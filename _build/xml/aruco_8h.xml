@@ -13,6 +13,22 @@
     <includedby refid="simple__single_8cpp" local="no">aruco_ros/aruco_ros/src/simple_single.cpp</includedby>
     <includedby refid="detectibot__magnifier_8cpp" local="yes">erl_assignment_3/src/detectibot_magnifier.cpp</includedby>
     <incdepgraph>
+      <node id="13">
+        <label>posetracker.h</label>
+        <link refid="posetracker_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
       <node id="11">
         <label>marker.h</label>
         <link refid="marker_8h"/>
@@ -27,29 +43,19 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="19">
-        <label>cvdrawingutils.h</label>
-        <link refid="cvdrawingutils_8h"/>
-        <childnode refid="1" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="7">
         <label>queue</label>
       </node>
-      <node id="17">
-        <label>markermap.h</label>
-        <link refid="markermap_8h"/>
+      <node id="14">
+        <label>cameraparameters.h</label>
+        <link refid="cameraparameters_8h"/>
         <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
         <childnode refid="15" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="16" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -80,26 +86,20 @@
       <node id="21">
         <label>stdint.h</label>
       </node>
-      <node id="14">
-        <label>cameraparameters.h</label>
-        <link refid="cameraparameters_8h"/>
-        <childnode refid="3" relation="include">
+      <node id="1">
+        <label>aruco_ros/aruco/include/aruco/aruco.h</label>
+        <link refid="aruco_8h"/>
+        <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="4" relation="include">
+        <childnode refid="13" relation="include">
         </childnode>
-        <childnode refid="15" relation="include">
+        <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
       </node>
       <node id="16">
         <label>stdexcept</label>
-      </node>
-      <node id="15">
-        <label>string</label>
-      </node>
-      <node id="18">
-        <label>map</label>
       </node>
       <node id="20">
         <label>dictionary.h</label>
@@ -119,6 +119,26 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
+      <node id="15">
+        <label>string</label>
+      </node>
+      <node id="17">
+        <label>markermap.h</label>
+        <link refid="markermap_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>map</label>
+      </node>
       <node id="9">
         <label>condition_variable</label>
       </node>
@@ -131,38 +151,18 @@
       <node id="10">
         <label>vector</label>
       </node>
-      <node id="1">
-        <label>aruco_ros/aruco/include/aruco/aruco.h</label>
-        <link refid="aruco_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-      </node>
       <node id="6">
         <label>iostream</label>
       </node>
       <node id="8">
         <label>mutex</label>
       </node>
-      <node id="13">
-        <label>posetracker.h</label>
-        <link refid="posetracker_8h"/>
+      <node id="19">
+        <label>cvdrawingutils.h</label>
+        <link refid="cvdrawingutils_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="3">
@@ -171,30 +171,6 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>aruco_ros/aruco/include/aruco/cvdrawingutils.h</label>
-        <link refid="cvdrawingutils_8h"/>
-        <childnode refid="1" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>aruco_ros/aruco/src/aruco/cvdrawingutils.cpp</label>
-        <link refid="cvdrawingutils_8cpp"/>
-      </node>
-      <node id="7">
-        <label>erl_assignment_3/src/detectibot_magnifier.cpp</label>
-        <link refid="detectibot__magnifier_8cpp"/>
-      </node>
       <node id="8">
         <label>aruco_ros/aruco_ros/include/aruco_ros/aruco_ros_utils.h</label>
         <link refid="aruco__ros__utils_8h"/>
@@ -205,9 +181,9 @@
         <childnode refid="6" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>aruco_ros/aruco_ros/src/simple_single.cpp</label>
-        <link refid="simple__single_8cpp"/>
+      <node id="4">
+        <label>aruco_ros/aruco_ros/src/marker_publish.cpp</label>
+        <link refid="marker__publish_8cpp"/>
       </node>
       <node id="5">
         <label>aruco_ros/aruco_ros/src/simple_double.cpp</label>
@@ -233,9 +209,33 @@
         <label>aruco_ros/aruco_ros/src/aruco_ros_utils.cpp</label>
         <link refid="aruco__ros__utils_8cpp"/>
       </node>
-      <node id="4">
-        <label>aruco_ros/aruco_ros/src/marker_publish.cpp</label>
-        <link refid="marker__publish_8cpp"/>
+      <node id="3">
+        <label>aruco_ros/aruco/src/aruco/cvdrawingutils.cpp</label>
+        <link refid="cvdrawingutils_8cpp"/>
+      </node>
+      <node id="7">
+        <label>erl_assignment_3/src/detectibot_magnifier.cpp</label>
+        <link refid="detectibot__magnifier_8cpp"/>
+      </node>
+      <node id="2">
+        <label>aruco_ros/aruco/include/aruco/cvdrawingutils.h</label>
+        <link refid="cvdrawingutils_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>aruco_ros/aruco_ros/src/simple_single.cpp</label>
+        <link refid="simple__single_8cpp"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">

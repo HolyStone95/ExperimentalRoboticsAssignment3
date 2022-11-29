@@ -9,25 +9,6 @@
       <node id="6">
         <label>ros/static_assert.h</label>
       </node>
-      <node id="1">
-        <label>_build/html/_sources/README.md.txt</label>
-        <link refid="_r_e_a_d_m_e_8md_8txt"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="10">
-        <label>stdexcept</label>
-      </node>
-      <node id="7">
-        <label>opencv2/core/core.hpp</label>
-      </node>
-      <node id="3">
-        <label>sensor_msgs/Image.h</label>
-      </node>
       <node id="2">
         <label>cv_bridge/cv_bridge.h</label>
         <link refid="cv__bridge_8h"/>
@@ -46,6 +27,25 @@
         <childnode refid="9" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>stdexcept</label>
+      </node>
+      <node id="7">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="3">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1">
+        <label>_build/html/_sources/README.md.txt</label>
+        <link refid="_r_e_a_d_m_e_8md_8txt"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -1228,7 +1228,7 @@
 <codeline lineno="911"><highlight class="stringliteral">&lt;!--<sp/>CONTACT<sp/>--&gt;</highlight></codeline>
 <codeline lineno="912"><highlight class="stringliteral">##<sp/>Contact</highlight></codeline>
 <codeline lineno="913"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="914"><highlight class="stringliteral">Iacopo Pietrasanta<sp/>Civetta<sp/>-<sp/>s4119821@studenti.unige.it</highlight></codeline>
+<codeline lineno="914"><highlight class="stringliteral">Iacopo<sp/>Pietrasanta<sp/>-<sp/>s4119821@studenti.unige.it</highlight></codeline>
 <codeline lineno="915"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="916"><highlight class="stringliteral">Project<sp/>Link:<sp/>[https://github.com/HolyStone95/ExperimentalRoboticsAssignment2](https://github.com/HolyStone95/ExperimentalRoboticsAssignment2)</highlight></codeline>
 <codeline lineno="917"><highlight class="stringliteral"></highlight></codeline>

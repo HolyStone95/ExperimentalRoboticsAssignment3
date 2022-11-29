@@ -136,7 +136,7 @@
         <definition>string conf::html_theme</definition>
         <argsstring></argsstring>
         <name>html_theme</name>
-        <initializer>=  &apos;sphinx_rtd_theme&apos;</initializer>
+        <initializer>=  &apos;classic&apos;</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>

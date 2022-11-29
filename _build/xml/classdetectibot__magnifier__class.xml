@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="115" column="17" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="115" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="112" column="17" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a9a1cd9cf012710653da20a9772018436" prot="private" static="no" mutable="no">
         <type><ref refid="classaruco_1_1_marker_detector" kindref="compound">aruco::MarkerDetector</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="118" column="23" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="118" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="115" column="23" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a1b3a8dba1d8063a7253b69d33b5ad374" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="classaruco_1_1_marker" kindref="compound">aruco::Marker</ref> &gt;</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="121" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="121" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="118" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a2bf627f4e8bd9e587e900906e0e85bc1" prot="private" static="no" mutable="no">
         <type><ref refid="classaruco_1_1_camera_parameters" kindref="compound">aruco::CameraParameters</ref></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="124" column="25" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="124" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="121" column="25" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a8cb2ca79c7dcea2ba7d4753b51ea25ec" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="127" column="8" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="127" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="124" column="8" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1ab4968459caadd5996a101e7a9de44b86" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="130" column="6" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="130" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="127" column="6" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1ad8469b09bd5d026a952fbac2543a863c" prot="private" static="no" mutable="no">
         <type>image_transport::ImageTransport</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="133" column="33" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="133" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="130" column="33" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1af98e9f63341a93d68fa11e11e5da2c11" prot="private" static="no" mutable="no">
         <type>cv::Mat</type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="136" column="9" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="136" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="133" column="9" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1ac8cbe98c37b88683356f7942c28b32f0" prot="private" static="no" mutable="no">
         <type>std::string</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="139" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="139" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="136" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a92a051c8e26dc6346ba58058607a472f" prot="private" static="no" mutable="no">
         <type>image_transport::Subscriber</type>
@@ -142,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="142" column="29" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="142" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="139" column="29" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="139" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a260c82bdf254a34de1481615c9e9f041" prot="private" static="no" mutable="no">
         <type>ros::ServiceServer</type>
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="145" column="20" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="145" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="142" column="20" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="142" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classdetectibot__magnifier__class_1a73fd8127bc297d6b0d707db5c92bb209" prot="private" static="no" mutable="no">
         <type>std::unordered_set&lt; int &gt;</type>
@@ -170,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="148" column="20" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="148" bodyend="-1"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="145" column="20" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="145" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -186,9 +186,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="57" column="1" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="57" bodyend="69"/>
-        <references refid="classdetectibot__magnifier__class_1a11a7b384ef801370a0d3b9ad4db47c5c" compoundref="detectibot__magnifier_8cpp" startline="104" endline="110">get_ids</references>
-        <references refid="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" compoundref="detectibot__magnifier_8cpp" startline="72" endline="101">image_callback</references>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="54" column="1" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="54" bodyend="66"/>
+        <references refid="classdetectibot__magnifier__class_1a11a7b384ef801370a0d3b9ad4db47c5c" compoundref="detectibot__magnifier_8cpp" startline="101" endline="107">get_ids</references>
+        <references refid="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" compoundref="detectibot__magnifier_8cpp" startline="69" endline="98">image_callback</references>
       </memberdef>
       <memberdef kind="function" id="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -206,10 +206,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="72" column="6" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="72" bodyend="101"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="69" column="6" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="69" bodyend="98"/>
         <references refid="classaruco_1_1_marker_detector_1adfb8f5e750be70433fff38e7270aaf82" compoundref="markerdetector_8cpp" startline="137" endline="142">aruco::MarkerDetector::detect</references>
         <references refid="namespacecv__bridge_1acbf2da402f4d3e505613e95b5a2aed35" compoundref="cv__bridge_8cpp" startline="425" endline="429">cv_bridge::toCvCopy</references>
-        <referencedby refid="classdetectibot__magnifier__class_1aa57059b46382b0a20397692b0e9dbe23" compoundref="detectibot__magnifier_8cpp" startline="57" endline="69">detectibot_magnifier_class</referencedby>
+        <referencedby refid="classdetectibot__magnifier__class_1aa57059b46382b0a20397692b0e9dbe23" compoundref="detectibot__magnifier_8cpp" startline="54" endline="66">detectibot_magnifier_class</referencedby>
       </memberdef>
       <memberdef kind="function" id="classdetectibot__magnifier__class_1a11a7b384ef801370a0d3b9ad4db47c5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -231,8 +231,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="104" column="6" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="104" bodyend="110"/>
-        <referencedby refid="classdetectibot__magnifier__class_1aa57059b46382b0a20397692b0e9dbe23" compoundref="detectibot__magnifier_8cpp" startline="57" endline="69">detectibot_magnifier_class</referencedby>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="101" column="6" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="101" bodyend="107"/>
+        <referencedby refid="classdetectibot__magnifier__class_1aa57059b46382b0a20397692b0e9dbe23" compoundref="detectibot__magnifier_8cpp" startline="54" endline="66">detectibot_magnifier_class</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="151" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="151" bodyend="159"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="148" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="148" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="classdetectibot__magnifier__class_1a3a0edabb93cb401eeeeb892f3e845cc1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; int &gt;</type>
@@ -270,14 +270,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="162" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="162" bodyend="169"/>
+        <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="159" column="13" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="159" bodyend="166"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="53" column="1" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="52" bodyend="170"/>
+    <location file="erl_assignment_3/src/detectibot_magnifier.cpp" line="50" column="1" bodyfile="erl_assignment_3/src/detectibot_magnifier.cpp" bodystart="49" bodyend="167"/>
     <listofallmembers>
       <member refid="classdetectibot__magnifier__class_1a2bf627f4e8bd9e587e900906e0e85bc1" prot="private" virt="non-virtual"><scope>detectibot_magnifier_class</scope><name>camParam_</name></member>
       <member refid="classdetectibot__magnifier__class_1aa57059b46382b0a20397692b0e9dbe23" prot="public" virt="non-virtual"><scope>detectibot_magnifier_class</scope><name>detectibot_magnifier_class</name></member>

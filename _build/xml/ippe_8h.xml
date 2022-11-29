@@ -28,10 +28,6 @@
         <label>aruco_ros/aruco/src/aruco/posetracker.cpp</label>
         <link refid="posetracker_8cpp"/>
       </node>
-      <node id="2">
-        <label>aruco_ros/aruco/src/aruco/ippe.cpp</label>
-        <link refid="ippe_8cpp"/>
-      </node>
       <node id="1">
         <label>aruco_ros/aruco/include/aruco/ippe.h</label>
         <link refid="ippe_8h"/>
@@ -39,6 +35,10 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
+      </node>
+      <node id="2">
+        <label>aruco_ros/aruco/src/aruco/ippe.cpp</label>
+        <link refid="ippe_8cpp"/>
       </node>
     </invincdepgraph>
     <innernamespace refid="namespacearuco">aruco</innernamespace>

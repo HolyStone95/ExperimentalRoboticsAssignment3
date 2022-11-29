@@ -10,6 +10,22 @@
     <includes refid="cv__bridge_8h" local="no">cv_bridge/cv_bridge.h</includes>
     <includes local="no">sensor_msgs/image_encodings.h</includes>
     <incdepgraph>
+      <node id="14">
+        <label>posetracker.h</label>
+        <link refid="posetracker_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
       <node id="12">
         <label>marker.h</label>
         <link refid="marker_8h"/>
@@ -24,32 +40,60 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="20">
-        <label>cvdrawingutils.h</label>
-        <link refid="cvdrawingutils_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
       <node id="29">
         <label>ros/static_assert.h</label>
       </node>
       <node id="8">
         <label>queue</label>
       </node>
-      <node id="18">
-        <label>markermap.h</label>
-        <link refid="markermap_8h"/>
-        <childnode refid="5" relation="include">
+      <node id="25">
+        <label>cv_bridge/cv_bridge.h</label>
+        <link refid="cv__bridge_8h"/>
+        <childnode refid="26" relation="include">
         </childnode>
-        <childnode refid="12" relation="include">
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>aruco_ros/aruco_ros/src/marker_publish.cpp</label>
+        <link refid="marker__publish_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>cameraparameters.h</label>
+        <link refid="cameraparameters_8h"/>
+        <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="17" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -80,16 +124,16 @@
       <node id="22">
         <label>stdint.h</label>
       </node>
-      <node id="15">
-        <label>cameraparameters.h</label>
-        <link refid="cameraparameters_8h"/>
-        <childnode refid="5" relation="include">
+      <node id="3">
+        <label>aruco/aruco.h</label>
+        <link refid="aruco_8h"/>
+        <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="6" relation="include">
+        <childnode refid="14" relation="include">
         </childnode>
-        <childnode refid="16" relation="include">
+        <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="17" relation="include">
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="17">
@@ -103,32 +147,6 @@
       </node>
       <node id="26">
         <label>sensor_msgs/Image.h</label>
-      </node>
-      <node id="16">
-        <label>string</label>
-      </node>
-      <node id="19">
-        <label>map</label>
-      </node>
-      <node id="25">
-        <label>cv_bridge/cv_bridge.h</label>
-        <link refid="cv__bridge_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
-        <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
       </node>
       <node id="21">
         <label>dictionary.h</label>
@@ -147,6 +165,26 @@
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="18">
+        <label>markermap.h</label>
+        <link refid="markermap_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>map</label>
       </node>
       <node id="10">
         <label>condition_variable</label>
@@ -169,18 +207,6 @@
       <node id="11">
         <label>vector</label>
       </node>
-      <node id="3">
-        <label>aruco/aruco.h</label>
-        <link refid="aruco_8h"/>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-      </node>
       <node id="23">
         <label>ros/ros.h</label>
       </node>
@@ -190,20 +216,12 @@
       <node id="9">
         <label>mutex</label>
       </node>
-      <node id="14">
-        <label>posetracker.h</label>
-        <link refid="posetracker_8h"/>
+      <node id="20">
+        <label>cvdrawingutils.h</label>
+        <link refid="cvdrawingutils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
         <childnode refid="5" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="12" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="27">
@@ -212,24 +230,6 @@
       <node id="5">
         <label>aruco_export.h</label>
         <link refid="aruco__export_8h"/>
-      </node>
-      <node id="1">
-        <label>aruco_ros/aruco_ros/src/marker_publish.cpp</label>
-        <link refid="marker__publish_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="28" relation="include">
-        </childnode>
       </node>
     </incdepgraph>
     <innerclass refid="class_aruco_marker_publisher" prot="public">ArucoMarkerPublisher</innerclass>

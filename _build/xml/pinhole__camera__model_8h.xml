@@ -22,20 +22,8 @@
       <node id="5">
         <label>stdexcept</label>
       </node>
-      <node id="7">
-        <label>exports.h</label>
-        <link refid="exports_8h"/>
-        <childnode refid="8" relation="include">
-        </childnode>
-      </node>
       <node id="6">
         <label>string</label>
-      </node>
-      <node id="3">
-        <label>opencv2/core/mat.hpp</label>
-      </node>
-      <node id="4">
-        <label>opencv2/imgproc/imgproc.hpp</label>
       </node>
       <node id="1">
         <label>vision_opencv/image_geometry/include/image_geometry/pinhole_camera_model.h</label>
@@ -53,19 +41,23 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
+      <node id="3">
+        <label>opencv2/core/mat.hpp</label>
+      </node>
+      <node id="4">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="7">
+        <label>exports.h</label>
+        <link refid="exports_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="4">
-        <label>vision_opencv/image_geometry/src/pinhole_camera_model.cpp</label>
-        <link refid="pinhole__camera__model_8cpp"/>
-      </node>
       <node id="3">
         <label>vision_opencv/image_geometry/src/stereo_camera_model.cpp</label>
         <link refid="stereo__camera__model_8cpp"/>
-      </node>
-      <node id="5">
-        <label>vision_opencv/image_geometry/test/utest.cpp</label>
-        <link refid="image__geometry_2test_2utest_8cpp"/>
       </node>
       <node id="6">
         <label>vision_opencv/image_geometry/test/utest_equi.cpp</label>
@@ -88,6 +80,14 @@
         <link refid="stereo__camera__model_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
+      </node>
+      <node id="5">
+        <label>vision_opencv/image_geometry/test/utest.cpp</label>
+        <link refid="image__geometry_2test_2utest_8cpp"/>
+      </node>
+      <node id="4">
+        <label>vision_opencv/image_geometry/src/pinhole_camera_model.cpp</label>
+        <link refid="pinhole__camera__model_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classimage__geometry_1_1_exception" prot="public">image_geometry::Exception</innerclass>

@@ -12,7 +12,7 @@
 <codeline lineno="2"><highlight class="stringliteral">..<sp/>module::<sp/>navigation</highlight></codeline>
 <codeline lineno="3"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:platform:<sp/>Unix</highlight></codeline>
 <codeline lineno="4"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:synopsis:<sp/>Python<sp/>module<sp/>aimed<sp/>at<sp/>implementong<sp/>the<sp/>Navigation<sp/>module</highlight></codeline>
-<codeline lineno="5"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Iacopo Pietrasanta<sp/>iacopo.pietrasanta@gmail.com</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Iacopo<sp/>Pietrasanta<sp/>iacopo.pietrasanta@gmail.com</highlight></codeline>
 <codeline lineno="6"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="7"><highlight class="stringliteral">This<sp/>node<sp/>implements<sp/>two<sp/>different<sp/>services<sp/>aimed<sp/>at<sp/>letting<sp/>the<sp/>robot<sp/>reach</highlight></codeline>
 <codeline lineno="8"><highlight class="stringliteral">different<sp/>rooms<sp/>in<sp/>order<sp/>to<sp/>fulfill<sp/>its<sp/>investigation-related<sp/>tasks.</highlight></codeline>

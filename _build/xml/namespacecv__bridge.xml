@@ -195,8 +195,8 @@ If <emphasis>encoding</emphasis> is the empty string (the default), the returned
         <inbodydescription>
         </inbodydescription>
         <location file="vision_opencv/cv_bridge/src/cv_bridge.cpp" line="425" column="12" bodyfile="vision_opencv/cv_bridge/src/cv_bridge.cpp" bodystart="425" bodyend="429" declfile="vision_opencv/cv_bridge/include/cv_bridge/cv_bridge.h" declline="195" declcolumn="12"/>
+        <referencedby refid="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" compoundref="detectibot__magnifier_8cpp" startline="69" endline="98">detectibot_magnifier_class::image_callback</referencedby>
         <referencedby refid="simple__double_8cpp_1af119c0685c1216bb9cdbc352ea016cd2" compoundref="simple__double_8cpp" startline="72" endline="202">image_callback</referencedby>
-        <referencedby refid="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" compoundref="detectibot__magnifier_8cpp" startline="72" endline="101">detectibot_magnifier_class::image_callback</referencedby>
         <referencedby refid="class_aruco_marker_publisher_1aa44e8391a543176e7b52c7ad382be7a2" compoundref="marker__publish_8cpp" startline="79" endline="137">ArucoMarkerPublisher::image_callback</referencedby>
         <referencedby refid="classimg__echo__class_1a395477377683017361fdc80aaf3cc995" compoundref="img__echo_8cpp" startline="84" endline="104">img_echo_class::image_callback</referencedby>
         <referencedby refid="class_aruco_simple_1a4187d02eb1f8af79b91dc901c3f96586" compoundref="simple__single_8cpp" startline="185" endline="309">ArucoSimple::image_callback</referencedby>

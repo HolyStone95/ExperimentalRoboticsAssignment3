@@ -435,8 +435,8 @@
         <location file="aruco_ros/aruco/include/aruco/markerdetector.h" line="198" column="15" bodyfile="aruco_ros/aruco/src/aruco/markerdetector.cpp" bodystart="137" bodyend="142"/>
         <referencedby refid="classaruco_1_1_marker_detector_1ad24697ba1c2e6843ce6405c9ae8ec7fa" compoundref="markerdetector_8cpp" startline="144" endline="150">detect</referencedby>
         <referencedby refid="namespacearuco__ros_1a2e7094ed95ffed7a8b3bf02e49732b6d" compoundref="aruco__ros__utils_8cpp" startline="87" endline="119">aruco_ros::detectMarkers</referencedby>
+        <referencedby refid="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" compoundref="detectibot__magnifier_8cpp" startline="69" endline="98">detectibot_magnifier_class::image_callback</referencedby>
         <referencedby refid="simple__double_8cpp_1af119c0685c1216bb9cdbc352ea016cd2" compoundref="simple__double_8cpp" startline="72" endline="202">image_callback</referencedby>
-        <referencedby refid="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b" compoundref="detectibot__magnifier_8cpp" startline="72" endline="101">detectibot_magnifier_class::image_callback</referencedby>
         <referencedby refid="class_aruco_marker_publisher_1aa44e8391a543176e7b52c7ad382be7a2" compoundref="marker__publish_8cpp" startline="79" endline="137">ArucoMarkerPublisher::image_callback</referencedby>
         <referencedby refid="class_aruco_simple_1a4187d02eb1f8af79b91dc901c3f96586" compoundref="simple__single_8cpp" startline="185" endline="309">ArucoSimple::image_callback</referencedby>
       </memberdef>

@@ -10,24 +10,11 @@
     <includedby refid="dictionary__based_8h" local="yes">aruco_ros/aruco/src/aruco/markerlabelers/dictionary_based.h</includedby>
     <includedby refid="svmmarkers_8h" local="yes">aruco_ros/aruco/src/aruco/markerlabelers/svmmarkers.h</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>aruco_ros/aruco/include/aruco/markerlabeler.h</label>
-        <link refid="markerlabeler_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
       <node id="7">
         <label>stdint.h</label>
       </node>
       <node id="8">
         <label>string</label>
-      </node>
-      <node id="6">
-        <label>map</label>
       </node>
       <node id="3">
         <label>dictionary.h</label>
@@ -47,6 +34,19 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
+      <node id="6">
+        <label>map</label>
+      </node>
+      <node id="1">
+        <label>aruco_ros/aruco/include/aruco/markerlabeler.h</label>
+        <link refid="markerlabeler_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
       <node id="4">
         <label>opencv2/core.hpp</label>
       </node>
@@ -62,9 +62,23 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="4">
+        <label>aruco_ros/aruco/src/aruco/markerlabelers/dictionary_based.h</label>
+        <link refid="dictionary__based_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
       <node id="5">
         <label>aruco_ros/aruco/src/aruco/markerlabelers/dictionary_based.cpp</label>
         <link refid="dictionary__based_8cpp"/>
+      </node>
+      <node id="6">
+        <label>aruco_ros/aruco/src/aruco/markerlabelers/svmmarkers.h</label>
+        <link refid="svmmarkers_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>aruco_ros/aruco/include/aruco/markerlabeler.h</label>
@@ -82,27 +96,13 @@
         <label>aruco_ros/aruco/src/aruco/markerdetector.cpp</label>
         <link refid="markerdetector_8cpp"/>
       </node>
-      <node id="6">
-        <label>aruco_ros/aruco/src/aruco/markerlabelers/svmmarkers.h</label>
-        <link refid="svmmarkers_8h"/>
-        <childnode refid="7" relation="include">
-        </childnode>
+      <node id="3">
+        <label>aruco_ros/aruco/src/aruco/markerlabeler.cpp</label>
+        <link refid="markerlabeler_8cpp"/>
       </node>
       <node id="7">
         <label>aruco_ros/aruco/src/aruco/markerlabelers/svmmarkers.cpp</label>
         <link refid="svmmarkers_8cpp"/>
-      </node>
-      <node id="4">
-        <label>aruco_ros/aruco/src/aruco/markerlabelers/dictionary_based.h</label>
-        <link refid="dictionary__based_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>aruco_ros/aruco/src/aruco/markerlabeler.cpp</label>
-        <link refid="markerlabeler_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classaruco_1_1_marker_labeler" prot="public">aruco::MarkerLabeler</innerclass>

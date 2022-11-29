@@ -15,6 +15,9 @@
     <includes local="no">thread</includes>
     <includes refid="debug_8h" local="yes">debug.h</includes>
     <incdepgraph>
+      <node id="24">
+        <label>valarray</label>
+      </node>
       <node id="11">
         <label>marker.h</label>
         <link refid="marker_8h"/>
@@ -29,49 +32,20 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="24">
-        <label>valarray</label>
-      </node>
-      <node id="16">
-        <label>markerlabeler.h</label>
-        <link refid="markerlabeler_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>aruco_ros/aruco/src/aruco/markerdetector.cpp</label>
-        <link refid="markerdetector_8cpp"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="13" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
-        <childnode refid="21" relation="include">
-        </childnode>
-        <childnode refid="25" relation="include">
-        </childnode>
-        <childnode refid="26" relation="include">
-        </childnode>
-      </node>
       <node id="7">
         <label>queue</label>
+      </node>
+      <node id="13">
+        <label>cameraparameters.h</label>
+        <link refid="cameraparameters_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>markerdetector.h</label>
@@ -101,48 +75,11 @@
       <node id="19">
         <label>stdint.h</label>
       </node>
-      <node id="26">
-        <label>debug.h</label>
-        <link refid="debug_8h"/>
-        <childnode refid="6" relation="include">
-        </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
-        <childnode refid="27" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-      </node>
-      <node id="13">
-        <label>cameraparameters.h</label>
-        <link refid="cameraparameters_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-        <childnode refid="14" relation="include">
-        </childnode>
-        <childnode refid="15" relation="include">
-        </childnode>
-      </node>
       <node id="15">
         <label>stdexcept</label>
       </node>
       <node id="22">
         <label>opencv2/imgproc.hpp</label>
-      </node>
-      <node id="14">
-        <label>string</label>
-      </node>
-      <node id="18">
-        <label>map</label>
-      </node>
-      <node id="23">
-        <label>fstream</label>
       </node>
       <node id="17">
         <label>dictionary.h</label>
@@ -162,11 +99,86 @@
         <childnode refid="10" relation="include">
         </childnode>
       </node>
+      <node id="14">
+        <label>string</label>
+      </node>
+      <node id="18">
+        <label>map</label>
+      </node>
+      <node id="16">
+        <label>markerlabeler.h</label>
+        <link refid="markerlabeler_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>fstream</label>
+      </node>
       <node id="9">
         <label>condition_variable</label>
       </node>
+      <node id="26">
+        <label>debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
       <node id="5">
         <label>cstdio</label>
+      </node>
+      <node id="27">
+        <label>ctime</label>
+      </node>
+      <node id="4">
+        <label>opencv2/core.hpp</label>
+      </node>
+      <node id="1">
+        <label>aruco_ros/aruco/src/aruco/markerdetector.cpp</label>
+        <link refid="markerdetector_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+      <node id="6">
+        <label>iostream</label>
       </node>
       <node id="20">
         <label>timers.h</label>
@@ -179,18 +191,6 @@
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-      </node>
-      <node id="27">
-        <label>ctime</label>
-      </node>
-      <node id="4">
-        <label>opencv2/core.hpp</label>
-      </node>
-      <node id="10">
-        <label>vector</label>
-      </node>
-      <node id="6">
-        <label>iostream</label>
       </node>
       <node id="8">
         <label>mutex</label>

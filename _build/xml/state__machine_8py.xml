@@ -16,7 +16,7 @@
 <codeline lineno="2"><highlight class="stringliteral">..<sp/>module::<sp/>state_machine</highlight></codeline>
 <codeline lineno="3"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:platform:<sp/>Unix</highlight></codeline>
 <codeline lineno="4"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:synopsis:<sp/>Core<sp/>Python<sp/>module<sp/>aimed<sp/>at<sp/>implementong<sp/>the<sp/>Smach<sp/>state<sp/>machine</highlight></codeline>
-<codeline lineno="5"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Iacopo Pietrasanta<sp/>iacopo.pietrasanta@gmail.com</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Iacopo<sp/>Pietrasanta<sp/>iacopo.pietrasanta@gmail.com</highlight></codeline>
 <codeline lineno="6"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="7"><highlight class="stringliteral">The<sp/>state_machine<sp/>node<sp/>implements<sp/>a<sp/>state<sp/>machine<sp/>(by<sp/>means<sp/>of<sp/>ROS<sp/>Smach<sp/>pkg)<sp/>that</highlight></codeline>
 <codeline lineno="8"><highlight class="stringliteral">establishes<sp/>the<sp/>operations<sp/>the<sp/>robot<sp/>can<sp/>actually<sp/>perform;<sp/>It<sp/>also<sp/>represent</highlight></codeline>

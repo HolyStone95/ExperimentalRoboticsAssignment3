@@ -11,6 +11,12 @@
       <node id="3">
         <label>string</label>
       </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
       <node id="1">
         <label>aruco_ros/aruco/include/aruco/timers.h</label>
         <link refid="timers_8h"/>
@@ -22,12 +28,6 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>vector</label>
-      </node>
-      <node id="5">
-        <label>iostream</label>
       </node>
       <node id="2">
         <label>chrono</label>

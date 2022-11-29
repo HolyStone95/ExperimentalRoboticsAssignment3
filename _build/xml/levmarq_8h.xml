@@ -14,30 +14,6 @@
     <includes local="no">iomanip</includes>
     <includedby refid="posetracker_8cpp" local="yes">aruco_ros/aruco/src/aruco/posetracker.cpp</includedby>
     <incdepgraph>
-      <node id="11">
-        <label>iomanip</label>
-      </node>
-      <node id="4">
-        <label>functional</label>
-      </node>
-      <node id="3">
-        <label>Eigen/Cholesky</label>
-      </node>
-      <node id="6">
-        <label>cmath</label>
-      </node>
-      <node id="2">
-        <label>Eigen/Core</label>
-      </node>
-      <node id="7">
-        <label>ctime</label>
-      </node>
-      <node id="9">
-        <label>vector</label>
-      </node>
-      <node id="5">
-        <label>iostream</label>
-      </node>
       <node id="1">
         <label>aruco_ros/aruco/include/aruco/levmarq.h</label>
         <link refid="levmarq_8h"/>
@@ -62,6 +38,30 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="4">
+        <label>functional</label>
+      </node>
+      <node id="3">
+        <label>Eigen/Cholesky</label>
+      </node>
+      <node id="6">
+        <label>cmath</label>
+      </node>
+      <node id="2">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="7">
+        <label>ctime</label>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
       <node id="10">
         <label>chrono</label>
       </node>
@@ -70,15 +70,15 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>aruco_ros/aruco/src/aruco/posetracker.cpp</label>
-        <link refid="posetracker_8cpp"/>
-      </node>
       <node id="1">
         <label>aruco_ros/aruco/include/aruco/levmarq.h</label>
         <link refid="levmarq_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="2">
+        <label>aruco_ros/aruco/src/aruco/posetracker.cpp</label>
+        <link refid="posetracker_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classaruco_1_1_lev_marq" prot="public">aruco::LevMarq</innerclass>

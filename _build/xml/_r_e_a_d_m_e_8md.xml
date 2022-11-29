@@ -7,112 +7,46 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline><highlight class="normal">&lt;div<sp/>id=&quot;top&quot;&gt;&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Experimental<sp/>Robotics<sp/>Laboratory<sp/>-<sp/>third<sp/>assignment</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">This<sp/>package<sp/>contains<sp/>the<sp/>source<sp/>code<sp/>implemented<sp/>during<sp/>the<sp/>third<sp/>assignment<sp/>of<sp/>the<sp/>Experimental<sp/>Robotics<sp/>Laboratory,<sp/>course<sp/>of<sp/>the<sp/>first<sp/>semester<sp/>of<sp/>the<sp/>second<sp/>year<sp/>of<sp/>Robotics<sp/>Engineering<sp/>Master<sp/>Degree<sp/>course<sp/>of<sp/>University<sp/>of<sp/>Genoa,<sp/>Italy.</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Index</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Index:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Required<sp/>packages](#required-packages)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Assignment<sp/>request](#assignment-request)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[Before<sp/>Getting<sp/>Started](#before-getting-started)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Software<sp/>Architecture<sp/>and<sp/>Functioning](#software-architecture-and-functioning)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[ROS<sp/>nodes<sp/>description](#ros-nodes-description)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[The<sp/>state_machine.py<sp/>node](#the-state_machine.py-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[The<sp/>navigation.py<sp/>node](#the-navigation.py-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[The<sp/>cluedo_kb.py<sp/>node](#the-cluedo_kb.py-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[The<sp/>simulation.cpp<sp/>node](#the-simulation.cpp-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[The<sp/>image_echo.cpp<sp/>node](#the-image_echo.cpp-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[The<sp/>detectibot_magnifier.cpp<sp/>node](#the-detectibot_magnifier.cpp-node)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[Rqt_graph](#rqt_graph)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[UML<sp/>temporal<sp/>diagram](#uml-temporal-diagram)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[Summarizing<sp/>working<sp/>architecture](#summarizing-working-architecture)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[How<sp/>to<sp/>launch<sp/>and<sp/>additional<sp/>documentation](#how-to-launch-and-additional-documentation)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[Running<sp/>the<sp/>Navigation<sp/>module](#running-the-navigation-module)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[Running<sp/>the<sp/>Visio<sp/><sp/>module](#running-the-vision-module)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[Running<sp/>the<sp/>State<sp/>machine<sp/>module](#running-the-state-machine-module)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[System<sp/>limitations](#system-limitations)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Possible<sp/>Technical<sp/>Improvements](#possible-technical-improvements)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Contact](#contact)</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>PROJECT<sp/>SHIELDS<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;!--</highlight></codeline>
-<codeline><highlight class="normal">***<sp/>https://www.markdownguide.org/basic-syntax/#reference-style-links</highlight></codeline>
-<codeline><highlight class="normal">--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[![Forks][forks-shield]][forks-url]</highlight></codeline>
-<codeline><highlight class="normal">[![Stargazers][stars-shield]][stars-url]</highlight></codeline>
-<codeline><highlight class="normal">[![Issues][issues-shield]][issues-url]</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Required<sp/>packages</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>**ROS**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>**smach**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>**OpenCV**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>**MoveIt<sp/>Frameowrk**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*<sp/>**move_base**</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Assignment<sp/>request</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>PROJECT<sp/>LOGO<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;br<sp/>/&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;a<sp/>href=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;img<sp/>src=&quot;media/miscellaneous/logo-black.png&quot;<sp/>alt=&quot;Logo&quot;<sp/>width=&quot;200&quot;<sp/>height=&quot;100&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;/a&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;h3<sp/>align=&quot;center&quot;&gt;Experimental<sp/>Robotics<sp/>Laboratory&lt;/h3&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>First<sp/>assignment<sp/>for<sp/>the<sp/>Experimental<sp/>Robotics<sp/>laboratory<sp/>course<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;br<sp/>/&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/doc&quot;&gt;&lt;strong&gt;Explore<sp/>the<sp/>docs<sp/>»&lt;/strong&gt;&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;br<sp/>/&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;br<sp/>/&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/demo&quot;&gt;View<sp/>Demo&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>·</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues&quot;&gt;Report<sp/>Bug&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>·</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues&quot;&gt;Request<sp/>Feature&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>TABLE<sp/>OF<sp/>CONTENTS<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;details&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;summary&gt;Table<sp/>of<sp/>Contents&lt;/summary&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;ol&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#about-the-project&quot;&gt;About<sp/>The<sp/>Project&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#assignments-prerequisites&quot;&gt;Assignment&apos;s<sp/>prerequisites&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#built-with&quot;&gt;Built<sp/>With&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#getting-started&quot;&gt;Getting<sp/>Started&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#installation-procedure&quot;&gt;Installation<sp/>procedure&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#workspace-building-and-launch&quot;&gt;Workspace<sp/>building<sp/>and<sp/>launch&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#running-pocedure&quot;&gt;Running<sp/>procedure&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#usage&quot;&gt;Usage&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#ros-node-description-an-overview&quot;&gt;ROS<sp/>node<sp/>description:<sp/>An<sp/>overview&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#the-main.py-node<sp/>&quot;&gt;the<sp/>main.py<sp/>node&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#the-cluedo_kb.py-node<sp/>&quot;&gt;the<sp/>cluedo_kb.py<sp/>node&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#the-action_interface.cpp-node&quot;&gt;the<sp/>action_interface.cpp<sp/>node&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#the-manipulation.cpp-node<sp/>&quot;&gt;the<sp/>manipulation.cpp<sp/>node&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#the-my_simulation.cpp-node<sp/>&quot;&gt;the<sp/>my_simulation.cpp<sp/>node<sp/>&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#rqt_graph&quot;&gt;rqt_graph&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#Working-hypothesis-and-environment&quot;&gt;Working<sp/>hypothesis<sp/>and<sp/>environment&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#System&apos;s<sp/>features&quot;&gt;System&apos;s<sp/>features&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#System&apos;s<sp/>limitations&quot;&gt;System&apos;s<sp/>limitations&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;&lt;a<sp/>href=&quot;#Possible<sp/>technical<sp/>Improvements&quot;&gt;Possible<sp/>technical<sp/>Improvements&lt;/a&gt;&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/ul&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#roadmap&quot;&gt;Roadmap&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#contributing&quot;&gt;Contributing&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#license&quot;&gt;License&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;a<sp/>href=&quot;#acknowledgments&quot;&gt;Acknowledgments&lt;/a&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;/li&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/ol&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;/details&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>ABOUT<sp/>THE<sp/>PROJECT<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>About<sp/>The<sp/>Project</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">This<sp/>project<sp/>takes<sp/>inspiration<sp/>from<sp/>the<sp/>earlier<sp/>ones<sp/>([ExperimentalRoboticsAssignment1][9]<sp/>and<sp/>[ExperimentalRoboticsAssignment2][10],<sp/>respectively)<sp/>but<sp/>unlike<sp/>them,<sp/>the<sp/>environment<sp/>in<sp/>which<sp/>detectiBot<sp/>moves<sp/>is<sp/>much<sp/>more<sp/>complex.<sp/>Indeed,<sp/>it<sp/>presents<sp/>several<sp/>rooms,<sp/>and<sp/>30<sp/>ArUco<sp/>markers<sp/>(5<sp/>markers<sp/>for<sp/>each<sp/>room)</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>assignment<sp/>improves<sp/>the<sp/>architectures<sp/>developed<sp/>in<sp/>the<sp/>first<sp/>and<sp/>second<sp/>assignments<sp/>but<sp/>unlike<sp/>them,<sp/>the<sp/>environment<sp/>in<sp/>which<sp/>the<sp/>robot<sp/>moves<sp/>is<sp/>much<sp/>more<sp/>complex.<sp/>Indeed,<sp/>it<sp/>presents<sp/>several<sp/>rooms,<sp/>and<sp/>30<sp/>ArUco<sp/>markers<sp/>(5<sp/>markers<sp/>for<sp/>each<sp/>room)</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">This<sp/>time,<sp/>each<sp/>marker<sp/>corresponds<sp/>to<sp/>a<sp/>hint,<sp/>which<sp/>are<sp/>always<sp/>given<sp/>with<sp/>the<sp/>following<sp/>structure:</highlight></codeline>
 <codeline></codeline>
@@ -125,35 +59,35 @@
 <codeline><highlight class="normal">Also,<sp/>markers<sp/>may<sp/>me<sp/>in<sp/>three<sp/>different<sp/>positions:<sp/>placed<sp/>on<sp/>the<sp/>walls<sp/>(height<sp/>1<sp/>m<sp/>ca.),<sp/>and<sp/>on<sp/>the</highlight></codeline>
 <codeline><highlight class="normal">floor<sp/>(placed<sp/>vertically<sp/>or<sp/>horizonally).</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">The<sp/>idea<sp/>is<sp/>the<sp/>same<sp/>of<sp/>the<sp/>previous<sp/>two<sp/>assignment:<sp/>the<sp/>robot<sp/>should<sp/>keep<sp/>receiving<sp/>hints<sp/>until<sp/>it<sp/>has<sp/>a<sp/>complete<sp/>and<sp/>consistent<sp/>hypothesis.<sp/>However,<sp/>as<sp/>in<sp/>the<sp/>previous<sp/>assignments,<sp/>only<sp/>one<sp/>ID<sp/>source<sp/>is<sp/>the<sp/>trustable<sp/>one.<sp/></highlight></codeline>
+<codeline><highlight class="normal">The<sp/>idea<sp/>is<sp/>the<sp/>same<sp/>of<sp/>the<sp/>previous<sp/>two<sp/>assignment:<sp/>the<sp/>robot<sp/>should<sp/>keep<sp/>receiving<sp/>hints<sp/>until<sp/>it<sp/>has<sp/>a<sp/>complete<sp/>and<sp/>consistent<sp/>hypothesis.<sp/>However,<sp/>as<sp/>in<sp/>the<sp/>previous<sp/>assignments,<sp/>only<sp/>one<sp/>ID<sp/>source<sp/>is<sp/>the<sp/>trustable<sp/>one.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">As<sp/>soon<sp/>as<sp/>the<sp/>robot<sp/>gets<sp/>a<sp/>complete<sp/>hypothesis,<sp/>it<sp/>should<sp/>go<sp/>in<sp/>the<sp/>center<sp/>of<sp/>the<sp/>arena<sp/>(**x=0.0**,<sp/>**y=-1.0**,<sp/>which<sp/>should<sp/>be<sp/>also<sp/>the<sp/>starting<sp/>position<sp/>of<sp/>the<sp/>robot)<sp/>and<sp/>«tells»<sp/>its<sp/>solution.<sp/></highlight></codeline>
+<codeline><highlight class="normal">As<sp/>soon<sp/>as<sp/>the<sp/>robot<sp/>gets<sp/>a<sp/>complete<sp/>hypothesis,<sp/>it<sp/>should<sp/>go<sp/>in<sp/>the<sp/>center<sp/>of<sp/>the<sp/>arena<sp/>(**x=0.0**,<sp/>**y=-1.0**,<sp/>which<sp/>should<sp/>be<sp/>also<sp/>the<sp/>starting<sp/>position<sp/>of<sp/>the<sp/>robot)<sp/>and<sp/>«tells»<sp/>its<sp/>solution.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">If<sp/>the<sp/>solution<sp/>is<sp/>the<sp/>correct<sp/>one,<sp/>the<sp/>game<sp/>ends.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&gt;<sp/>**REMARK**<sp/>x<sp/>and<sp/>y<sp/>coordinates<sp/>belonging<sp/>to<sp/>each<sp/>room&apos;s<sp/>point<sp/>where<sp/>known<sp/>a<sp/>priori<sp/>as<sp/>shown<sp/>in<sp/>the<sp/>table<sp/>below<sp/><sp/><sp/></highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>room<sp/><sp/>|<sp/>x,y<sp/>coordinates<sp/><sp/>|<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>room<sp/><sp/>|<sp/>x,y<sp/>coordinates<sp/><sp/>|</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|--|--|</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room1<sp/>|<sp/>(<sp/>-4<sp/>,<sp/>-3<sp/>)<sp/>|<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room2<sp/>|<sp/>(<sp/>-4<sp/>,<sp/>+2<sp/>)<sp/>|<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room3<sp/>|<sp/>(<sp/>-4<sp/>,<sp/>+7<sp/>)<sp/>|<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room4<sp/>|<sp/>(<sp/>5<sp/>,<sp/>-7<sp/>)<sp/><sp/>|<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room5<sp/>|<sp/>(<sp/>5<sp/>,<sp/>-3<sp/>)<sp/><sp/>|<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room6<sp/>|<sp/>(<sp/>5<sp/>,<sp/>+1<sp/>)<sp/><sp/>|<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/></highlight></codeline>
-<codeline><highlight class="normal">Having<sp/>differen<sp/>values<sp/>for<sp/>z,<sp/>it<sp/>is<sp/>needed<sp/>that<sp/>detectibot<sp/>reaches<sp/>both<sp/>quotes<sp/>with<sp/>its<sp/>cluedo_link</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room1<sp/>|<sp/>(<sp/>-4<sp/>,<sp/>-3<sp/>)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room2<sp/>|<sp/>(<sp/>-4<sp/>,<sp/>+2<sp/>)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room3<sp/>|<sp/>(<sp/>-4<sp/>,<sp/>+7<sp/>)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room4<sp/>|<sp/>(<sp/>5<sp/>,<sp/>-7<sp/>)<sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room5<sp/>|<sp/>(<sp/>5<sp/>,<sp/>-3<sp/>)<sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>|<sp/>Room6<sp/>|<sp/>(<sp/>5<sp/>,<sp/>+1<sp/>)<sp/><sp/>|</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Concerining<sp/>the<sp/>simulation<sp/>environment,<sp/>there<sp/>are<sp/>small<sp/>walls<sp/>around<sp/>the<sp/>robot<sp/>aimed<sp/>at<sp/>impeding<sp/>the<sp/>movements<sp/>of<sp/>its<sp/>mobile<sp/>base<sp/></highlight></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>different<sp/>values<sp/>for<sp/>z,<sp/>meaning<sp/>that<sp/>the<sp/>robot<sp/>needs<sp/>to<sp/>be<sp/>able<sp/>to<sp/>reach<sp/>them<sp/>with<sp/>it&apos;s<sp/>arm,<sp/>precisely<sp/>with<sp/>its<sp/>*cluedo_link*.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Concerining<sp/>the<sp/>simulation<sp/>environment,<sp/>there<sp/>are<sp/>small<sp/>walls<sp/>around<sp/>the<sp/>robot<sp/>aimed<sp/>at<sp/>impeding<sp/>the<sp/>movements<sp/>of<sp/>its<sp/>mobile<sp/>base</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Hence<sp/>the<sp/>robot<sp/>moves<sp/>from<sp/>one<sp/>«hint»<sp/>coordinate<sp/>to<sp/>another<sp/>one,<sp/>while<sp/>receiving<sp/>hints.<sp/>This<sp/>holds<sp/>until<sp/>it<sp/>has<sp/>a<sp/>complete</highlight></codeline>
 <codeline><highlight class="normal">and<sp/>consistent<sp/>hypothesis</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;!--<sp/>Note<sp/>about<sp/><sp/>consistent<sp/>huèothesis<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal"><sp/>Please<sp/>consider<sp/>that<sp/>**consistent<sp/>hypothesis**<sp/>have<sp/>been<sp/>defined<sp/>as<sp/>COMPLETED<sp/>but<sp/>NOT<sp/>INCONSISTENT<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>Please<sp/>consider<sp/>that<sp/>**consistent<sp/>hypothesis**<sp/>have<sp/>been<sp/>defined<sp/>as<sp/>COMPLETED<sp/>but<sp/>NOT<sp/>INCONSISTENT</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>*REMARK*<sp/>A<sp/>consistent<sp/>hypothesis<sp/>is<sp/><sp/>defined<sp/>as<sp/>*completed*<sp/>when<sp/>there<sp/>occurs<sp/>one<sp/>role<sp/>for<sp/>each<sp/>class<sp/>(i.e.,<sp/>one<sp/>occourence<sp/>of<sp/>what,<sp/>one<sp/>occourence<sp/>for<sp/>who,<sp/>one<sp/>occourence<sp/>for<sp/>where<sp/>).<sp/></highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>*REMARK*<sp/>A<sp/>consistent<sp/>hypothesis<sp/>is<sp/><sp/>defined<sp/>as<sp/>*completed*<sp/>when<sp/>there<sp/>occurs<sp/>one<sp/>role<sp/>for<sp/>each<sp/>class<sp/>(i.e.,<sp/>one<sp/>occourence<sp/>of<sp/>what,<sp/>one<sp/>occourence<sp/>for<sp/>who,<sp/>one<sp/>occourence<sp/>for<sp/>where<sp/>).</highlight></codeline>
 <codeline><highlight class="normal">A<sp/>straightforward<sp/>example<sp/>of<sp/>such<sp/>hypothesis<sp/>is<sp/>[ID2][12],<sp/>whose<sp/>definition<sp/>is<sp/>here<sp/>below<sp/>reported</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">```txt</highlight></codeline>
@@ -162,256 +96,31 @@
 <codeline><highlight class="normal">ID2_3:<sp/>[&apos;what&apos;,<sp/>&apos;Rope&apos;]</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>*REMARK*<sp/>An<sp/>hypothesis,<sp/>is<sp/>defined<sp/>as<sp/>*inconsistent*<sp/>when<sp/>there<sp/>occurs<sp/>more<sp/>than<sp/>one<sp/>role<sp/>for<sp/>each<sp/>class<sp/>(i.e.<sp/>2<sp/>or<sp/>more<sp/>occourences<sp/>of<sp/>who,<sp/>where,<sp/>what)<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">A<sp/>clear<sp/>example<sp/>of<sp/>such<sp/>hypothesis<sp/>is<sp/>ID4<sp/><sp/>whose<sp/>definition<sp/>is<sp/>here<sp/>below<sp/>reported</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```txt</highlight></codeline>
-<codeline><highlight class="normal">ID4_1:<sp/>[&apos;where&apos;,<sp/>&apos;Library&apos;]</highlight></codeline>
-<codeline><highlight class="normal">ID4_2:<sp/>[&apos;who&apos;,<sp/>&apos;Mrs.White&apos;]</highlight></codeline>
-<codeline><highlight class="normal">ID4_3:<sp/>[&apos;what&apos;,<sp/>&apos;LeadPipe&apos;]</highlight></codeline>
-<codeline><highlight class="normal">ID4_4:<sp/>[&apos;where&apos;,<sp/>&apos;Diningroom&apos;]</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">###<sp/>Assignment&apos;s<sp/>prerequisites</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">In<sp/>this<sp/>assignment:</highlight></codeline>
-<codeline><highlight class="normal">-<sp/><sp/>Here<sp/>using<sp/>ROSPlan<sp/>is<sp/>**not<sp/>mandatory**</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>the<sp/>robot<sp/>of<sp/>the<sp/>model<sp/>has<sp/>no<sp/>limitations,<sp/>meaning<sp/>that<sp/>it<sp/>can<sp/>be<sp/>modelled<sp/>in<sp/>whatever<sp/>fashion<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>the<sp/>usage<sp/>of<sp/>the<sp/>ArUco<sp/>libraries<sp/>is<sp/>mandatory<sp/>for<sp/>the<sp/>detection<sp/>of<sp/>the<sp/>markers.<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>using<sp/>functionalities<sp/>such<sp/>as<sp/>mapping,<sp/>path<sp/>planning<sp/>and<sp/>following<sp/>may<sp/>greatly<sp/>help<sp/>in<sp/>performing</highlight></codeline>
-<codeline><highlight class="normal">the<sp/>assignment</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>use,<sp/>as<sp/>starting<sp/>point<sp/>the<sp/>[following<sp/>package][8],<sp/>provided<sp/>by<sp/>our<sp/>Professors!</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">What<sp/>does<sp/>the<sp/>[starting<sp/>package][8]<sp/>contain:</highlight></codeline>
-<codeline><highlight class="normal">-<sp/><sp/>a<sp/>node,<sp/>which<sp/>implements<sp/>the<sp/>oracle.<sp/>Concerning<sp/>the<sp/>implementation<sp/>of<sp/>the<sp/>Oracle<sp/>consider<sp/>that:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>there<sp/>are<sp/>in<sp/>total<sp/>6<sp/>IDs<sp/>[0...5];</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>ome<sp/>of<sp/>these<sp/>IDs<sp/>(randomly<sp/>chosen)<sp/>may<sp/>generate<sp/>inconsistent<sp/>hypotheses<sp/>(e.g.<sp/>multiple<sp/>persons,</highlight></codeline>
-<codeline><highlight class="normal">rooms,<sp/>objects)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/><sp/>the<sp/>«trustable»<sp/>ID<sp/>is<sp/>also<sp/>randomly<sp/>chosen<sp/>(among<sp/>the<sp/>IDs<sp/>which<sp/>do<sp/>not<sp/>generate<sp/>inconsisten</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/><sp/>the<sp/>oracle<sp/>node<sp/>implements<sp/>two<sp/>services:<sp/>the<sp/>first<sp/>one<sp/>(/oracle_hint)<sp/>recevies<sp/>an<sp/>Int32<sp/>as<sp/>request<sp/>(the<sp/>id<sp/>of</highlight></codeline>
-<codeline><highlight class="normal">the<sp/>marker)<sp/>and<sp/>returns<sp/>the<sp/>hint<sp/>as<sp/>a<sp/>erl2/ErlOracle<sp/>message;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>The<sp/>oracle<sp/>node<sp/>implements<sp/>also<sp/>a<sp/>service<sp/>(/oracle_solution)<sp/>which<sp/>returns<sp/>the<sp/>trustable<sp/>ID<sp/>(erl2/Oracle.h,</highlight></codeline>
-<codeline><highlight class="normal">with<sp/>an<sp/>empty<sp/>message<sp/>for<sp/>the<sp/>request,<sp/>and<sp/>a<sp/>int32<sp/>for<sp/>the<sp/>reply).</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>similarly<sp/>to<sp/>the<sp/>second<sp/>assignment,<sp/>some<sp/>markers<sp/>correspond<sp/>to<sp/>malformed<sp/>hints<sp/>(e.g,<sp/>all<sp/>fields<sp/>are</highlight></codeline>
-<codeline><highlight class="normal">empty,<sp/>or<sp/>just<sp/>one<sp/>field<sp/>is<sp/>empty,<sp/>....)</highlight></codeline>
+<codeline><highlight class="normal">As<sp/>in<sp/>the<sp/>first<sp/>assignment:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>only<sp/>one<sp/>ID<sp/>source<sp/>is<sp/>the<sp/>trustable<sp/>one.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Whenever<sp/>a<sp/>robot<sp/>gets<sp/>a<sp/>complete<sp/>hypothesis,<sp/>it<sp/>should<sp/>go<sp/>in<sp/>the<sp/>center<sp/>of<sp/>the<sp/>arena</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Once<sp/>the<sp/>center<sp/>has<sp/>been<sp/>reached,<sp/>it<sp/>should<sp/>«tell»<sp/>its<sp/>solution<sp/>(as<sp/>in<sp/>the<sp/>first<sp/>assignment).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>solution<sp/>is<sp/>the<sp/>**correct<sp/>one**,<sp/>the<sp/>game<sp/>ends</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Before<sp/>Getting<sp/>Started</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">###<sp/>Built<sp/>With<sp/>🏗️</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">*<sp/>[ROS][4]</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[smach][1]</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[OpenCV][115]</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[MoveIt<sp/>Frameowrk][6]</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[move_base][7]</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>GETTING<sp/>STARTED<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Under<sp/>the<sp/>following<sp/>sections,<sp/>the<sp/>software<sp/>architecture<sp/>is<sp/>briefly<sp/>introduced,<sp/>along<sp/>with<sp/>the<sp/>prerequisites<sp/>and<sp/>installation<sp/>procedures.<sp/>Then,<sp/>a<sp/>quick<sp/>video<sp/>demonstration<sp/>showing<sp/>the<sp/>overall<sp/>functioning<sp/>is<sp/>provided<sp/>and<sp/>system’s<sp/>limitations<sp/>are<sp/>discussed</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">###<sp/>Installation<sp/>procedure</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>:warning:<sp/>To<sp/>avoid<sp/>further<sp/>issues,<sp/>please<sp/>use<sp/>this<sp/>docker<sp/>image<sp/>provided<sp/>by<sp/>our<sp/>professors<sp/></highlight></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>find<sp/>the<sp/>marker<sp/>models,<sp/>befire<sp/>the<sp/>build,<sp/>navigate<sp/>through<sp/>the<sp/>directories:</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">docker<sp/>run<sp/>-it<sp/>-p<sp/>6080:80<sp/>-p<sp/>5900:5900<sp/>--name<sp/>MyDockerContainer<sp/>carms84/exproblab</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">Also<sp/>remember<sp/>to<sp/>update<sp/>and<sp/>upgrade<sp/>the<sp/>container</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">sudo<sp/>apt<sp/>get<sp/>update</highlight></codeline>
-<codeline><highlight class="normal">sudo<sp/>apt<sp/>get<sp/>upgrade</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">Then<sp/>run<sp/>`catkin_make`<sp/>on<sp/>your<sp/>workspace;<sp/>in<sp/>my<sp/>case:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Navigate<sp/>to<sp/>your<sp/>ROS<sp/>workspace</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```sh</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>/home/ros_ws/</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Run<sp/>catkin</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```sh</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>catkin_make</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">You<sp/>can<sp/>now<sp/>download<sp/>the<sp/>repository<sp/>inside<sp/>the<sp/>`src`<sp/>folder<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh<sp/></highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>/home/ros_ws/src</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">Also<sp/>download<sp/>`MoveIt<sp/>1.1.5`<sp/>(If<sp/>you<sp/>haven&apos;t<sp/>already<sp/>done<sp/>so)</highlight></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/ros-planning/moveit.git</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>moveit</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>checkout<sp/>2b881e5e3c4fd900d4d4310f4b12f9c4a63eb5dd</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>..</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/ros-planning/moveit_resources.git</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>moveit_resources</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>checkout<sp/>f6a7d161e224b9909afaaf621822daddf61b6f52</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>..</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/ros-planning/srdfdom.git</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>srdfdom</highlight></codeline>
-<codeline><highlight class="normal">git<sp/>checkout<sp/>b1d67a14e45133928f9793e9ee143998219760fd</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>..</highlight></codeline>
-<codeline><highlight class="normal">apt-get<sp/>install<sp/>-y<sp/>ros-noetic-rosparam-shortcuts</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>..</highlight></codeline>
-<codeline><highlight class="normal">catkin_make</highlight></codeline>
-<codeline><highlight class="normal">catkin_make</highlight></codeline>
-<codeline><highlight class="normal">catkin_make</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">Then<sp/>navigate<sp/>through<sp/>the<sp/>directory,<sp/>in<sp/>order<sp/>to<sp/>find<sp/>the<sp/>marker<sp/>models<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>/ros_ws/src/ExperimentalRoboticsAssignment3/erl3/models<sp/></highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>/ros_ws/src/ExperimentalRoboticsAssignment3/erl3/models</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline><highlight class="normal">copy<sp/>all<sp/>files<sp/>inside<sp/>the<sp/>`erl3`<sp/>models<sp/>folder<sp/>and<sp/>navigate<sp/>to<sp/>the<sp/>`root/.gazebo`<sp/>directory</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">```sh</highlight></codeline>
 <codeline><highlight class="normal">cd<sp/>/root/.gazebo/models</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">paste<sp/>the<sp/>previously<sp/>copied<sp/>files,<sp/>containing<sp/>all<sp/>the<sp/>marker&apos;s<sp/>models,<sp/>as<sp/>showm<sp/>in<sp/>the<sp/>animated<sp/>gif,<sp/>here<sp/>below</highlight></codeline>
+<codeline><highlight class="normal">paste<sp/>the<sp/>previously<sp/>copied<sp/>files,<sp/>containing<sp/>all<sp/>the<sp/>marker&apos;s<sp/>models.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">![optimized_install_models](https://user-images.githubusercontent.com/61761835/188335313-a364d084-6098-49a8-8f91-d8eda227416b.gif)</highlight></codeline>
+<codeline><highlight class="normal">Then<sp/>you<sp/>can<sp/>build<sp/>the<sp/>workspace.</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">##<sp/>Workspace<sp/>building<sp/>e<sp/>launch</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Navigate<sp/>to<sp/>you<sp/>workspace</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">cd<sp/>/home/ros_ws/</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>clone<sp/>the<sp/>repository</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">https://github.com/HolyStone95/ExperimentalRoboticsAssignment3</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>source<sp/>your<sp/>workspace<sp/>by<sp/>typing</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">source<sp/>devel/setup.bash</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">###<sp/>Running<sp/>procedure</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">####<sp/>Running<sp/>the<sp/>entire<sp/>project</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>including<sp/>all<sp/>the<sp/>steps<sp/>to<sp/>display<sp/>the<sp/>robot&apos;s<sp/>behavior<sp/>--&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>**project**,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch<sp/>2&gt;/dev/null</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3<sp/>launch_nodes.launch</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>third<sp/>shell<sp/>and<sp/>type:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">####<sp/>Running<sp/>the<sp/>Navigation<sp/>module</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>navigation<sp/>module,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run<sp/>the<sp/>navigation<sp/>node<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">####<sp/>Running<sp/>the<sp/>Vision<sp/>module</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>vision<sp/>module,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>third<sp/>shell<sp/>and<sp/>type:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">####<sp/>Running<sp/>the<sp/>State<sp/>machine<sp/><sp/>module</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>state<sp/>machine&apos;s<sp/>module<sp/>,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch<sp/>2&gt;/dev/null</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo<sp/>&amp;</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier<sp/>&amp;</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py<sp/></highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>third<sp/>shell<sp/>and<sp/>type:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>cluedo_kb.py</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>fourth<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```sh</highlight></codeline>
-<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>USAGE<sp/>EXAMPLES<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Software<sp/>Architecture<sp/>and<sp/>Functioning</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>most<sp/>relevant<sp/>aspects<sp/>of<sp/>the<sp/>project<sp/>and<sp/>a<sp/>brief<sp/>video<sp/>tutorial<sp/>on<sp/>how<sp/>to<sp/>launch<sp/>the<sp/>simulation<sp/>can<sp/>be<sp/>found<sp/>here<sp/>below</highlight></codeline>
 <codeline></codeline>
@@ -419,151 +128,127 @@
 <codeline></codeline>
 <codeline><highlight class="normal">https://user-images.githubusercontent.com/61761835/188322232-e940bd45-e460-4505-8004-16a02879690c.mp4</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>A<sp/>commented<sp/>small<sp/>video,<sp/>a<sp/>GIF<sp/>or<sp/>screenshots<sp/>showing<sp/>the<sp/>relevant<sp/>parts<sp/>of<sp/>the<sp/>running<sp/>code.<sp/>--&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>ROS<sp/>node<sp/>description:<sp/>An<sp/>overview<sp/></highlight></codeline>
+<codeline><highlight class="normal">##<sp/>ROS<sp/>nodes<sp/>description</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Here<sp/>there<sp/>is<sp/>the<sp/>UML<sp/>components<sp/>diagram<sp/>of<sp/>the<sp/>project</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/component_diagram.jpg&quot;<sp/>&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/component_diagrams/v1/component_diagram.jpg&quot;<sp/>&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">The<sp/>aforementioned<sp/>architechture<sp/>can<sp/>be<sp/>seen<sp/>as<sp/>a<sp/>**Deliberative**<sp/>one,<sp/>being<sp/>its<sp/>pipeline<sp/>structured<sp/>as<sp/>&quot;sense-plan-act&quot;</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Concerning<sp/>the<sp/>&quot;sense&quot;<sp/>module,<sp/>there<sp/>are<sp/>three<sp/>types<sp/>of<sp/>sense<sp/>in<sp/>this<sp/>architechture<sp/></highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.<sp/>**Vision**<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>is<sp/>implemented<sp/>by<sp/>means<sp/>of<sp/>Aruco<sp/>and<sp/>OpenCV<sp/>frameworks</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2.<sp/>**Localisation**<sp/>-<sp/>It<sp/>is<sp/>implemented<sp/>by<sp/>means<sp/>of<sp/>the<sp/>Odom<sp/>topic,<sp/>in<sp/>Gazebo</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3.<sp/>**Mapping**<sp/>-<sp/>made<sp/>possible<sp/>by<sp/>laser<sp/>sensors<sp/>and<sp/>GMAPPING<sp/>algorithm</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Concerning<sp/>the<sp/>&quot;plan&quot;<sp/>module,<sp/>it<sp/>is<sp/>implemented<sp/>through<sp/>a<sp/>[smach][1]<sp/>state<sp/>machine<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Finally,<sp/>the<sp/>move_base<sp/>pkg<sp/>is<sp/>responsible<sp/>for<sp/>the<sp/>detectibot&apos;s<sp/>movement<sp/>around<sp/>the<sp/>environment<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">The<sp/>aforementioned<sp/>architechture<sp/>can<sp/>be<sp/>seen<sp/>as<sp/>a<sp/>**deliberative**<sp/>one,<sp/>being<sp/>its<sp/>pipeline<sp/>structured<sp/>as<sp/>*&quot;sense-plan-act&quot;*</highlight></codeline>
+<codeline><highlight class="normal">More<sp/>specifically,<sp/>there<sp/>are<sp/>*three<sp/>types*<sp/>of<sp/>sense<sp/>in<sp/>this<sp/>architechture</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Vision**:<sp/><sp/><sp/><sp/><sp/><sp/>It<sp/>is<sp/>implemented<sp/>by<sp/>means<sp/>of<sp/>Aruco<sp/>and<sp/>OpenCV<sp/>frameworks</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Localisation**:<sp/>It<sp/>is<sp/>implemented<sp/>by<sp/>means<sp/>of<sp/>the<sp/>Odom<sp/>topic,<sp/>in<sp/>Gazebo</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mapping**:<sp/>made<sp/>possible<sp/>by<sp/>laser<sp/>sensors<sp/>and<sp/>GMAPPING<sp/>algorithm</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/miscellaneous/deliberative_sketch_arch.png&quot;<sp/>width=<sp/>500<sp/>height=100&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline><highlight class="normal">Moreover:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Concerning<sp/>the<sp/>*&quot;plan&quot;*<sp/>module,<sp/>it<sp/>is<sp/>implemented<sp/>through<sp/>a<sp/>**Smach**<sp/>state<sp/>machine</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Finally,<sp/>the<sp/>`move_base`<sp/>pkg<sp/>is<sp/>responsible<sp/>for<sp/>the<sp/>detectibot&apos;s<sp/>movement<sp/>around<sp/>the<sp/>environment</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>mapping<sp/>is<sp/>performed<sp/>using<sp/>**SLAM<sp/>GMAPPING**<sp/>module</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">As<sp/>shown<sp/>in<sp/>the<sp/>above<sp/>component<sp/>diagram,<sp/>this<sp/>software<sp/>architechture<sp/>relies<sp/>on<sp/>the<sp/>synergy<sp/>of<sp/>varius<sp/>modules:<sp/></highlight></codeline>
-<codeline></codeline>
+<codeline><highlight class="normal">Modules:</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[cluedo_kb.py][20]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**cluedo_kb.py**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[navigation.py][21]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**navigation.py**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[state_machine.py][22]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**state_machine.py**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[final_oracle.cpp][23]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**simulation.cpp**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[img_echo.cpp][24]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**img_echo.cpp**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[detectibot_magnifier.cpp][25]<sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**detectibot_magnifier.cpp**<sp/><sp/>&lt;!--<sp/>PLEASE<sp/>INSERT<sp/>HERE<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>the<sp/>state_machine.py<sp/>node<sp/>:knot:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Let&apos;s<sp/>start<sp/>with<sp/>the<sp/>`state_machine.py`<sp/>node</highlight></codeline>
-<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>The<sp/>state_machine.py<sp/>node</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_state_machine_py.jpg&quot;<sp/>width=<sp/>300<sp/>height=300&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/component_diagrams/v1/erl_assignment_3_state_machine_py.jpg&quot;<sp/>width=<sp/>300<sp/>height=300&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/></highlight></codeline>
-<codeline><highlight class="normal">It<sp/>implements<sp/>a<sp/>state<sp/>machine<sp/>that<sp/>controls<sp/>the<sp/>operations<sp/>of<sp/>the<sp/>robot;<sp/>it<sp/>is<sp/>the<sp/>core<sp/>node<sp/>of<sp/>the<sp/>architecture<sp/>that<sp/>interacts<sp/>with<sp/>and<sp/>directs<sp/>all<sp/>remaining<sp/>parts<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>implements<sp/>a<sp/>state<sp/>machine<sp/>that<sp/>controls<sp/>the<sp/>operations<sp/>of<sp/>the<sp/>robot<sp/>using<sp/>**smach_ros**</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">In<sp/>particular<sp/>the<sp/>machine<sp/>organises<sp/>the<sp/>investigation<sp/>into<sp/>four<sp/>states.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>**move**<sp/>→<sp/>moves<sp/>the<sp/>robot<sp/>between<sp/>rooms<sp/>inside<sp/>the<sp/>simulated<sp/>indoor<sp/>environment<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>**collect**<sp/>→<sp/>the<sp/>robot<sp/>rotates<sp/>on<sp/>itself<sp/>to<sp/>read<sp/>the<sp/>largest<sp/>number<sp/>of<sp/>hints<sp/>within<sp/>the<sp/>room<sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**move**<sp/>→<sp/>moves<sp/>the<sp/>robot<sp/>between<sp/>rooms<sp/>inside<sp/>the<sp/>simulated<sp/>indoor<sp/>environment</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**collect**<sp/>→<sp/>the<sp/>robot<sp/>rotates<sp/>on<sp/>itself<sp/>to<sp/>read<sp/>the<sp/>largest<sp/>number<sp/>of<sp/>hints<sp/>within<sp/>the<sp/>room</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>**check**<sp/>→<sp/>takes<sp/>hints<sp/>from<sp/>the<sp/>sensing<sp/>system<sp/>via<sp/>a<sp/>service,<sp/>and<sp/>uses<sp/>the<sp/>ontology<sp/>to<sp/>work<sp/>out<sp/>whether<sp/>there<sp/>are<sp/>possible<sp/>solutions<sp/>or<sp/>not.<sp/>If<sp/>there<sp/>occurs<sp/>no<sp/>possible<sp/>solutions,<sp/>the<sp/>outcome<sp/>is<sp/>`mistery_not_solvable`,<sp/>and<sp/>the<sp/>robot<sp/>transitions<sp/>back<sp/>to<sp/>the<sp/>&quot;move&quot;<sp/>state.<sp/>Otherwise,<sp/>if<sp/>there<sp/>actually<sp/>occurs<sp/>possible<sp/>solutions,<sp/>the<sp/>state<sp/>machine<sp/>makes<sp/>a<sp/>transition<sp/>to<sp/>the<sp/>&quot;show&quot;<sp/>state,<sp/>responsible<sp/>for<sp/>querying<sp/>the<sp/>oracle<sp/>about<sp/>the<sp/>solution&apos;s<sp/>truthfulness</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>**show**<sp/>→<sp/>questions<sp/>the<sp/>oracle<sp/>about<sp/>the<sp/>solution</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Here<sp/>below<sp/>we<sp/>can<sp/>find<sp/>a<sp/>hand-made<sp/>state<sp/>diagram,<sp/>representing<sp/>how<sp/>the<sp/>system<sp/>works<sp/></highlight></codeline>
+<codeline><highlight class="normal">Here<sp/>below<sp/>we<sp/>can<sp/>find<sp/>a<sp/>hand-made<sp/>state<sp/>diagram,<sp/>representing<sp/>how<sp/>the<sp/>system<sp/>works</highlight></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/state_diagrams/state_diagram.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/state_diagrams/state_diagram.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Moreover,<sp/>an<sp/>**introspection<sp/>Server**<sp/>has<sp/>been<sp/>implemented<sp/>in<sp/>order<sp/>to<sp/>visualize<sp/>the<sp/>possible<sp/>transitions<sp/>between<sp/>states,<sp/>as<sp/>well<sp/>as<sp/>the<sp/>currently<sp/>active<sp/>state<sp/>and<sp/>the<sp/>values<sp/>of<sp/>user<sp/>data<sp/>that<sp/>is<sp/>passed<sp/>around<sp/></highlight></codeline>
-<codeline><highlight class="normal">For<sp/>visualising<sp/>it,<sp/>just<sp/>type:</highlight></codeline>
+<codeline><highlight class="normal">Thanks<sp/>to<sp/>smach,<sp/>we<sp/>can<sp/>visualize<sp/>the<sp/>state<sp/>of<sp/>the<sp/>state<sp/>machine<sp/>in<sp/>which<sp/>the<sp/>program<sp/>is<sp/>running.<sp/>Just<sp/>type:</highlight></codeline>
 <codeline><highlight class="normal">```sh</highlight></codeline>
 <codeline><highlight class="normal">rosrun<sp/>smach_viewer<sp/>smach_viewer.py</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">&gt;<sp/>_REMARK:_<sp/>Please,<sp/>remember<sp/>to<sp/>import<sp/>the<sp/>correct<sp/>libraries<sp/>(i.e<sp/>`import<sp/>smach,<sp/>smach_ros`)<sp/>otherwise<sp/>some<sp/>errors<sp/>may<sp/>occur!<sp/></highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>_REMARK:_<sp/>Please,<sp/>remember<sp/>to<sp/>import<sp/>the<sp/>correct<sp/>libraries<sp/>(i.e<sp/>`import<sp/>smach,<sp/>smach_ros`)<sp/>otherwise<sp/>some<sp/>errors<sp/>may<sp/>occur!</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">![state_machine_functioning](https://user-images.githubusercontent.com/61761835/188338883-71fa5cc8-ad81-4621-87c5-35a7ca21c44a.gif)</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Node<sp/>interfaces:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Node<sp/>interfaces:</highlight></codeline>
 <codeline><highlight class="normal">```Plain<sp/>txt</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/state_machine]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/state_machine/get_loggers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/state_machine/set_logger_level</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>the<sp/>navigation.py<sp/>node<sp/>:knot:</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>The<sp/>navigation.py<sp/>node<sp/>:knot:</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_navigation_py.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/component_diagrams/v1/erl_assignment_3_navigation_py.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">This<sp/>node<sp/>implements<sp/>two<sp/>different<sp/>services<sp/>aimed<sp/>at<sp/>letting<sp/>the<sp/>robot<sp/>reach<sp/>ifferent<sp/>rooms<sp/>in<sp/>order<sp/>to<sp/>fulfill<sp/>its<sp/>investigation-related<sp/>tasks.</highlight></codeline>
-<codeline><highlight class="normal">The<sp/>`/go_to_point`<sp/>service<sp/>calls<sp/>MoveBase<sp/>and<sp/>waits<sp/>until<sp/>the<sp/>robot<sp/>hasn&apos;t<sp/>reached<sp/>the<sp/>given<sp/>target<sp/>whereas<sp/>the<sp/>`/turn_robot`<sp/>service<sp/>listens<sp/>for<sp/>a<sp/>request<sp/>containing<sp/>the<sp/>angular<sp/>velocity<sp/>around<sp/>x<sp/>to<sp/>keep,<sp/>and<sp/>the<sp/>time<sp/>during<sp/>which<sp/>the<sp/>robot<sp/>has<sp/>to<sp/>turn<sp/>at<sp/>&quot;that&quot;<sp/>specific<sp/>angular<sp/>velocity.<sp/>Moreover:</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>node<sp/>implements<sp/>two<sp/>different<sp/>services<sp/>aimed<sp/>at<sp/>letting<sp/>the<sp/>robot<sp/>reach<sp/>different<sp/>rooms<sp/>and<sp/>to<sp/>collect<sp/>hints.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>`/go_to_point`<sp/>service<sp/>this<sp/>time<sp/>implements<sp/>MoveBase<sp/>and<sp/>waits<sp/>until<sp/>the<sp/>robot<sp/>hasn&apos;t<sp/>reached<sp/>the<sp/>given<sp/>target.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Localisation<sp/>takes<sp/>place<sp/>through<sp/>the<sp/>subscription<sp/>to<sp/>the<sp/>**odom**<sp/>(nav_msgs/Odom)<sp/>topic<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>The<sp/>node<sp/>uses<sp/>**move_base**<sp/>(from<sp/>move_base<sp/>pkg)<sp/>to<sp/>perform<sp/>the<sp/>navigation.<sp/>The<sp/>main<sp/>function<sp/>of<sp/>this<sp/>package<sp/>is<sp/>to<sp/>move<sp/>a<sp/>robot<sp/>from<sp/>its<sp/>current<sp/>position<sp/>to<sp/>a<sp/>goal<sp/>position<sp/>with<sp/>the<sp/>help<sp/>of<sp/>other<sp/>navigation<sp/>nodes.<sp/>The<sp/>move_base<sp/>node<sp/>inside<sp/>this<sp/>package<sp/>links<sp/>the<sp/>global-planner<sp/>and<sp/>the<sp/>local-planner<sp/>for<sp/>the<sp/>path<sp/>planning,<sp/>connecting<sp/>to<sp/>the<sp/>rotate-recovery<sp/>package<sp/>if<sp/>the<sp/>robot<sp/>is<sp/>stuck<sp/>in<sp/>some<sp/>obstacle<sp/>and<sp/>connecting<sp/>global<sp/>costmap<sp/>and<sp/>local<sp/>costmap<sp/>for<sp/>getting<sp/>the<sp/>map.<sp/>The<sp/>move_base<sp/>node<sp/>is<sp/>basically<sp/>an<sp/>implementation<sp/>of<sp/>SimpleActionServer,<sp/>which<sp/>takes<sp/>a<sp/>goal<sp/>pose<sp/>with<sp/>message<sp/>type<sp/>(geometry_msgs/PoseStamped).<sp/>We<sp/>can<sp/>send<sp/>a<sp/>goal<sp/>position<sp/>to<sp/>this<sp/>node<sp/>using<sp/>a<sp/>SimpleActionClient<sp/>node.</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>In<sp/>addition<sp/>the<sp/>navigation<sp/>service<sp/>provides<sp/>a<sp/>**service**<sp/>to<sp/>rotate<sp/>the<sp/>robot<sp/>(erl_assignment_3_msgs/TurnRobot)<sp/>by<sp/>a<sp/>certain<sp/>angle<sp/>speed<sp/>for<sp/>a<sp/>certain<sp/>time;<sp/>this<sp/>functionality<sp/>is<sp/>aimed<sp/>at<sp/>the<sp/>collection<sp/>of<sp/>clues!</highlight></codeline>
+<codeline><highlight class="normal"><sp/>The<sp/>`/turn_robot`<sp/>service<sp/>listens<sp/>for<sp/>a<sp/>request<sp/>containing<sp/>the<sp/>angular<sp/>velocity<sp/>around<sp/>x<sp/>to<sp/>keep,<sp/>and<sp/>the<sp/>time<sp/>during<sp/>which<sp/>the<sp/>robot<sp/>has<sp/>to<sp/>turn<sp/>at<sp/>a<sp/>specific<sp/>angular<sp/>velocity.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>**move_base**<sp/>module<sp/>combines<sp/>a<sp/>global<sp/>and<sp/>a<sp/>local<sp/>planner<sp/>and<sp/>provides<sp/>a<sp/>much<sp/>more<sp/>robust<sp/>navigation<sp/>module<sp/>than<sp/>the<sp/>previously<sp/>used.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>In<sp/>addition<sp/>the<sp/>navigation<sp/>service<sp/>provides<sp/>a<sp/>**service**<sp/>to<sp/>rotate<sp/>the<sp/>robot<sp/>(erl_assignment_3_msgs/TurnRobot)<sp/>by<sp/>a<sp/>certain<sp/>angle<sp/>speed<sp/>for<sp/>a<sp/>certain<sp/>time;<sp/>this<sp/>functionality<sp/>is<sp/>necessary<sp/>for<sp/>the<sp/>collection<sp/>of<sp/>clues.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Node<sp/>Interfaces:</highlight></codeline>
-<codeline><highlight class="normal">```Plain<sp/>txt<sp/></highlight></codeline>
+<codeline><highlight class="normal">```Plain<sp/>txt</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/navigation]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/cmd_vel<sp/>[geometry_msgs/Twist]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/move_base/cancel<sp/>[actionlib_msgs/GoalID]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/move_base/goal<sp/>[move_base_msgs/MoveBaseActionGoal]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/odom<sp/>[nav_msgs/Odometry]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/go_to_point</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/navigation/get_loggers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/navigation/set_logger_level</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/turn_robot</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>the<sp/>cluedo_kb.py<sp/>node<sp/>:knot:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Concerning<sp/>the<sp/>`cluedo_kb.py`<sp/>node:</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>The<sp/>cluedo_kb.py<sp/>node</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_cluedo_kb_py.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/component_diagrams/v1/erl_assignment_3_cluedo_kb_py.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">cluedo_KB<sp/>is<sp/>a<sp/>node<sp/>that<sp/>serves<sp/>as<sp/>a<sp/>specialised<sp/>ontology<sp/>for<sp/>the<sp/>problem<sp/>in<sp/>hand;<sp/>it<sp/>supplies<sp/>a<sp/>processing/reasoning<sp/>system<sp/>that<sp/>provides<sp/>the<sp/>functionality<sp/>of:<sp/><sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>Registering<sp/>clues<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Building<sp/>and<sp/>processing<sp/>hypotheses<sp/>based<sp/>on<sp/>the<sp/>added<sp/>information<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Finding<sp/>possible<sp/>solutions<sp/>to<sp/>the<sp/>case<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Rejecting<sp/>hypotheses<sp/>(whether<sp/>needed)</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>node<sp/>represents<sp/>the<sp/>knowledge<sp/>base<sp/>of<sp/>the<sp/>robot,<sp/>allowing<sp/>for<sp/>storing<sp/>and<sp/>processing<sp/>of<sp/>hypotheses,<sp/>and<sp/>interrogation<sp/>of<sp/>the<sp/>oracle<sp/>in<sp/>order<sp/>to<sp/>check<sp/>if<sp/>the<sp/>problem<sp/>is<sp/>being<sp/>resolved.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">More<sp/>specifically,<sp/>When<sp/>the<sp/>robot<sp/>starts<sp/>roaming<sp/>around<sp/>looking<sp/>for<sp/>Aruco<sp/>markers,<sp/>(where<sp/>the<sp/>hints&apos;<sp/>IDs<sp/>are<sp/>stored),<sp/>it<sp/><sp/>makes<sp/>a<sp/>service<sp/>request<sp/>through<sp/>`/add_hint`<sp/>for<sp/>soliciting<sp/>the<sp/>oracle<sp/>to<sp/>announce<sp/>the<sp/>found<sp/>hint.<sp/>This<sp/>latter,<sp/>consists<sp/>in<sp/>a<sp/>request<sp/>of<sp/>type<sp/>`erl3/Marker`<sp/>here<sp/>below<sp/>reported</highlight></codeline>
 <codeline></codeline>
@@ -575,25 +260,19 @@
 <codeline><highlight class="normal">#<sp/>erl3/ErlOracle<sp/>oracle_hint</highlight></codeline>
 <codeline><highlight class="normal">ErlOracle<sp/>oracle_hint</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
-<codeline><highlight class="normal">Since<sp/>could<sp/>happen<sp/>that<sp/>sometimes<sp/>the<sp/>Oracle<sp/>sends<sp/>a<sp/>wrong<sp/>hint<sp/>(i.e.<sp/>it<sp/>may<sp/>occurs<sp/>that<sp/>some<sp/>fields<sp/>are<sp/>empty<sp/>strings<sp/>and/or<sp/>some<sp/>fields<sp/>has<sp/>value<sp/>-1),<sp/>a<sp/>function<sp/>responsible<sp/>for<sp/>checking<sp/>its<sp/>quality,<sp/>has<sp/>been<sp/>implemented.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Since<sp/>could<sp/>happen<sp/>that<sp/>sometimes<sp/>the<sp/>Oracle<sp/>sends<sp/>a<sp/>wrong<sp/>hint<sp/>(i.e.<sp/>it<sp/>may<sp/>occurs<sp/>that<sp/>some<sp/>fields<sp/>are<sp/>empty<sp/>strings<sp/>and/or<sp/>some<sp/>fields<sp/>has<sp/>value<sp/>-1),<sp/>a<sp/>function<sp/>responsible<sp/>for<sp/>checking<sp/>its<sp/>quality,<sp/>has<sp/>been<sp/>implemented.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>*Remark*<sp/>In<sp/>the<sp/>previous<sp/>section<sp/>we<sp/>mentioned<sp/>the<sp/>difference<sp/>between<sp/>consistent<sp/>and<sp/>inconsistent<sp/>hypothesis;<sp/>It<sp/>is<sp/>worthmentioning<sp/>that<sp/>this<sp/>nodes<sp/>also<sp/>implements<sp/>a<sp/>function<sp/><sp/>to<sp/>cope<sp/>with<sp/>the<sp/>removal<sp/>of<sp/>inconsistent<sp/>hypothesis<sp/>from<sp/>the<sp/>list<sp/>of<sp/>possible<sp/>hints</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>***REMARK***<sp/>the<sp/>KB<sp/>listens<sp/>to<sp/>the<sp/>oracle&apos;s<sp/>topic<sp/>and<sp/>as<sp/>soon<sp/>as<sp/>the<sp/>oracle<sp/>transmits<sp/>the<sp/>clue,<sp/>the<sp/>KB<sp/>adds<sp/>the<sp/>message<sp/>to<sp/>the<sp/>ontology<sp/>without<sp/>the<sp/>need<sp/>for<sp/>an<sp/>explicit<sp/>request</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Node<sp/>interfaces:</highlight></codeline>
 <codeline><highlight class="normal">```Plain<sp/>txt</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/cluedo_kb]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/add_hint</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/cluedo_kb/get_loggers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/cluedo_kb/set_logger_level</highlight></codeline>
@@ -603,29 +282,27 @@
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>the<sp/>simulation.cpp<sp/>node<sp/>(final_oracle)<sp/>:knot:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Concerning<sp/>the<sp/>`simulation.cpp`<sp/>node:</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>The<sp/>simulation.cpp<sp/>node</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl3_final_oracle_cpp&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/component_diagrams/v1/erl3_final_oracle_cpp.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>architecture<sp/>is<sp/>based<sp/>on<sp/>the<sp/>simulation.cpp<sp/>node<sp/>which<sp/>is<sp/>the<sp/>same<sp/>node<sp/>we<sp/>were<sp/>provided<sp/>by<sp/>our<sp/>Professors</highlight></codeline>
-<codeline><highlight class="normal">This<sp/>latter<sp/>supplies<sp/>two<sp/>services:</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Concerning<sp/>the<sp/>first<sp/>one<sp/>(/oracle_hint<sp/>[erl3/Marker]),<sp/>once<sp/>it<sp/>has<sp/>been<sp/>provided<sp/>with<sp/>a<sp/>certain<sp/>ID,<sp/>it<sp/>returns<sp/>the<sp/>clue<sp/>corresponding<sp/>to<sp/>that<sp/>ID<sp/>(Identifier<sp/>of<sp/>an<sp/>index<sp/>in<sp/>an<sp/>array<sp/>of<sp/>messages<sp/>yield<sp/>by<sp/>the<sp/>oracle)</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>Concerning<sp/>the<sp/>second<sp/>one<sp/>(/oracle_solution<sp/>[erl3/Oracle]),<sp/>it<sp/>is<sp/>needed<sp/>to<sp/>check<sp/>the<sp/>correctness<sp/>of<sp/>a<sp/>proposed<sp/>hypothesis<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>case<sp/></highlight></codeline>
+<codeline><highlight class="normal">Implements<sp/>two<sp/>services:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>1.<sp/>(/oracle_hint<sp/>[erl3/Marker]),<sp/>once<sp/>it<sp/>has<sp/>been<sp/>provided<sp/>with<sp/>a<sp/>certain<sp/>ID,<sp/>it<sp/>returns<sp/>the<sp/>clue<sp/>corresponding<sp/>to<sp/>that<sp/>ID<sp/>(Identifier<sp/>of<sp/>an<sp/>index<sp/>in<sp/>an<sp/>array<sp/>of<sp/>messages<sp/>yield<sp/>by<sp/>the<sp/>oracle)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2.<sp/>Concerning<sp/>the<sp/>second<sp/>one<sp/>(/oracle_solution<sp/>[erl3/Oracle]),<sp/>it<sp/>is<sp/>needed<sp/>to<sp/>check<sp/>the<sp/>correctness<sp/>of<sp/>a<sp/>proposed<sp/>hypothesis<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>case</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Node<sp/>interfaces:</highlight></codeline>
 <codeline><highlight class="normal">```Plain<sp/>txt</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/final_oracle]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/final_oracle/get_loggers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/final_oracle/set_logger_level</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/oracle_hint</highlight></codeline>
@@ -633,32 +310,23 @@
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>the<sp/>img_echo.cpp<sp/>node<sp/>:knot:</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Concerning<sp/>the<sp/>`img_echo.cpp`<sp/>node<sp/>:</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>The<sp/>img_echo.cpp<sp/>node</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_img_echo_cpp.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Briefly,<sp/>this<sp/>node<sp/>reads<sp/>the<sp/>input<sp/>image<sp/>from<sp/>the<sp/>robot&apos;s<sp/>camera.<sp/>Secondly,<sp/>it<sp/><sp/>print<sp/>it<sp/>on<sp/>a<sp/>floating<sp/>window,<sp/>namely<sp/>DetectiCAm,<sp/>by<sp/>means<sp/>of<sp/>a<sp/>`cv_ptr`.<sp/>(the<sp/>`cv_bridge::CvImagePtr<sp/>cv_ptr`<sp/>returns<sp/>a<sp/>ROS<sp/>image<sp/>into<sp/>an<sp/>appropriate<sp/>format<sp/>compatible<sp/>with<sp/>OpenCV).<sp/>Thirdly<sp/>it<sp/>publish<sp/>the<sp/>video<sp/>stream!</highlight></codeline>
+<codeline><highlight class="normal">Briefly,<sp/>this<sp/>node<sp/>reads<sp/>the<sp/>input<sp/>image<sp/>from<sp/>the<sp/>robot&apos;s<sp/>camera.<sp/>Secondly,<sp/>it<sp/><sp/>print<sp/>it<sp/>on<sp/>a<sp/>floating<sp/>window,<sp/>namely<sp/>DetectiCAm,<sp/>by<sp/>means<sp/>of<sp/>a<sp/>`cv_ptr`.<sp/>(the<sp/>`cv_bridge::CvImagePtr<sp/>cv_ptr`<sp/>returns<sp/>a<sp/>ROS<sp/>image<sp/>into<sp/>an<sp/>appropriate<sp/>format<sp/>compatible<sp/>with<sp/>OpenCV).</highlight></codeline>
+<codeline><highlight class="normal">It<sp/>then<sp/>publishes<sp/>the<sp/>video<sp/>stream.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">![detecticam_optimised](https://user-images.githubusercontent.com/61761835/188857662-adec563d-f4ec-4517-bd43-c74b1b9261d7.gif)</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>Remark:<sp/>Since<sp/>we<sp/>have<sp/>to<sp/>deal<sp/>with<sp/>the<sp/>image,<sp/>multiple<sp/>copies<sp/>of<sp/>it<sp/>will<sp/>be<sp/>needed;<sp/>For<sp/>this<sp/>purpose<sp/>the<sp/>BGR8<sp/>image<sp/>encoding<sp/><sp/>has<sp/>been<sp/>chosen,<sp/>being<sp/>it<sp/>less<sp/>susceptible<sp/>against<sp/>typos.</highlight></codeline>
 <codeline><highlight class="normal">&gt;<sp/>Further<sp/>Remark:<sp/>ImageTransport&apos;s<sp/><sp/>methods<sp/>have<sp/>been<sp/>employed<sp/>for<sp/>creating<sp/>image<sp/>publishers<sp/>and<sp/>subscribers,<sp/>being<sp/>`image_transport`<sp/>a<sp/>package<sp/>that<sp/>provides<sp/>transparetn<sp/>support<sp/>for<sp/>transporting<sp/>images<sp/>in<sp/>low-bandwidth<sp/>compressed<sp/>formats.</highlight></codeline>
-<codeline><highlight class="normal">&gt;<sp/>*Further<sp/>Further<sp/>Remark*:<sp/>Please<sp/>remember<sp/>to<sp/>include<sp/>`cv_bridge`<sp/>in<sp/>your<sp/>`xml`<sp/>package!<sp/>Also<sp/>do<sp/>not<sp/>forget<sp/>to<sp/>add<sp/>the<sp/>following<sp/>headers<sp/>to<sp/>your<sp/>cpp<sp/>file</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">```cpp</highlight></codeline>
-<codeline><highlight class="normal">#include<sp/>&lt;cv_bridge/cv_bridge.h&gt;</highlight></codeline>
-<codeline><highlight class="normal">#include<sp/>&lt;opencv2/imgproc/imgproc.hpp&gt;<sp/></highlight></codeline>
-<codeline><highlight class="normal">#include<sp/>&lt;opencv2/highgui/highgui.hpp&gt;</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Node<sp/>interfaces:</highlight></codeline>
 <codeline><highlight class="normal">```Plain<sp/>txt</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/img_echo]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo<sp/>[sensor_msgs/Image]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/compressed<sp/>[sensor_msgs/CompressedImage]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/compressed/parameter_descriptions<sp/>[dynamic_reconfigure/ConfigDescription]</highlight></codeline>
@@ -671,20 +339,20 @@
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/theora/parameter_updates<sp/>[dynamic_reconfigure/Config]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/robot/camera1/image_raw<sp/>[sensor_msgs/Image]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/compressed/set_parameters</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/compressedDepth/set_parameters</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/get_loggers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/set_logger_level</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/img_echo/theora/set_parameters</highlight></codeline>
-<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal"><sp/>--------------------------------------------------------------------------------</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/gazebo]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/gazebo/link_states<sp/>[gazebo_msgs/LinkStates]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/gazebo/model_states<sp/>[gazebo_msgs/ModelStates]</highlight></codeline>
@@ -708,13 +376,13 @@
 <codeline><highlight class="normal"><sp/>*<sp/>/scan<sp/>[sensor_msgs/LaserScan]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/tf<sp/>[tf2_msgs/TFMessage]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/cmd_vel<sp/>[geometry_msgs/Twist]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/gazebo/set_link_state<sp/>[unknown<sp/>type]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/gazebo/set_model_state<sp/>[unknown<sp/>type]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/controller_manager/list_controller_types</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/controller_manager/list_controllers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/controller_manager/load_controller</highlight></codeline>
@@ -759,283 +427,194 @@
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>The<sp/>detectibot_magnifier.cpp<sp/>node<sp/>:knot:</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>The<sp/>detectibot_magnifier.cpp<sp/>node</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_detectibot_magnifier.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/component_diagrams/v1/erl_assignment_3_detectibot_magnifier.jpg&quot;<sp/>width=<sp/>500<sp/>height=500&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">This<sp/>node<sp/>is<sp/>devoted<sp/>to<sp/>the<sp/>detection<sp/>of<sp/>ARUCO&apos;s<sp/>markers<sp/>made<sp/>through<sp/>a<sp/>single<sp/>camera<sp/>mounted<sp/>on<sp/>the<sp/>front<sp/>side<sp/>of<sp/>the<sp/>robot.<sp/></highlight></codeline>
+<codeline><highlight class="normal">This<sp/>node<sp/>is<sp/>devoted<sp/>to<sp/>the<sp/>detection<sp/>of<sp/>ARUCO&apos;s<sp/>markers<sp/>made<sp/>through<sp/>a<sp/>single<sp/>camera<sp/>mounted<sp/>on<sp/>the<sp/>front<sp/>side<sp/>of<sp/>the<sp/>robot.</highlight></codeline>
 <codeline><highlight class="normal">It<sp/>also<sp/>implements<sp/>a<sp/>service<sp/>that<sp/>allows<sp/>for<sp/>retrieving<sp/>the<sp/>IDs<sp/>identified<sp/>through<sp/>Aruco.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">For<sp/>realising<sp/>such<sp/>a<sp/>node,<sp/>the<sp/>[vision_openCV][117]<sp/>packages,<sp/>aimed<sp/>at<sp/>interfacing<sp/>ROS<sp/>with<sp/>OpenCV<sp/>have<sp/>been<sp/>emploied.<sp/>OpenCV<sp/>basically<sp/>consists<sp/>in<sp/>a<sp/>library<sp/>of<sp/>programming<sp/>functions<sp/>for<sp/>real<sp/>time<sp/>computer<sp/>vision.<sp/>Hence<sp/>this<sp/>node<sp/>employs<sp/>a<sp/>bridge<sp/>between<sp/>OpenCV<sp/>and<sp/>ROS.<sp/>Due<sp/>to<sp/>the<sp/>fact<sp/>that<sp/>ROS<sp/>sends<sp/>Images<sp/>in<sp/>`sensor_msgs/Image`<sp/>format,<sp/>our<sp/>goal<sp/>is<sp/>to<sp/>obtain<sp/>images<sp/>in<sp/>`cv_bridge`<sp/>format.</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&gt;<sp/>*REMARK*<sp/>Please<sp/>note<sp/>that<sp/>By<sp/>using<sp/>`image_transport::Publisher<sp/>image_pub_<sp/>`and<sp/>subscribing<sp/>to<sp/>the<sp/>topic<sp/>`/robot/camera1/image_raw`<sp/>we<sp/>are<sp/>able<sp/>to<sp/>decrease<sp/>the<sp/>bandwidth!</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>realising<sp/>such<sp/>a<sp/>node,<sp/>the<sp/>**vision_openCV**<sp/>package<sp/>is<sp/>needed.<sp/>This<sp/>node<sp/>employs<sp/>a<sp/>bridge<sp/>between<sp/>OpenCV<sp/>and<sp/>ROS.<sp/>Due<sp/>to<sp/>the<sp/>fact<sp/>that<sp/>ROS<sp/>sends<sp/>Images<sp/>in<sp/>`sensor_msgs/Image`<sp/>format,<sp/>our<sp/>goal<sp/>is<sp/>to<sp/>obtain<sp/>images<sp/>in<sp/>`cv_bridge`<sp/>format.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Node<sp/>interfaces:</highlight></codeline>
 <codeline><highlight class="normal">```Plain<sp/>txt</highlight></codeline>
 <codeline><highlight class="normal">Node<sp/>[/detectibot_magnifier]</highlight></codeline>
-<codeline><highlight class="normal">Publications:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Publications:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Subscriptions:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Subscriptions:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/robot/camera1/image_raw<sp/>[sensor_msgs/Image]</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Services:<sp/></highlight></codeline>
+<codeline><highlight class="normal">Services:</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/aruco_markers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/detectibot_magnifier/get_loggers</highlight></codeline>
 <codeline><highlight class="normal"><sp/>*<sp/>/detectibot_magnifier/set_logger_level</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>rqt_graph</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Rqt_graph</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">In<sp/>the<sp/>figure<sp/>below,<sp/>circles<sp/>represent<sp/>nodes<sp/>and<sp/>squares<sp/>represent<sp/>topic<sp/>messages.<sp/>The<sp/>arrow<sp/>instead,<sp/>indicates<sp/>the<sp/>transmission<sp/>of<sp/>the<sp/>message!</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=<sp/>&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/rqt/rosgraph_nodes_topics_all.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=<sp/>&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/rqt/rosgraph_nodes_topics_all.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>UML<sp/>temporal<sp/>diagram</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">By<sp/>means<sp/>of<sp/>this<sp/>diagram<sp/>it<sp/>is<sp/>possible<sp/>to<sp/>show<sp/>how<sp/>the<sp/>system<sp/>works.<sp/>As<sp/>the<sp/>state_machine<sp/>gets<sp/>launched,<sp/>the<sp/>robot<sp/>enters<sp/>the<sp/>MOVE<sp/>state,<sp/>responsible<sp/>for<sp/>the<sp/>acrivation<sp/>of<sp/>the<sp/>`/go_to_point`<sp/>service.<sp/>Hence,<sp/>it<sp/>reaches<sp/>the<sp/>center<sp/>of<sp/>the<sp/>room<sp/>and<sp/>it<sp/>starts<sp/>to<sp/>collect<sp/>as<sp/>many<sp/>marker<sp/>as<sp/>possible.<sp/></highlight></codeline>
+<codeline><highlight class="normal">By<sp/>means<sp/>of<sp/>this<sp/>diagram<sp/>it<sp/>is<sp/>possible<sp/>to<sp/>show<sp/>how<sp/>the<sp/>system<sp/>works.<sp/>As<sp/>the<sp/>state_machine<sp/>gets<sp/>launched,<sp/>the<sp/>robot<sp/>enters<sp/>the<sp/>MOVE<sp/>state,<sp/>responsible<sp/>for<sp/>the<sp/>activation<sp/>of<sp/>the<sp/>`/go_to_point`<sp/>service.<sp/>Hence,<sp/>it<sp/>reaches<sp/>the<sp/>center<sp/>of<sp/>the<sp/>room<sp/>and<sp/>it<sp/>starts<sp/>to<sp/>collect<sp/>as<sp/>many<sp/>marker<sp/>as<sp/>possible.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">This<sp/>has<sp/>been<sp/>made<sp/>possible<sp/>through<sp/>the<sp/>implementation<sp/>of<sp/>a<sp/>`/turn_robot`<sp/>service<sp/>that,<sp/>as<sp/>the<sp/>name<sp/>explicitly<sp/>suggests,<sp/>makes<sp/>detectibot<sp/>turning<sp/>around<sp/>its<sp/>own<sp/>position.<sp/>Only<sp/>after,<sp/>the<sp/>system<sp/>transitions<sp/>to<sp/>the<sp/>CHECK<sp/>state,<sp/>where<sp/>a<sp/>request<sp/>is<sp/>made<sp/>by<sp/>the<sp/>`/aruco_marker`<sp/>service<sp/>to<sp/>retrieve<sp/>the<sp/>detected<sp/>marker&apos;s<sp/>IDs<sp/>(by<sp/>means<sp/>of<sp/>a<sp/>topic<sp/>subscription).<sp/>Whenever<sp/>a<sp/>new<sp/>hint<sp/>gets<sp/>detected,<sp/>the<sp/>knowledge<sp/>base<sp/>represented<sp/>by<sp/>cluedo_kb<sp/>node<sp/>is<sp/>issued<sp/>(with<sp/>a<sp/>`/oracle_hint`<sp/>service<sp/>request).<sp/></highlight></codeline>
+<codeline><highlight class="normal">This<sp/>has<sp/>been<sp/>made<sp/>possible<sp/>through<sp/>the<sp/>implementation<sp/>of<sp/>a<sp/>`/turn_robot`<sp/>service<sp/>that,<sp/>as<sp/>the<sp/>name<sp/>explicitly<sp/>suggests,<sp/>makes<sp/>detectibot<sp/>turning<sp/>around<sp/>its<sp/>own<sp/>position.<sp/>Only<sp/>after,<sp/>the<sp/>system<sp/>transitions<sp/>to<sp/>the<sp/>CHECK<sp/>state,<sp/>where<sp/>a<sp/>request<sp/>is<sp/>made<sp/>by<sp/>the<sp/>`/aruco_marker`<sp/>service<sp/>to<sp/>retrieve<sp/>the<sp/>detected<sp/>marker&apos;s<sp/>IDs<sp/>(by<sp/>means<sp/>of<sp/>a<sp/>topic<sp/>subscription).<sp/>Whenever<sp/>a<sp/>new<sp/>hint<sp/>gets<sp/>detected,<sp/>the<sp/>knowledge<sp/>base<sp/>represented<sp/>by<sp/>cluedo_kb<sp/>node<sp/>is<sp/>issued<sp/>(with<sp/>a<sp/>`/oracle_hint`<sp/>service<sp/>request).</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">By<sp/>means<sp/>of<sp/>a<sp/>further<sp/>request,<sp/>made<sp/>to<sp/>the<sp/>final_oracle<sp/>node<sp/>through<sp/>the<sp/>`/oracle_solution`<sp/>service,<sp/>the<sp/>True<sp/>ID<sp/>gets<sp/>compared<sp/>and<sp/>it<sp/>is<sp/>chosen<sp/>whether<sp/>to<sp/>terminate<sp/>the<sp/>investigation<sp/>(ending<sp/>up<sp/>in<sp/>a<sp/>MISTERY_SOLVED<sp/>state)<sp/>or<sp/>pursuing<sp/>it,<sp/>transitioning<sp/>back<sp/>to<sp/>the<sp/>MOVE<sp/>state</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;img<sp/>src=<sp/>&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/temporal_diagrams/erl_temporal_diagram.jpg&quot;<sp/>/&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=<sp/>&quot;https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/master/media/temporal_diagrams/erl_temporal_diagram.jpg&quot;<sp/>/&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>Working<sp/>hypothesis<sp/>and<sp/>environment<sp/></highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Summarizing<sp/>working<sp/>architecture</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">This<sp/>architecture<sp/>is<sp/>designed<sp/>for<sp/>providing<sp/>a<sp/>reinterpretation<sp/>of<sp/>the<sp/>Cluedo<sp/>Game.<sp/>Markers<sp/>are<sp/>set<sp/>a-priori<sp/>both<sp/>on<sp/>the<sp/>ground<sp/>and<sp/>on<sp/>wall-fixed<sp/>boxes.<sp/>The<sp/>hypothesis<sp/>IDs<sp/>are<sp/>contained<sp/>within<sp/>Aruco<sp/>markers.<sp/>The<sp/>True<sp/>ID<sp/>instead,<sp/>is<sp/><sp/>randomly<sp/>chosen<sp/>before<sp/>starting<sp/>the<sp/>game.<sp/></highlight></codeline>
+<codeline><highlight class="normal">The<sp/>hypothesis<sp/>IDs<sp/>are<sp/>contained<sp/>within<sp/>Aruco<sp/>markers.<sp/>The<sp/>True<sp/>ID<sp/>instead,<sp/>is<sp/><sp/>randomly<sp/>chosen<sp/>before<sp/>starting<sp/>the<sp/>game.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Detectibot<sp/>(the<sp/>robot<sp/>involved<sp/>in<sp/>the<sp/>investigation),<sp/>moves<sp/>in<sp/>a<sp/>obstacle-free<sp/>environment<sp/>charachterised<sp/>by<sp/>a<sp/>perfectly<sp/>flat<sp/>floor<sp/>(without<sp/>irregularities),<sp/>within<sp/>a<sp/>indoor<sp/>environment,<sp/>provided<sp/>with<sp/>rooms<sp/>without<sp/>furnitures.<sp/>Path<sp/>planning,<sp/>has<sp/>been<sp/>implemented<sp/>by<sp/>menas<sp/>of<sp/>the<sp/>MoveBase<sp/>package<sp/>It<sp/>has<sp/>been<sp/>designed<sp/>to<sp/>mount<sp/>a<sp/>single<sp/>camera,<sp/>pointing<sp/>toward<sp/>the<sp/>front<sp/>side.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Path<sp/>planning,<sp/>has<sp/>been<sp/>implemented<sp/>using<sp/>MoveBase<sp/>package</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">It<sp/>is<sp/>also<sp/>equipped<sp/>with<sp/>laser<sp/>range<sp/>finders<sp/>which<sp/>make<sp/>possible,<sp/>together<sp/>with<sp/>Odometry<sp/>data,<sp/>to<sp/>employ<sp/>a<sp/>SLAM<sp/>gmapping<sp/>algorithm.<sp/>This<sp/>approach<sp/>uses<sp/>a<sp/>particle<sp/>filter<sp/>in<sp/>which<sp/>each<sp/>particle<sp/>carries<sp/>an<sp/>individual<sp/>map<sp/>of<sp/>the<sp/>environment.<sp/>To<sp/>ensure<sp/>its<sp/>employability,<sp/>the<sp/>following<sp/>requirements<sp/>were<sp/>met:</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>robot<sp/>is<sp/>equipped<sp/>with<sp/>a<sp/>single<sp/>camera,<sp/>mounted<sp/>frontally.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>also<sp/>equipped<sp/>with<sp/>laser<sp/>range<sp/>finders<sp/>which<sp/>make<sp/>possible,<sp/>together<sp/>with<sp/>Odometry<sp/>data,<sp/>to<sp/>employ<sp/>a<sp/>SLAM<sp/>gmapping<sp/>algorithm.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>ensure<sp/>its<sp/>employability,<sp/>the<sp/>following<sp/>requirements<sp/>were<sp/>met:</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>laser<sp/>outputs<sp/>are<sp/>published<sp/>onto<sp/>`/scan`<sp/><sp/>topic</highlight></codeline>
 <codeline><highlight class="normal">-<sp/>the<sp/>robot<sp/>model<sp/>is<sp/>endowed<sp/>with<sp/>two<sp/>frames<sp/>required<sp/>for<sp/>mapping<sp/>algorithms,<sp/>which<sp/>are:<sp/>`link_chassis`<sp/>and<sp/>`odom`</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Concerning<sp/>the<sp/>Aruco<sp/>detection,<sp/>it<sp/>has<sp/>been<sp/>implemented<sp/>by<sp/>the<sp/>[detectibotMagnifier][25].<sp/>This<sp/>reads<sp/>images<sp/>on<sp/>a<sp/>specific<sp/>topic<sp/>(`topic_info`)</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">All<sp/>choices<sp/>were<sp/>made<sp/>with<sp/>the<sp/>aim<sp/>of<sp/>making<sp/>the<sp/>system<sp/>as<sp/>modular<sp/>and<sp/>flexible<sp/>as<sp/>possible.<sp/>Despite<sp/>this,<sp/>certain<sp/>limitations<sp/>make<sp/>the<sp/>system<sp/>quite<sp/>unrealistic<sp/>but<sp/>functional.</highlight></codeline>
+<codeline><highlight class="normal">Concerning<sp/>the<sp/>Aruco<sp/>detection,<sp/>it<sp/>has<sp/>been<sp/>implemented<sp/>by<sp/>the<sp/>**detectibotMagnifier**.<sp/>Indeed,<sp/>ROS<sp/>images<sp/>messages<sp/>are<sp/>sent<sp/>over<sp/>`/robot/camera/image_raw`<sp/>for<sp/>being<sp/>converted<sp/>im<sp/>a<sp/>openCV<sp/>handable<sp/>format.<sp/>This<sp/>is<sp/>done<sp/>by<sp/>means<sp/>of<sp/>`cv_bridge`<sp/>package.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>System&apos;s<sp/>features</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>How<sp/>to<sp/>launch<sp/>and<sp/>additional<sp/>documentation</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Most<sp/>of<sp/>them<sp/>have<sp/>been<sp/>already<sp/>discussed<sp/>in<sp/>the<sp/>Software<sp/>architecture’s<sp/>section.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Additional<sp/>documentation<sp/>of<sp/>this<sp/>project<sp/>can<sp/>be<sp/>found<sp/>opening<sp/>in<sp/>the<sp/>browser<sp/>the<sp/>file<sp/>*_build/html/index.html*</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">The<sp/>project<sp/>implements<sp/>the<sp/>robot<sp/>behaviour<sp/>so<sp/>that<sp/>it<sp/>can<sp/>keep<sp/>roaming<sp/>around,<sp/>looking<sp/>for<sp/>Aruco<sp/>Markers<sp/>inside<sp/>the<sp/>environmeent.<sp/>This<sp/>serves<sp/>for<sp/>solving<sp/>the<sp/>case.<sp/></highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>the<sp/>entire<sp/>project</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Indeed,<sp/>while<sp/>it<sp/>navigates<sp/>through<sp/>the<sp/>environment<sp/>it<sp/>tries<sp/>to<sp/>combine<sp/>them<sp/>in<sp/>order<sp/>to<sp/>find<sp/>a<sp/>solution.<sp/>This<sp/>is<sp/>where<sp/>the<sp/>reasoning<sp/>&amp;<sp/>AI<sp/>module,<sp/>represented<sp/>by<sp/>the<sp/>[cluedo_kb.py][20],<sp/>comes<sp/>imto<sp/>play</highlight></codeline>
+<codeline><highlight class="normal">&lt;!--<sp/>including<sp/>all<sp/>the<sp/>steps<sp/>to<sp/>display<sp/>the<sp/>robot&apos;s<sp/>behavior<sp/>--&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Concerning<sp/>the<sp/>architecture,<sp/>it<sp/>is<sp/>centralised<sp/>and<sp/>designed<sp/>in<sp/>such<sp/>a<sp/>way<sp/>that<sp/>individual<sp/>components<sp/>can<sp/>be<sp/>replaced<sp/>as<sp/>long<sp/>as<sp/>they<sp/>meet<sp/>the<sp/>same<sp/>required<sp/>interface<sp/></highlight></codeline>
+<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>**project**,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>System&apos;s<sp/>limitations</highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch<sp/>2&gt;/dev/null</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3<sp/>launch_nodes.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>third<sp/>shell<sp/>and<sp/>type:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>the<sp/>Navigation<sp/>module</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>navigation<sp/>module,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run<sp/>the<sp/>navigation<sp/>node</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>the<sp/>Vision<sp/>module</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>vision<sp/>module,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>third<sp/>shell<sp/>and<sp/>type:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Running<sp/>the<sp/>State<sp/>machine<sp/>module</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>test<sp/>the<sp/>state<sp/>machine&apos;s<sp/>module<sp/>,<sp/>first<sp/>of<sp/>all:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch<sp/>2&gt;/dev/null</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>second<sp/>shell<sp/>and<sp/>run</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>third<sp/>shell<sp/>and<sp/>type:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>cluedo_kb.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>a<sp/>fourth<sp/>shell<sp/>and<sp/>run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>System&apos;s<sp/>limitations</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Here<sp/>below,<sp/>some<sp/>of<sp/>the<sp/>major<sp/>system<sp/>limitations<sp/>are<sp/>listed:</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>If<sp/>the<sp/>robot<sp/>had<sp/>more<sp/>than<sp/>one<sp/>camera,<sp/>the<sp/>detection<sp/>system<sp/>(detectibot_magnifirer)<sp/>would<sp/>have<sp/>to<sp/>be<sp/>re-implemented<sp/>to<sp/>ensure<sp/>a<sp/>certain<sp/>performance<sp/>from<sp/>the<sp/>system<sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Adding<sp/>cameras<sp/>will<sp/>mean<sp/>to<sp/>reconfigure<sp/>**detectibot_magnifier**<sp/>module.<sp/>Camera<sp/>data<sp/>simulated<sp/>is<sp/>costly,<sp/>it<sp/>required<sp/>a<sp/>powerfull<sp/>computer.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>A<sp/>significant<sp/>numebrs<sp/>of<sp/>Aruco<sp/>Markers<sp/>are<sp/>not<sp/>perceived<sp/>by<sp/>the<sp/>single<sp/>camera.<sp/>Modifying<sp/>the<sp/>orientation<sp/>of<sp/>the<sp/>camera<sp/>could<sp/>be<sp/>a<sp/>solution<sp/>or<sp/>even<sp/>better,<sp/>endowing<sp/>the<sp/>manipulator<sp/>arm<sp/>with<sp/>multiple<sp/>cameras<sp/>(with<sp/>different<sp/>pan<sp/>and<sp/>tilt)<sp/>could<sp/>work<sp/>as<sp/>well.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>There&apos;s<sp/>some<sp/>issues<sp/>with<sp/>the<sp/>move<sp/>base<sp/>evaluating<sp/>the<sp/>target:<sp/>sometimes<sp/>the<sp/>robot<sp/>remains<sp/>stuck<sp/>for<sp/>a<sp/>while<sp/>before<sp/>resuming<sp/>navigation.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>As<sp/>already<sp/>pointed<sp/>out<sp/>the<sp/>simulation<sp/>is<sp/>very<sp/>costly<sp/>and<sp/>required<sp/>the<sp/>use<sp/>a<sp/>powerful<sp/>machine<sp/>in<sp/>order<sp/>to<sp/>run<sp/>rapidly<sp/>enough.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">###<sp/>Possible<sp/>technical<sp/>Improvements</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Possible<sp/>technical<sp/>Improvements</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">As<sp/>for<sp/>the<sp/>system<sp/>limitations,<sp/>some<sp/>of<sp/>the<sp/>most<sp/>relevant<sp/>potential<sp/>techincal<sp/>improvements:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>current<sp/>KB<sp/>is<sp/>being<sp/>chosen<sp/>because<sp/>there<sp/>was<sp/>problems<sp/>and<sp/>limitations<sp/>in<sp/>using<sp/>ARMOR<sp/>due<sp/>to<sp/>the<sp/>nature<sp/>of<sp/>the<sp/>generation<sp/>flow<sp/>of<sp/>ID,<sp/>decided<sp/>a<sp/>priori.<sp/>By<sp/>modification<sp/>of<sp/>the<sp/>ID<sp/>generation<sp/>flow<sp/>and<sp/>by<sp/>creating<sp/>an<sp/>interface<sp/>in<sp/>order<sp/>to<sp/>initially<sp/>filter<sp/>the<sp/>data,<sp/>it<sp/>is<sp/>fair<sp/>to<sp/>say<sp/>that<sp/>the<sp/>integration<sp/>with<sp/>ARMOR<sp/>would<sp/>be<sp/>preferable.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>The<sp/>current<sp/>KB<sp/>can<sp/>be<sp/>modified<sp/>to<sp/>implement<sp/>the<sp/>same<sp/>functionalities<sp/>on<sp/>a<sp/>different<sp/>ontology<sp/>system<sp/>(i.e.<sp/>Armor);<sp/>the<sp/>component<sp/>can<sp/>be<sp/>extended<sp/>for<sp/>more<sp/>accurate<sp/><sp/>hypotheses<sp/>processing<sp/>or<sp/>for<sp/>providing,<sp/>for<sp/>instance,<sp/>a<sp/>ontology<sp/>backup<sp/>feature</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>The<sp/>current<sp/>navigation<sp/>system<sp/>is<sp/>rather<sp/>poor;<sp/>it<sp/>should<sp/>be<sp/>replaced<sp/>with<sp/>a<sp/>more<sp/>elaborate<sp/>navigation<sp/>system.<sp/>In<sp/>particular,<sp/>the<sp/>new<sp/>navigation<sp/>system<sp/>should<sp/>make<sp/>it<sp/>possible<sp/>to<sp/>achieve<sp/>a<sp/>certain<sp/>orientation<sp/>as<sp/>well<sp/>as<sp/>a<sp/>final<sp/>position.</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>The<sp/>manipulation<sp/>could<sp/>be<sp/>replaced<sp/>with<sp/>a<sp/>more<sp/>advanced<sp/>node<sp/>that<sp/>performs<sp/>a<sp/>finer<sp/>(more<sp/>precise)<sp/>control<sp/>on<sp/>moveit</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>The<sp/>current<sp/>robot<sp/>model<sp/>is<sp/>quite<sp/>unstable.<sp/>It<sp/>should<sp/>be<sp/>adjusted<sp/>so<sp/>that<sp/>it<sp/>does<sp/>not<sp/>oscillate<sp/>during<sp/>its<sp/>movments</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>the<sp/>robot<sp/>needs<sp/>a<sp/>lot<sp/>of<sp/>manoeuvring<sp/>space<sp/>to<sp/>move;<sp/>There<sp/>should<sp/>be<sp/>the<sp/>need<sp/>of<sp/>seeking<sp/>an<sp/>appropriate<sp/>navigation<sp/>algorithm<sp/>to<sp/>reduce<sp/>the<sp/>necessary<sp/>manoeuvring<sp/>space</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>navigation<sp/>system<sp/>using<sp/>move_base<sp/>still<sp/>has<sp/>some<sp/>limitations<sp/>and<sp/>seems<sp/>to<sp/>fatigue<sp/>in<sp/>reaching<sp/>certain<sp/>positions<sp/>and<sp/>orientations.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">-<sp/>The<sp/>architecture<sp/>could<sp/>also<sp/>be<sp/>executed<sp/>in<sp/>a<sp/>distributed<sp/>manner<sp/>by<sp/>splitting<sp/>the<sp/>components<sp/>over<sp/>several<sp/>devices.<sp/>However,<sp/>this<sp/>possibility<sp/>was<sp/>not<sp/>considered<sp/>during<sp/>the<sp/>design<sp/>of<sp/>the<sp/>system.<sp/>It<sp/>is<sp/>therefore<sp/>necessary<sp/>to<sp/>identify<sp/>possible<sp/>criticalities<sp/>in<sp/>the<sp/>communication<sp/>protocol<sp/>(i.e.<sp/>to<sp/>better<sp/>manage<sp/>service<sp/>calls<sp/>that<sp/>fail<sp/>based<sp/>on<sp/>the<sp/>quality<sp/>of<sp/>the<sp/>connection)<sp/>and<sp/>deal<sp/>with<sp/>them<sp/>appropriately<sp/></highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>current<sp/>robot<sp/>model<sp/>is<sp/>quite<sp/>unstable.<sp/>It<sp/>should<sp/>be<sp/>adjusted<sp/>so<sp/>that<sp/>it<sp/>does<sp/>not<sp/>oscillate<sp/>during<sp/>its<sp/>movements.<sp/>This<sp/>is<sp/>due<sp/>to<sp/>the<sp/>simplicity<sp/>of<sp/>its<sp/>mobile<sp/>base<sp/>with<sp/>respect<sp/>to<sp/>the<sp/>shape<sp/>of<sp/>its<sp/>robotic<sp/>arm.<sp/>A<sp/>more<sp/>robust<sp/>and<sp/>stable<sp/>model<sp/>should<sp/>eliminate<sp/>some<sp/>of<sp/>these<sp/>issues.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Possible<sp/>improvements<sp/>in<sp/>the<sp/>manipulation<sp/>controls<sp/>used<sp/>by<sp/>MoveIt<sp/>for<sp/>obtaining<sp/>a<sp/>better,<sp/>more<sp/>robust,<sp/>more<sp/>precise<sp/>manipulation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Possible<sp/>code<sp/>and<sp/>computational<sp/>improvements<sp/>in<sp/>order<sp/>to<sp/>further<sp/>reduce<sp/>the<sp/>cost<sp/>of<sp/>execution</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>ROADMAP<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>Roadmap</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[x]<sp/>Complete<sp/>the<sp/>introduction<sp/>of<sp/>the<sp/>template<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[x]<sp/>Describe<sp/>the<sp/>software<sp/>architechture</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Component<sp/>diagram<sp/>(*not<sp/>mandatory*)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[<sp/>]<sp/>Temporal<sp/>diagram<sp/>+<sp/>comments</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>States<sp/>diagrams,<sp/>whether<sp/>applicable<sp/>+<sp/>comments</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Create<sp/>a<sp/>list<sp/>describing<sp/>ROS<sp/>messages<sp/>and<sp/>parameters<sp/></highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[x]<sp/>Describe<sp/>the<sp/>installation<sp/>steps<sp/>and<sp/>the<sp/>running<sp/>procedures</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Create<sp/>a<sp/>dedicated<sp/>paragraph</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Include<sp/>all<sp/>the<sp/>steps<sp/>to<sp/>display<sp/>the<sp/>robot&apos;s<sp/>behaviour</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[x]<sp/>Show<sp/>in<sp/>the<sp/>&quot;usage&quot;<sp/>section<sp/>the<sp/>running<sp/>code</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Create<sp/>a<sp/>small<sp/>video<sp/>tutorial<sp/>of<sp/>the<sp/>launch</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Create<sp/>a<sp/>small<sp/>animated<sp/>gif<sp/>of<sp/>the<sp/>terminal<sp/>while<sp/>running<sp/>code</highlight></codeline>
-<codeline><highlight class="normal">-<sp/>[x]<sp/>Describe<sp/>the<sp/>Working<sp/>hypothesis<sp/>and<sp/>environment</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Dedicated<sp/>section<sp/>for<sp/>System&apos;s<sp/>features</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Dedicated<sp/>section<sp/>for<sp/>System&apos;s<sp/>limitations</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[x]<sp/>Dedicated<sp/>section<sp/>for<sp/>Possible<sp/>technical<sp/>improvements</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">See<sp/>the<sp/>[open<sp/>issues](https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues)<sp/>for<sp/>a<sp/>full<sp/>list<sp/>of<sp/>proposed<sp/>features<sp/>(and<sp/>known<sp/>issues).</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>CONTRIBUTING<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">If<sp/>you<sp/>have<sp/>a<sp/>suggestion<sp/>that<sp/>would<sp/>make<sp/>this<sp/>better,<sp/>please<sp/>fork<sp/>the<sp/>repo<sp/>and<sp/>create<sp/>a<sp/>pull<sp/>request.<sp/>You<sp/>can<sp/>also<sp/>simply<sp/>open<sp/>an<sp/>issue<sp/>with<sp/>the<sp/>tag<sp/>&quot;enhancement&quot;</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">1.<sp/>Fork<sp/>the<sp/>Project</highlight></codeline>
-<codeline><highlight class="normal">2.<sp/>Create<sp/>your<sp/>Feature<sp/>Branch<sp/>(`git<sp/>checkout<sp/>-b<sp/>feature/AmazingFeature`)</highlight></codeline>
-<codeline><highlight class="normal">3.<sp/>Commit<sp/>your<sp/>Changes<sp/>(`git<sp/>commit<sp/>-m<sp/>&apos;Add<sp/>some<sp/>AmazingFeature&apos;`)</highlight></codeline>
-<codeline><highlight class="normal">4.<sp/>Push<sp/>to<sp/>the<sp/>Branch<sp/>(`git<sp/>push<sp/>origin<sp/>feature/AmazingFeature`)</highlight></codeline>
-<codeline><highlight class="normal">5.<sp/>Open<sp/>a<sp/>Pull<sp/>Request</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>LICENSE<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Distributed<sp/>under<sp/>none<sp/>License.<sp/></highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>CONTACT<sp/>--&gt;</highlight></codeline>
 <codeline><highlight class="normal">##<sp/>Contact</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Iacopo Pietrasanta<sp/>Civetta<sp/>-<sp/>s4119821@studenti.unige.it</highlight></codeline>
+<codeline><highlight class="normal">Iacopo<sp/>Pietrasanta<sp/>-<sp/>s4119821@studenti.unige.it</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Project<sp/>Link:<sp/>[https://github.com/HolyStone95/ExperimentalRoboticsAssignment2](https://github.com/HolyStone95/ExperimentalRoboticsAssignment2)</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>ACKNOWLEDGMENTS<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">##<sp/>List<sp/>of<sp/>resources</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">*<sp/>[Viewing<sp/>state<sp/>machine](http://wiki.ros.org/smach/Tutorials/Smach%20Viewer)</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[Smach](http://wiki.ros.org/smach)</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[Armor](https://github.com/EmaroLab/armor)</highlight></codeline>
-<codeline><highlight class="normal">*<sp/>[Protègè](https://protege.stanford.edu)</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;p<sp/>align=&quot;right&quot;&gt;(&lt;a<sp/>href=&quot;#top&quot;&gt;back<sp/>to<sp/>top&lt;/a&gt;)&lt;/p&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>MARKDOWN<sp/>LINKS<sp/>&amp;<sp/>IMAGES<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>https://www.markdownguide.org/basic-syntax/#reference-style-links<sp/>--&gt;</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">[forks-shield]:<sp/><sp/><sp/><sp/><sp/>https://img.shields.io/github/forks/HolyStone95/ExperimentalRoboticsAssignment3</highlight></codeline>
-<codeline><highlight class="normal">[forks-url]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/network/members</highlight></codeline>
-<codeline><highlight class="normal">[stars-shield]:<sp/><sp/><sp/><sp/><sp/>https://img.shields.io/github/stars/HolyStone95/ExperimentalRoboticsAssignment3</highlight></codeline>
-<codeline><highlight class="normal">[stars-url]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/stargazers</highlight></codeline>
-<codeline><highlight class="normal">[issues-shield]:<sp/><sp/><sp/><sp/>https://img.shields.io/github/issues/HolyStone95/ExperimentalRoboticsAssignment3</highlight></codeline>
-<codeline><highlight class="normal">[issues-url]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues</highlight></codeline>
-<codeline><highlight class="normal">[license-shield]:<sp/>https://img.shields.io/github/license/HolyStone95/ExperimentalRoboticsAssignment3</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>general<sp/>resources<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[1]:<sp/><sp/>http://wiki.ros.org/smach</highlight></codeline>
-<codeline><highlight class="normal">[3]:<sp/><sp/>http://wiki.ros.org/smach/Tutorials/Smach%20Viewer</highlight></codeline>
-<codeline><highlight class="normal">[4]:<sp/><sp/>http://wiki.ros.org</highlight></codeline>
-<codeline><highlight class="normal">[5]:<sp/><sp/>https://github.com/KCL-Planning/ROSPlan</highlight></codeline>
-<codeline><highlight class="normal">[6]:<sp/><sp/>https://moveit.ros.org/</highlight></codeline>
-<codeline><highlight class="normal">[7]:<sp/><sp/>http://wiki.ros.org/move_base</highlight></codeline>
-<codeline><highlight class="normal">[8]:<sp/><sp/>https://github.com/CarmineD8/exp_assignment3</highlight></codeline>
-<codeline><highlight class="normal">[9]:<sp/><sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment1</highlight></codeline>
-<codeline><highlight class="normal">[10]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment2</highlight></codeline>
-<codeline><highlight class="normal">[11]:<sp/>&lt;<sp/>insert<sp/>here<sp/>&gt;</highlight></codeline>
-<codeline><highlight class="normal">[12]:<sp/>&lt;<sp/>insert<sp/>here<sp/>&gt;</highlight></codeline>
-<codeline><highlight class="normal">[13]:<sp/>&lt;<sp/>insert<sp/>here<sp/>&gt;</highlight></codeline>
-<codeline><highlight class="normal">[14]:<sp/>&lt;<sp/>insert<sp/>here<sp/>&gt;</highlight></codeline>
-<codeline><highlight class="normal">[15]:<sp/>&lt;<sp/>insert<sp/>here<sp/>&gt;</highlight></codeline>
-<codeline><highlight class="normal">[16]:<sp/>https://ontogenesis.knowledgeblog.org/1260/</highlight></codeline>
-<codeline><highlight class="normal">[17]:<sp/>http://emarolab.github.io/armor_py_api/armor_utils_client.html</highlight></codeline>
-<codeline><highlight class="normal">[18]:<sp/>https://docs.python.org/3/library/queue.html</highlight></codeline>
-<codeline><highlight class="normal">[19]:<sp/>https://protege.stanford.edu</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>Nodes<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[20]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/cluedo_kb.py</highlight></codeline>
-<codeline><highlight class="normal">[21]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/navigation.py</highlight></codeline>
-<codeline><highlight class="normal">[22]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/state_machine.py</highlight></codeline>
-<codeline><highlight class="normal">[23]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl3/src/simulation.cpp</highlight></codeline>
-<codeline><highlight class="normal">[24]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/src/img_echo.cpp</highlight></codeline>
-<codeline><highlight class="normal">[25]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/src/detectibot_magnifier.cpp</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>Launchers<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[28]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/launch/launch_nodes.launch</highlight></codeline>
-<codeline><highlight class="normal">[29]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_robot/launch/detectibot_environment_2.launch</highlight></codeline>
-<codeline><highlight class="normal">[30]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_robot/launch/detectibot_environment.launch</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>srvs<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[32]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_msgs/srv/GetId.srv</highlight></codeline>
-<codeline><highlight class="normal">[33]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_msgs/srv/MarkWrongId.srv</highlight></codeline>
-<codeline><highlight class="normal">[34]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_msgs/srv/AddHint.srv</highlight></codeline>
-<codeline><highlight class="normal">[35]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_msgs/srv/GetArucoIds.srv</highlight></codeline>
-<codeline><highlight class="normal">[36]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_msgs/srv/GoToPoint.srv</highlight></codeline>
-<codeline><highlight class="normal">[37]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3_msgs/srv/TurnRobot.srv</highlight></codeline>
-<codeline><highlight class="normal">[38]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl3/srv/Marker.srv</highlight></codeline>
-<codeline><highlight class="normal">[39]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl3/srv/Oracle.srv</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>diagrams<sp/><sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[100]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/component_diagram.jpg</highlight></codeline>
-<codeline><highlight class="normal">[101]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_action_interface_cpp.jpg</highlight></codeline>
-<codeline><highlight class="normal">[102]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl3_my_simulation_cpp.jpg</highlight></codeline>
-<codeline><highlight class="normal">[103]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_cluedo_kb_py.jpg</highlight></codeline>
-<codeline><highlight class="normal">[104]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_main_py.jpg</highlight></codeline>
-<codeline><highlight class="normal">[105]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_manipulation_cpp.jpg</highlight></codeline>
-<codeline><highlight class="normal">[106]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_test_nav_py.jpg</highlight></codeline>
-<codeline><highlight class="normal">[107]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_go_to_point_py.jpg</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>Temporal<sp/>diagram<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[116]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/temporal_diagrams/erl_temporal_diagram.jpg</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>rqt<sp/>graphs<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[108]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/tree/main/media/rqt/rosgraph_nodes_only.png</highlight></codeline>
-<codeline><highlight class="normal">[109]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/tree/main/media/rqt/rosgraph_nodes_topics_active.png</highlight></codeline>
-<codeline><highlight class="normal">[110]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/tree/main/media/rqt/rosgraph_nodes_topics_all.png</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>temporal<sp/>diagram<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[111]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/tree/main/media/temporal_diagrams/Diagrams_erl_img.jpg</highlight></codeline>
-<codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>MoveIt<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[112]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/tree/main/erl_moveit_pkg/launch</highlight></codeline>
-<codeline><highlight class="normal">[113]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/tree/main/erl_moveit_pkg/config</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>Previous<sp/>project<sp/>links<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[114]:<sp/>https://github.com/HolyStone95/ExperimentalRoboticsAssignment2</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">&lt;!--<sp/>OpemCV<sp/>--<sp/>Aruco<sp/>--&gt;</highlight></codeline>
-<codeline><highlight class="normal">[115]:<sp/>https://www.github.com/opencv/opencv/wiki</highlight></codeline>
-<codeline><highlight class="normal">[117]:<sp/>https://github.com/ros-perception/vision_opencv</highlight></codeline>
+<codeline><highlight class="normal">Project<sp/>Link:<sp/>[https://github.com/HolyStone95/ExperimentalRoboticsAssignment3](https://github.com/HolyStone95/ExperimentalRoboticsAssignment3)</highlight></codeline>
     </programlisting>
     <location file="README.md"/>
   </compounddef>
