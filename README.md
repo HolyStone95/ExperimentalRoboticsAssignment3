@@ -9,7 +9,7 @@ This package contains the source code implemented during the third assignment of
   - [Assignment request](#assignment-request)
 	- [Before Getting Started](#before-getting-started)
   - [Software Architecture and Functioning](#software-architecture-and-functioning)
-  - [ROS node description: An overview](#ros-node-description:-an-overview)
+  - [ROS nodes description](#ros-nodes-description)
     - [The state_machine.py node](#the-state_machine.py-node)
     - [The navigation.py node](#the-navigation.py-node)
     - [The cluedo_kb.py node](#the-cluedo_kb.py-node)
@@ -121,7 +121,7 @@ https://user-images.githubusercontent.com/61761835/188322232-e940bd45-e460-4505-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## ROS node description: An overview
+## ROS nodes description
 
 Here there is the UML components diagram of the project
 
