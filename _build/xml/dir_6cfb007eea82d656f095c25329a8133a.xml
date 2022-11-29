@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_6cfb007eea82d656f095c25329a8133a" kind="dir">
+    <compoundname>_build/html/_sources/aruco_ros/aruco</compoundname>
+    <innerdir refid="dir_36058f892416b90d21adbdc707a36f31">_build/html/_sources/aruco_ros/aruco/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="_build/html/_sources/aruco_ros/aruco/"/>
+  </compounddef>
+</doxygen>

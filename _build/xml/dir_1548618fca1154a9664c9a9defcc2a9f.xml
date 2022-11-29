@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_1548618fca1154a9664c9a9defcc2a9f" kind="dir">
+    <compoundname>vision_opencv/cv_bridge/src/boost/predef</compoundname>
+    <innerdir refid="dir_6de194429d2a9c938640ae4a7f55a7cd">vision_opencv/cv_bridge/src/boost/predef/detail</innerdir>
+    <innerdir refid="dir_eb888e2fb81ed1861a86c1e7ceb9abba">vision_opencv/cv_bridge/src/boost/predef/library</innerdir>
+    <innerdir refid="dir_2debafecf895b417bc89e2a43eefe967">vision_opencv/cv_bridge/src/boost/predef/os</innerdir>
+    <innerdir refid="dir_0542ce5e37039b604060d427d6441195">vision_opencv/cv_bridge/src/boost/predef/other</innerdir>
+    <innerfile refid="make_8h">make.h</innerfile>
+    <innerfile refid="version__number_8h">version_number.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/cv_bridge/src/boost/predef/"/>
+  </compounddef>
+</doxygen>

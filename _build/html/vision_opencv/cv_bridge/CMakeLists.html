@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; ExperimentalRoboticsAssignment3 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> ExperimentalRoboticsAssignment3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code_documentation/index.html">Code Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">ExperimentalRoboticsAssignment3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/vision_opencv/cv_bridge/CMakeLists.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>cmake_minimum_required(VERSION 3.0.2)
+project(cv_bridge)</p>
+<p>find_package(catkin REQUIRED COMPONENTS rosconsole sensor_msgs)</p>
+<dl>
+<dt>if(NOT ANDROID)</dt><dd><p>find_package(PythonLibs)</p>
+<dl class="simple">
+<dt>if(PYTHONLIBS_VERSION_STRING VERSION_LESS “3.8”)</dt><dd><p># Debian Buster
+find_package(Boost REQUIRED python37)</p>
+</dd>
+<dt>else()</dt><dd><p># Ubuntu Focal
+find_package(Boost REQUIRED python)</p>
+</dd>
+</dl>
+<p>endif()</p>
+</dd>
+</dl>
+<p>else()
+find_package(Boost REQUIRED)
+endif()</p>
+<p>set(_opencv_version 4)
+find_package(OpenCV 4 QUIET)
+if(NOT OpenCV_FOUND)</p>
+<blockquote>
+<div><p>message(STATUS “Did not find OpenCV 4, trying OpenCV 3”)
+set(_opencv_version 3)</p>
+</div></blockquote>
+<p>endif()</p>
+<dl>
+<dt>find_package(OpenCV ${_opencv_version} REQUIRED</dt><dd><dl class="simple">
+<dt>COMPONENTS</dt><dd><p>opencv_core
+opencv_imgproc
+opencv_imgcodecs</p>
+</dd>
+</dl>
+<p>CONFIG</p>
+</dd>
+</dl>
+<p>)</p>
+<dl class="simple">
+<dt>catkin_package(</dt><dd><p>INCLUDE_DIRS include
+LIBRARIES ${PROJECT_NAME}
+CATKIN_DEPENDS rosconsole sensor_msgs
+DEPENDS OpenCV
+CFG_EXTRAS cv_bridge-extras.cmake</p>
+</dd>
+</dl>
+<p>)</p>
+<p>catkin_python_setup()</p>
+<p>include_directories(include ${Boost_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS} ${catkin_INCLUDE_DIRS})
+link_directories(${Boost_LIBRARY_DIRS})</p>
+<p>if(NOT ANDROID)
+add_subdirectory(python)
+endif()
+add_subdirectory(src)
+if(CATKIN_ENABLE_TESTING)</p>
+<blockquote>
+<div><p>add_subdirectory(test)</p>
+</div></blockquote>
+<p>endif()</p>
+<p># install the include folder
+install(</p>
+<blockquote>
+<div><p>DIRECTORY include/${PROJECT_NAME}/
+DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}</p>
+</div></blockquote>
+<p>)</p>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Iacopo Pietrasanta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

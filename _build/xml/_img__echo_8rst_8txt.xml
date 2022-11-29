@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_img__echo_8rst_8txt" kind="file" language="C++">
+    <compoundname>Img_echo.rst.txt</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_img__echo_8rst_8txt_1a1790a56af86ecde0b03cdf2f0fe4d387" prot="public" static="no" mutable="no">
+        <type>Code docs *Img_echo cpp it print it on a floating</type>
+        <definition>Code docs* Img_echo cpp it print it on a floating window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Img_echo.rst.txt" line="12" column="28" bodyfile="_build/html/_sources/code_documentation/Img_echo.rst.txt" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_img__echo_8rst_8txt_1af89959d671d8edcafe6635b166adec1a" prot="public" static="no" mutable="no">
+        <type>Code docs *Img_echo cpp it print it on a floating namely **DetectiCam by means of a cv_ptr(the ``<ref refid="namespacecv__bridge_1a1be6ad7c0a2d37ef773198f59ed2f456" kindref="member">cv_bridge::CvImagePtr</ref> cv_ptr`` returns a ROS image into an appropriate <ref refid="_detectibot__magnifier_8rst_8txt_1aab7935661ade1e68845326aa28cf201d" kindref="member">format</ref> compatible with OpenCV). Thirdly it publish the video stream! .. note For this purpose the BGR8 image encoding has been</type>
+        <definition>Code docs* Img_echo cpp it print it on a floating namely** DetectiCam by means of a cv_ptr (the ``cv_bridge::CvImagePtr cv_ptr`` returns a ROS image into an appropriate format compatible with OpenCV). Thirdly it publish the video stream! .. note For this purpose the BGR8 image encoding has been chosen</definition>
+        <argsstring></argsstring>
+        <name>chosen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Img_echo.rst.txt" line="18" column="55" bodyfile="_build/html/_sources/code_documentation/Img_echo.rst.txt" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_img__echo_8rst_8txt_1a43047111e6e12a759e27a3dd09a8e2a5" prot="public" static="no" mutable="no">
+        <type>Code docs *Img_echo cpp it print it on a floating namely **DetectiCam by means of a cv_ptr(the ``<ref refid="namespacecv__bridge_1a1be6ad7c0a2d37ef773198f59ed2f456" kindref="member">cv_bridge::CvImagePtr</ref> cv_ptr`` returns a ROS image into an appropriate <ref refid="_detectibot__magnifier_8rst_8txt_1aab7935661ade1e68845326aa28cf201d" kindref="member">format</ref> compatible with OpenCV). Thirdly it publish the video stream! .. note For this purpose the BGR8 image encoding has been being it less susceptible against typos note::ImageTransport s methods have been employed for creating image publishers and</type>
+        <definition>Code docs* Img_echo cpp it print it on a floating namely** DetectiCam by means of a cv_ptr (the ``cv_bridge::CvImagePtr cv_ptr`` returns a ROS image into an appropriate format compatible with OpenCV). Thirdly it publish the video stream! .. note For this purpose the BGR8 image encoding has been being it less susceptible against typos note:: ImageTransport s methods have been employed for creating image publishers and subscribers</definition>
+        <argsstring></argsstring>
+        <name>subscribers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Img_echo.rst.txt" line="21" column="82" bodyfile="_build/html/_sources/code_documentation/Img_echo.rst.txt" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">Code<sp/>docs<sp/>--<sp/>*Img_echo.cpp*</highlight></codeline>
+<codeline lineno="2" refid="_img__echo_8rst_8txt_1a1790a56af86ecde0b03cdf2f0fe4d387" refkind="member"><highlight class="normal">============================</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">:Authors:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>HolyStone95</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">:Version:</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>1.0</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">About<sp/>the<sp/>node<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">---------------</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">This<sp/>node<sp/>reads<sp/>the<sp/>input<sp/>image<sp/>from<sp/>the<sp/>robot</highlight><highlight class="stringliteral">&apos;s<sp/>camera.<sp/>Secondly,<sp/>it<sp/>print<sp/>it<sp/>on<sp/>a<sp/>floating<sp/>window,<sp/></highlight></codeline>
+<codeline lineno="13" refid="_img__echo_8rst_8txt_1af89959d671d8edcafe6635b166adec1a" refkind="member"><highlight class="stringliteral">namely<sp/>**DetectiCam**,<sp/>by<sp/>means<sp/>of<sp/>a<sp/>``cv_ptr``.<sp/>(the<sp/>``cv_bridge::CvImagePtr<sp/>cv_ptr``<sp/>returns<sp/>a<sp/>ROS<sp/>image<sp/>into<sp/>an<sp/>appropriate</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">format<sp/>compatible<sp/>with<sp/>OpenCV).<sp/>Thirdly<sp/>it<sp/>publish<sp/>the<sp/>video<sp/>stream!</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral">..<sp/>note::</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Since<sp/>we<sp/>have<sp/>to<sp/>deal<sp/>with<sp/>the<sp/>image,<sp/>multiple<sp/>copies<sp/>of<sp/>it<sp/>will<sp/>be<sp/>needed;<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>For<sp/>this<sp/>purpose<sp/>the<sp/>BGR8<sp/>image<sp/>encoding<sp/>has<sp/>been<sp/>chosen,<sp/>being<sp/>it<sp/>less<sp/>susceptible<sp/>against<sp/>typos.<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral">..<sp/>note::</highlight></codeline>
+<codeline lineno="21" refid="_img__echo_8rst_8txt_1a43047111e6e12a759e27a3dd09a8e2a5" refkind="member"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>ImageTransport&apos;</highlight><highlight class="normal">s<sp/>methods<sp/>have<sp/>been<sp/>employed<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>creating<sp/>image<sp/>publishers<sp/>and<sp/><ref refid="_img__echo_8rst_8txt_1a43047111e6e12a759e27a3dd09a8e2a5" kindref="member">subscribers</ref>,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>being<sp/>``image_transport``<sp/>a<sp/></highlight><highlight class="keyword">package<sp/></highlight><highlight class="normal">that<sp/>provides<sp/>transparetn<sp/>support<sp/>for<sp/>transporting<sp/>images<sp/>in<sp/>**low-bandwidth**<sp/>compressed<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>formats.<sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">..<sp/>warning::</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Please<sp/>remember<sp/>to<sp/>include<sp/>cv_bridge<sp/>in<sp/>your<sp/>xml<sp/>package!<sp/>Also<sp/>do<sp/>not<sp/>forget<sp/>to<sp/>add<sp/>the<sp/>following<sp/>headers<sp/>to<sp/>your<sp/>cpp<sp/>file</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">Code<sp/>Reference</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">---------------</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">..<sp/>doxygenfile::<sp/>img_echo.cpp</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>:project:<sp/>ExperimentalRoboticsAssignment3</highlight></codeline>
+    </programlisting>
+    <location file="_build/html/_sources/code_documentation/Img_echo.rst.txt"/>
+  </compounddef>
+</doxygen>

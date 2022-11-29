@@ -1,0 +1,414 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="cluedo__kb_8py" kind="file" language="Python">
+    <compoundname>cluedo_kb.py</compoundname>
+    <innernamespace refid="namespacecluedo__kb">cluedo_kb</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacecluedo__kb" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral">..<sp/>module::<sp/>cluedo_kb</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:platform:<sp/>Unix</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:synopsis:<sp/>Python<sp/>module<sp/>aimed<sp/>at<sp/>implementong<sp/>the<sp/>Reasoning<sp/>&amp;<sp/>AI<sp/>module</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Iacopo Pietrasanta<sp/>iacopo.pietrasanta@gmail.com</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">cluedo_KB<sp/>is<sp/>a<sp/>node<sp/>that<sp/>serves<sp/>as<sp/>a<sp/>specialised<sp/>ontology<sp/>for<sp/>the<sp/>problem<sp/>in<sp/>hand;<sp/>it<sp/>supplies<sp/>a<sp/>processing/reasoning<sp/>system<sp/>that<sp/>provides<sp/>the<sp/>functionality<sp/>of:<sp/><sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">-<sp/>Registering<sp/>clues<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">-<sp/>Building<sp/>and<sp/>processing<sp/>hypotheses<sp/>based<sp/>on<sp/>the<sp/>added<sp/>information<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">-<sp/>Finding<sp/>possible<sp/>solutions<sp/>to<sp/>the<sp/>case<sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">-<sp/>Rejecting<sp/>hypotheses<sp/>(whether<sp/>needed)</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">It<sp/>also<sp/>implements<sp/>two<sp/>different<sp/>services;<sp/>As<sp/>the<sp/>robot<sp/>starts<sp/>its<sp/>investigation,</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral">it<sp/>moves<sp/>from<sp/>one<sp/>room<sp/>to<sp/>tne<sp/>next;<sp/>In<sp/>the<sp/>meantime<sp/>it<sp/>makes<sp/>a<sp/>service<sp/>request<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral">through<sp/>`/add_hint`<sp/>for<sp/>soliciting<sp/>the<sp/>oracle<sp/>to<sp/>announce<sp/>the<sp/>found<sp/>hint.<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral">This<sp/>latter,<sp/>consists<sp/>in<sp/>a<sp/>request<sp/>of<sp/>type<sp/>`erl3/Marker`<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral">Subscribes<sp/>to:</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/clock<sp/>[rosgraph_msgs/Clock]</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral">Publishes<sp/>to:</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral">Service<sp/>:</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/add_hint</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/cluedo_kb/get_loggers</highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/cluedo_kb/set_logger_level</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/get_id</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/mark_wrong_id</highlight></codeline>
+<codeline lineno="31"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;testing<sp/>snippet</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral">rosrun<sp/>erl_assignment_3<sp/>cluedo_kb.py<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral">rosrun<sp/>erl3<sp/>final_oracle</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>0&quot;</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>1&quot;</highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>2&quot;</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>3&quot;</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>4&quot;</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>5&quot;</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>6&quot;</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>7&quot;</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>8&quot;</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>9&quot;</highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>10&quot;</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>11&quot;</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>12&quot;</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>13&quot;</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>14&quot;</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>15&quot;</highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>16&quot;</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>17&quot;</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>18&quot;</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>19&quot;</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>20&quot;</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>21&quot;</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>22&quot;</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>23&quot;</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>24&quot;</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>25&quot;</highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>26&quot;</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>27&quot;</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>28&quot;</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>29&quot;</highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral">rosservice<sp/>call<sp/>/add_hint<sp/>&quot;ID:<sp/>30&quot;</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl3.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ErlOracle</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl3.srv<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Marker,<sp/>MarkerRequest,<sp/>MarkerResponse</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl_assignment_3_msgs.srv<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GetId,<sp/>GetIdRequest,<sp/>GetIdResponse</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl_assignment_3_msgs.srv<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MarkWrongId,<sp/>MarkWrongIdRequest,<sp/>MarkWrongIdResponse</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl_assignment_3_msgs.srv<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>AddHint,<sp/>AddHintRequest,<sp/>AddHintResponse</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="namespacecluedo__kb_1a0fb9cc01990ff96751d9a8df8f473ad2" refkind="member"><highlight class="normal">record_where<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="80" refid="namespacecluedo__kb_1a727404718e0777bf45e91fa9458e1f18" refkind="member"><highlight class="normal">record_what<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="81" refid="namespacecluedo__kb_1a0e82193f2d59570204a37c310bc95e7b" refkind="member"><highlight class="normal">record_who<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="82" refid="namespacecluedo__kb_1af2159774e7dc8e59e293d9057d60e690" refkind="member"><highlight class="normal">is_active<sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="83" refid="namespacecluedo__kb_1a5be4e3b61f6bdb880099c78cf658f5dc" refkind="member"><highlight class="normal">is_complete<sp/>=<sp/>4</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="namespacecluedo__kb_1a8636f58ddb22c3c70904f8e30a4dcc5e" refkind="member"><highlight class="normal">kb<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>a<sp/>list<sp/>of<sp/>6<sp/>tuples,<sp/>corresponding<sp/>to<sp/>the<sp/>6<sp/>possible<sp/>solution<sp/>IDs.</highlight></codeline>
+<codeline lineno="87"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="88"><highlight class="stringliteral">list(<sp/>...,<sp/>tuple(<sp/>&lt;where&gt;,<sp/>&lt;what&gt;,<sp/>&lt;who&gt;,<sp/>&lt;is_active&gt;,<sp/>&lt;is_complete&gt;<sp/>),<sp/>...<sp/>)</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral">Note:</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>a<sp/>cell<sp/>is<sp/>empty<sp/>when<sp/>its<sp/>content<sp/>is<sp/>a<sp/>empty<sp/>string<sp/>&quot;&quot;<sp/>.</highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="namespacecluedo__kb_1a335d9858030dee0238a6f2fc67a05023" refkind="member"><highlight class="normal">kb_consistent<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>indexex<sp/>of<sp/>the<sp/>remaining<sp/>active<sp/>IDs,<sp/>not<sp/>necessailry<sp/>complete</highlight></codeline>
+<codeline lineno="96"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="namespacecluedo__kb_1a1c63dfe724e4e24b2985ef2adb3bbfbb" refkind="member"><highlight class="normal">srv_get_id<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>service<sp/>handle<sp/>for<sp/>/get_id</highlight></codeline>
+<codeline lineno="100"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="namespacecluedo__kb_1ac2ce9f31fe1875079d6cdbaa539122f6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1ac2ce9f31fe1875079d6cdbaa539122f6" kindref="member">print_kb_content</ref>():</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>print<sp/>the<sp/>content<sp/>inside<sp/>the<sp/>ontology<sp/>on<sp/>screen</highlight></codeline>
+<codeline lineno="106"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>kb,<sp/>kb_consistent</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>record_who,<sp/>record_what,<sp/>record_where</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>print<sp/>consistent<sp/>indexes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(kb_consistent)<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;(kb)<sp/>remaining<sp/>active<sp/>hints:<sp/>{len(kb_consistent)}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;(kb)<sp/>values:&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>idx<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>kb_consistent:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;(kb)<sp/>ID={idx}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;(kb)<sp/>kb<sp/>status:<sp/>({len(kb)}<sp/>possible<sp/>solutions)&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(0,len(kb)):</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_active_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kb[i][3]:</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_active_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_complete_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kb[i][4]:</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is_complete_str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;(kb)<sp/>ID={i}<sp/>WHO={kb[i][record_who]}<sp/>WHERE={kb[i][record_where]}<sp/>WHAT={kb[i][record_what]}<sp/>--<sp/>is_active={is_active_str}<sp/>is_complete={is_complete_str}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" kindref="member">add_hint</ref>(<sp/>hint<sp/>):</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>receive<sp/>and<sp/>store<sp/>(if<sp/>possible)<sp/>the<sp/>hint</highlight></codeline>
+<codeline lineno="134"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="135"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:<sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hint<sp/>(erl3/ErlOracle):</highlight></codeline>
+<codeline lineno="137"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>hint<sp/>received<sp/>directly<sp/>from<sp/>the<sp/>Oracle</highlight></codeline>
+<codeline lineno="138"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/><ref refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" kindref="member">is_valid_hint</ref>(<sp/>hint<sp/>):</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;evaluating<sp/>hint<sp/>with<sp/>data<sp/>(key={hint.key}<sp/>,<sp/>value={hint.value})&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" kindref="member">add_hint_to_list</ref>(<sp/>hint<sp/>)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;received<sp/>a<sp/>unvalid<sp/>hint<sp/>with<sp/>data<sp/>(key={hint.key}<sp/>,<sp/>value={hint.value})&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>print_kb_content()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" kindref="member">add_hint_to_list</ref>(<sp/>hint<sp/>):</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>add<sp/>a<sp/>hint<sp/>to<sp/>the<sp/>list,<sp/>if<sp/>possible</highlight></codeline>
+<codeline lineno="152"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>function<sp/>tries<sp/>to<sp/>add<sp/>a<sp/>hint,<sp/>checking<sp/>if<sp/>it<sp/>is<sp/>still<sp/>consistent;<sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>if<sp/>the<sp/>required<sp/>field<sp/>is<sp/>already<sp/>occupied<sp/>(i.e.<sp/>the<sp/>string<sp/>in<sp/>that<sp/>cell</highlight></codeline>
+<codeline lineno="155"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>is<sp/>not<sp/>empty),<sp/>the<sp/>ID<sp/>is<sp/>marked<sp/>as<sp/>inconsistent<sp/>and<sp/>deactivated,<sp/>and</highlight></codeline>
+<codeline lineno="156"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>its<sp/>index<sp/>is<sp/>removed<sp/>from<sp/>the<sp/>indexes<sp/>list.<sp/></highlight></codeline>
+<codeline lineno="157"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="159"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hint<sp/>(erl2/ErlOracle):</highlight></codeline>
+<codeline lineno="160"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>hint<sp/>to<sp/>store<sp/>in<sp/>the<sp/>KB</highlight></codeline>
+<codeline lineno="161"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="162"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>kb,<sp/>kb_consistent</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>record_who,<sp/>record_what,<sp/>record_where</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>is_active,<sp/>is_complete</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>delete_that<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>kb[hint.ID][is_active]:</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>hint.key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;where&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kb[hint.ID][record_where]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;adding<sp/>hint<sp/>ID={hint.ID}<sp/>WHERE={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[hint.ID][record_where]<sp/>=<sp/>hint.value;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>kb[hint.ID][record_where]<sp/>==<sp/>hint.value<sp/>:</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;skipping<sp/>hint<sp/>ID={hint.ID}<sp/>WHERE={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ID<sp/>not<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;removing<sp/>hint<sp/>ID={hint.ID}<sp/>WHERE={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delete_that<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>hint.key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;what&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kb[hint.ID][record_what]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>:</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;adding<sp/>hint<sp/>ID={hint.ID}<sp/>WHAT={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[hint.ID][record_what]<sp/>=<sp/>hint.value;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>kb[hint.ID][record_what]<sp/>==<sp/>hint.value<sp/>:</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;skipping<sp/>hint<sp/>ID={hint.ID}<sp/>WHAT={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ID<sp/>not<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;deleting<sp/>hint<sp/>ID={hint.ID}<sp/>WHAT={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delete_that<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>hint.key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;who&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kb[hint.ID][record_who]<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>:</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;adding<sp/>hint<sp/>ID={hint.ID}<sp/>WHO={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[hint.ID][record_who]<sp/>=<sp/>hint.value;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>kb[hint.ID][record_who]<sp/>==<sp/>hint.value<sp/>:</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;skipping<sp/>hint<sp/>ID={hint.ID}<sp/>WHO={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ID<sp/>not<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;deleting<sp/>hint<sp/>ID={hint.ID}<sp/>WHO={hint.value}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delete_that<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.logwarn(<sp/>f</highlight><highlight class="stringliteral">&quot;(cluedo_kb<sp/>-&gt;<sp/>add_hint_to_list)<sp/>received<sp/>a<sp/>unknown<sp/>hint.key<sp/>:<sp/>{hint.key}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/><sp/>Testing<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/>---<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>rospy.loginfo(f&quot;empty<sp/>WHO?<sp/>{kb[hint.ID][record_who]<sp/>==<sp/>&apos;&apos;}&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>rospy.loginfo(f&quot;empty<sp/>WHERE?<sp/>{kb[hint.ID][record_where]<sp/>==<sp/>&apos;&apos;}&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>rospy.loginfo(f&quot;empty<sp/>WHAT?<sp/>{kb[hint.ID][record_what]<sp/>==<sp/>&apos;&apos;}&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kb[hint.ID][record_where]<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>(kb[hint.ID][record_what]<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>(kb[hint.ID][record_who]<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>rospy.loginfo(f&quot;ID{hint.ID}<sp/>is<sp/>complete&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[hint.ID][is_complete]<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>rospy.loginfo(f&quot;ID{hint.ID}<sp/>is<sp/>not<sp/>complete&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>delete_that<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>len(kb_consistent)<sp/>&gt;<sp/>0:</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;discard<sp/>hypothesis<sp/>with<sp/>ID={hint.ID}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ID<sp/>not<sp/>consistent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[hint.ID][is_active]<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[hint.ID][is_complete]<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>delete<sp/>that<sp/>from<sp/>the<sp/>index<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>hint.ID<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>kb_consistent:</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb_consistent.remove(<sp/>hint.ID<sp/>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>len(kb_consistent)<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;nothing<sp/>to<sp/>discard<sp/>(received<sp/>an<sp/>inconsistent<sp/>ID={hint.ID})&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242" refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" kindref="member">is_valid_hint</ref>(<sp/>hint<sp/>):</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>check<sp/>if<sp/>the<sp/>hint<sp/>is<sp/>vald<sp/>or<sp/>not</highlight></codeline>
+<codeline lineno="244"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="245"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>Oracle<sp/>sometimes<sp/>could<sp/>send<sp/>a<sp/>wrong<sp/>hint,<sp/>i.e.<sp/>some<sp/>field<sp/>is</highlight></codeline>
+<codeline lineno="246"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>a<sp/>empty<sp/>string<sp/>and/or<sp/>some<sp/>filed<sp/>has<sp/>value<sp/>&quot;-1&quot;.<sp/>the<sp/>function</highlight></codeline>
+<codeline lineno="247"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>detects<sp/>the<sp/>quality<sp/>of<sp/>the<sp/>hint,<sp/>and<sp/>returns<sp/>if<sp/>it<sp/>is<sp/>admissible</highlight></codeline>
+<codeline lineno="248"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>or<sp/>not.<sp/>Also<sp/>the<sp/>ID<sp/>could<sp/>be<sp/>negative<sp/>or<sp/>zero.<sp/></highlight></codeline>
+<codeline lineno="249"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="250"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="251"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hint<sp/>(erl2/ErlOracle):</highlight></codeline>
+<codeline lineno="252"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>hint<sp/>to<sp/>store<sp/>in<sp/>the<sp/>KB</highlight></codeline>
+<codeline lineno="253"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="254"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="255"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(bool)<sp/>if<sp/>the<sp/>hint<sp/>is<sp/>admissible<sp/>or<sp/>not.</highlight></codeline>
+<codeline lineno="256"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>hint.ID<sp/>&lt;<sp/>0<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>hint.ID<sp/>&gt;<sp/>5:</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>hint.key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>hint.key<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-1&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>hint.value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>hint.value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;-1&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269" refid="namespacecluedo__kb_1a9c5cbd279b89f36f5f84c0e2dd63fca8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1a9c5cbd279b89f36f5f84c0e2dd63fca8" kindref="member">get_id</ref>(<sp/>req<sp/>):</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>implementation<sp/>of<sp/>the<sp/>service<sp/>/get_id</highlight></codeline>
+<codeline lineno="271"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="272"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>service<sp/>tries<sp/>to<sp/>return<sp/>the<sp/>first<sp/>available<sp/>index,<sp/>looking<sp/>in<sp/>the<sp/></highlight></codeline>
+<codeline lineno="273"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>list<sp/>of<sp/>remaining<sp/>indexes.<sp/>if<sp/>no<sp/>consistent<sp/>index<sp/>is<sp/>available,<sp/>the</highlight></codeline>
+<codeline lineno="274"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>service<sp/>returns<sp/>response.consistent_found=False<sp/>.</highlight></codeline>
+<codeline lineno="275"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="276"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="277"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>req<sp/>(erl_assignment_2/GetIdRequest):</highlight></codeline>
+<codeline lineno="278"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>service<sp/>request</highlight></codeline>
+<codeline lineno="279"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="280"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="281"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(erl_assignment_2/GetIdResponse)<sp/>the<sp/>id<sp/>and<sp/>if<sp/>there<sp/>are</highlight></codeline>
+<codeline lineno="282"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>still<sp/>available<sp/>IDs.<sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="284"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Note:</highlight></codeline>
+<codeline lineno="285"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>service<sp/>coulf<sp/>return<sp/>also<sp/>(true,<sp/>-1)<sp/>in<sp/>a<sp/>situation<sp/>in<sp/>which</highlight></codeline>
+<codeline lineno="286"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>there<sp/>are<sp/>some<sp/>active<sp/>ID,<sp/>but<sp/>none<sp/>of<sp/>them<sp/>is<sp/>complete.<sp/></highlight></codeline>
+<codeline lineno="287"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="288"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>kb,<sp/>kb_consistent</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>record_who,<sp/>record_what,<sp/>record_where</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>is_active,<sp/>is_complete</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/>GetIdResponse(<sp/>)</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>res.consistent_found<sp/>=<sp/>(<sp/>len(<sp/>kb_consistent<sp/>)<sp/>&gt;<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/>res.consistent_id<sp/>=<sp/>-1</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.logwarn(</highlight><highlight class="stringliteral">&quot;called<sp/>get_id()<sp/>--<sp/>kb<sp/>content:&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacecluedo__kb_1ac2ce9f31fe1875079d6cdbaa539122f6" kindref="member">print_kb_content</ref>()</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>res.consistent_found:</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>kb_consistent:</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>kb[id][is_complete]:</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res.consistent_id<sp/>=<sp/>id</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.logwarn(f</highlight><highlight class="stringliteral">&quot;called<sp/>get_id()<sp/>--<sp/>found<sp/>consistent<sp/>hypothesis<sp/>with<sp/>ID={res.consistent_id}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.logwarn(</highlight><highlight class="stringliteral">&quot;called<sp/>get_id()<sp/>--<sp/>no<sp/>consistent<sp/>hypotheses!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.logwarn(f</highlight><highlight class="stringliteral">&quot;called<sp/>get_id()<sp/>--<sp/>returning<sp/>res<sp/>with<sp/>res.consistent_found={res.consistent_found}<sp/>res.consistent_id={res.consistent_id}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315" refid="namespacecluedo__kb_1afe9cb44eb6b95930542c455410ad70fe" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1afe9cb44eb6b95930542c455410ad70fe" kindref="member">mark_wrong_id</ref>(<sp/>req<sp/>):</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;discard<sp/>a<sp/>ID<sp/>from<sp/>the<sp/>system.</highlight></codeline>
+<codeline lineno="317"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="318"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="319"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>req<sp/>(erl_assignment_2/MarkWrongIdRequest):</highlight></codeline>
+<codeline lineno="320"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>service<sp/>request</highlight></codeline>
+<codeline lineno="321"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="322"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="323"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>req<sp/>(erl_assignment_2/MarkWrongIdResponse)<sp/>empty</highlight></codeline>
+<codeline lineno="324"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>kb,<sp/>kb_consistent</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>record_who,<sp/>record_what,<sp/>record_where</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>is_active,<sp/>is_complete</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>delete<sp/>the<sp/>ID<sp/>from<sp/>the<sp/>index<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(<sp/>kb_consistent<sp/>)<sp/>&gt;<sp/>0<sp/>:</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[req.ID][is_active]<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb[req.ID][is_complete]<sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>hint.ID<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>kb_consistent:</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb_consistent.remove(<sp/>req.ID<sp/>)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/>f</highlight><highlight class="stringliteral">&quot;(mark_wrong_id)<sp/>discarded<sp/>ID={req.ID}&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342" refid="namespacecluedo__kb_1aa138c12c38a471ab81561c0a1b3606cf" refkind="member"><highlight class="normal">cl_oracle_hint<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>oracle<sp/>client:<sp/>get<sp/>the<sp/>infos<sp/>from<sp/>a<sp/>hint<sp/>ID</highlight></codeline>
+<codeline lineno="344"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346" refid="namespacecluedo__kb_1a789e88706006ad8833736360f1445982" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1a789e88706006ad8833736360f1445982" kindref="member">add_hint_service</ref>(req):</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>add<sp/>a<sp/>hint<sp/>to<sp/>th<sp/>knowledge.</highlight></codeline>
+<codeline lineno="348"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="349"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>service<sp/>calls<sp/>the<sp/>oracle<sp/>and<sp/>asks<sp/>for<sp/>a<sp/>hint,<sp/>then<sp/>stores</highlight></codeline>
+<codeline lineno="350"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>hint.<sp/></highlight></codeline>
+<codeline lineno="351"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="352"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:<sp/></highlight></codeline>
+<codeline lineno="353"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>req<sp/>(erl_assignment_3/AddHintRequest):</highlight></codeline>
+<codeline lineno="354"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>service<sp/>request<sp/></highlight></codeline>
+<codeline lineno="355"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>cl_oracle_hint</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/>res<sp/>=<sp/><ref refid="namespacecluedo__kb_1aa138c12c38a471ab81561c0a1b3606cf" kindref="member">cl_oracle_hint</ref>(req.ID)</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" kindref="member">add_hint</ref>(res.oracle_hint)</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>AddHintResponse()</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" kindref="member">shut_msg</ref>(<sp/>):</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;print<sp/>on<sp/>console<sp/>shut<sp/>message</highlight></codeline>
+<codeline lineno="368"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/></highlight><highlight class="stringliteral">&quot;stopping<sp/>...<sp/>&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.init_node(<sp/></highlight><highlight class="stringliteral">&quot;cluedo_kb&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.on_shutdown(<sp/>shut_msg<sp/>)</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/></highlight><highlight class="stringliteral">&quot;cluedo_kb<sp/>initialization...&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>kb<sp/>=<sp/>list(<sp/>)</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>kb_consistent<sp/>=<sp/>list(<sp/>)</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(0,<sp/>6):</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb.append(<sp/>[</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal">]<sp/>)</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kb_consistent.append(i)</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(<sp/></highlight><highlight class="stringliteral">&quot;cluedo_kb<sp/>initialization...<sp/>done&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;srv<sp/>add_hint&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.Service(</highlight><highlight class="stringliteral">&quot;/add_hint&quot;</highlight><highlight class="normal">,<sp/>AddHint,<sp/>add_hint_service)</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;client<sp/>oracle_hint&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/>cl_oracle_hint<sp/>=<sp/>rospy.ServiceProxy(</highlight><highlight class="stringliteral">&quot;/oracle_hint&quot;</highlight><highlight class="normal">,<sp/>Marker)</highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;cluedo_kb<sp/>client<sp/>/get_id...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/>srv_get_id<sp/>=<sp/>rospy.Service(<sp/></highlight><highlight class="stringliteral">&quot;/get_id&quot;</highlight><highlight class="normal">,<sp/>GetId,<sp/>get_id<sp/>)</highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;cluedo_kb<sp/>client<sp/>/mark_wrong_id...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/>srv_get_id<sp/>=<sp/>rospy.Service(<sp/></highlight><highlight class="stringliteral">&quot;/mark_wrong_id&quot;</highlight><highlight class="normal">,<sp/>MarkWrongId,<sp/>mark_wrong_id<sp/>)</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;cluedo_kb<sp/>starting...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.spin(<sp/>)</highlight></codeline>
+    </programlisting>
+    <location file="erl_assignment_3/scripts/cluedo_kb.py"/>
+  </compounddef>
+</doxygen>

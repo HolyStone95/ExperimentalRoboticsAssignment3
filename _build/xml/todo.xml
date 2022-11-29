@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Member <ref refid="marker_8cpp_1a525335710b53cb064ca56b936120431e" kindref="member">_USE_MATH_DEFINES</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000003"/>set this definition in the cmake code  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classaruco_1_1_dictionary_1a283574d1fa128c868902ec6ac3a49735" kindref="member">aruco::Dictionary::createMarkerMap</ref>  (cv::Size gridSize, int MarkerSize, int MarkerDistance, const std::vector&lt; int &gt; &amp;Ids, bool chess_board=false)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000001"/>use const auto &amp; </para>
+<para><anchor id="todo_1_todo000002"/>use const auto &amp;  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="class_equidistant_test" kindref="compound">EquidistantTest</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000020"/>Tests with simple values (R = identity, D = 0, P = K or simple scaling) </para>
+<para>Test projection functions for right stereo values, P(:,3) != 0 </para>
+<para>Tests for [un]rectifyImage </para>
+<para>Tests using ROI, needs support from PinholeCameraModel </para>
+<para>Tests for StereoCameraModel  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="class_equidistant_test_1aba1177ec24f2d85b20003905baeb3c8c" kindref="member">EquidistantTest::SetUp</ref>  ()</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000023"/>Just load these from file  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_pinhole_camera_model_1adcf644e58628954d28a89473beb4a03c" kindref="member">image_geometry::PinholeCameraModel::fromCameraInfo</ref>  (const sensor_msgs::CameraInfo &amp;msg)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000005"/>Calculate and use rectified ROI </para>
+<para><anchor id="todo_1_todo000006"/>Adjust P by rectified ROI instead  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_pinhole_camera_model_1a1a1eaea138b6f4103ddd0aaa2c3e7533" kindref="member">image_geometry::PinholeCameraModel::initRectificationMaps</ref>  () const</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000010"/>For large binning settings, can drop extra rows/cols at bottom/right boundary. Make sure we&apos;re handling that 100% correctly. </para>
+<para><anchor id="todo_1_todo000011"/>Should binned resolution, K, P be part of public API? </para>
+<para><anchor id="todo_1_todo000012"/>Use rectified ROI  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_pinhole_camera_model_1a04aac2f6a633e3a325e09e0d3e878d22" kindref="member">image_geometry::PinholeCameraModel::initUnrectificationMaps</ref>  () const</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000013"/>For large binning settings, can drop extra rows/cols at bottom/right boundary. Make sure we&apos;re handling that 100% correctly. </para>
+<para><anchor id="todo_1_todo000014"/>Should binned resolution, K, P be part of public API? </para>
+<para><anchor id="todo_1_todo000015"/>Use rectified ROI  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_pinhole_camera_model_1a07e45aafec138761b8ed62f0b1906f83" kindref="member">image_geometry::PinholeCameraModel::rectifyPoint</ref>  (const cv::Point2d &amp;uv_raw, const cv::Matx33d &amp;K, const cv::Matx34d &amp;P) const</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000007"/>cv::undistortPoints requires the point data to be float, should allow double  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_pinhole_camera_model_1a64e2815572652c5b51ff31849db97b17" kindref="member">image_geometry::PinholeCameraModel::rectifyRoi</ref>  (const cv::Rect &amp;roi_raw) const</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000008"/>Actually implement &quot;best fit&quot; as described by REP 104.  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_pinhole_camera_model_1ac8815860e7009e5407e43ebfafb3f4d0" kindref="member">image_geometry::PinholeCameraModel::unrectifyRoi</ref>  (const cv::Rect &amp;roi_rect) const</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000009"/>Actually implement &quot;best fit&quot; as described by REP 104.  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="classimage__geometry_1_1_stereo_camera_model_1a963876fbeafcc1ee53f3e11b139eadde" kindref="member">image_geometry::StereoCameraModel::baseline</ref>  () const</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000004"/>Currently assuming horizontal baseline  </para>
+</listitem>
+<varlistentry><term>Class <ref refid="class_pinhole_test" kindref="compound">PinholeTest</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000016"/>Tests with simple values (R = identity, D = 0, P = K or simple scaling) </para>
+<para>Test projection functions for right stereo values, P(:,3) != 0 </para>
+<para>Tests for rectifyImage </para>
+<para>Tests using ROI, needs support from PinholeCameraModel </para>
+<para>Tests for StereoCameraModel  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="class_pinhole_test_1a8c1a0cd8b7b53e00a234619f340a47ea" kindref="member">PinholeTest::SetUp</ref>  ()</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000019"/>Just load these from file  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="image__geometry_2test_2utest_8cpp_1af8ce860c596a5c4676d888a0fd654bb8" kindref="member">TEST_F</ref>  (<ref refid="class_pinhole_test" kindref="compound">PinholeTest</ref>, rectifyIfCalibrated)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000018"/>use forward distortion for a better test  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="utest__equi_8cpp_1a2f8893eef961af6d1cf2d169da04c7d8" kindref="member">TEST_F</ref>  (<ref refid="class_equidistant_test" kindref="compound">EquidistantTest</ref>, rectifyIfCalibrated)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000022"/>use forward distortion for a better test  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="utest__equi_8cpp_1a3bc17170fe1f2929af04532434e69c06" kindref="member">TEST_F</ref>  (<ref refid="class_equidistant_test" kindref="compound">EquidistantTest</ref>, rectifyPoint)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000021"/>Need R = identity for the principal point tests.  </para>
+</listitem>
+<varlistentry><term>Member <ref refid="image__geometry_2test_2utest_8cpp_1a84705d60f0cde00bbb7bed971e6cfd69" kindref="member">TEST_F</ref>  (<ref refid="class_pinhole_test" kindref="compound">PinholeTest</ref>, rectifyPoint)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000017"/>Need R = identity for the principal point tests. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

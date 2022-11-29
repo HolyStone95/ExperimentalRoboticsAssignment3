@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classstate__machine_1_1_s_h_o_w" kind="class" language="Python" prot="public">
+    <compoundname>state_machine::SHOW</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">State</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classstate__machine_1_1_s_h_o_w_1a3754375710f6e77e923f212e7bf8fde2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.SHOW.__init__</definition>
+        <argsstring>(self, outcomes=[&apos;AGAIN&apos;, &apos;SUCCESS&apos;])</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>outcomes</type>
+          <defname>outcomes</defname>
+          <defval>[&apos;AGAIN&apos;</defval>
+        </param>
+        <param>
+          <type>&apos;SUCCESS&apos;]</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="211" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="211" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__machine_1_1_s_h_o_w_1a14d2726508e9b2dbb5c2a33589dd5b47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.SHOW.execute</definition>
+        <argsstring>(self, userdata)</argsstring>
+        <name>execute</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>userdata</type>
+          <defname>userdata</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>final checking: ask to the oracle, and try to show a solution.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="214" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="214" bodyend="239"/>
+        <references refid="namespacestate__machine_1a3c3b5ea8c574a68329796bac67a0b562" compoundref="state__machine_8py" startline="92">state_machine.cl_oracle_solution</references>
+        <references refid="namespacestate__machine_1ae1b578fc9d502ebdbfb09a0ff78bf0da" compoundref="state__machine_8py" startline="52" endline="59">state_machine.next_room</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>state_machine.SHOW</label>
+        <link refid="classstate__machine_1_1_s_h_o_w"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>smach::State</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>state_machine.SHOW</label>
+        <link refid="classstate__machine_1_1_s_h_o_w"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>smach::State</label>
+      </node>
+    </collaborationgraph>
+    <location file="erl_assignment_3/scripts/state_machine.py" line="210" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="210" bodyend="240"/>
+    <listofallmembers>
+      <member refid="classstate__machine_1_1_s_h_o_w_1a3754375710f6e77e923f212e7bf8fde2" prot="public" virt="non-virtual"><scope>state_machine::SHOW</scope><name>__init__</name></member>
+      <member refid="classstate__machine_1_1_s_h_o_w_1a14d2726508e9b2dbb5c2a33589dd5b47" prot="public" virt="non-virtual"><scope>state_machine::SHOW</scope><name>execute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

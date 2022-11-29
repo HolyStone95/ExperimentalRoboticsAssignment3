@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About The Project &mdash; ExperimentalRoboticsAssignment3 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ExperimentalRoboticsAssignment3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code_documentation/index.html">Code Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="documents/index.html">Other Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ExperimentalRoboticsAssignment3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>About The Project</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div id="top"></div>
+<!-- PROJECT SHIELDS -->
+<!--
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+<p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/HolyStone95/ExperimentalRoboticsAssignment3" /></a>
+<a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/HolyStone95/ExperimentalRoboticsAssignment3" /></a>
+<a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues"><img alt="Issues" src="https://img.shields.io/github/issues/HolyStone95/ExperimentalRoboticsAssignment3" /></a></p>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+<a href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3">
+	<img src="media/miscellaneous/logo-black.png" alt="Logo" width="200" height="100">
+</a>
+<h3 align="center">Experimental Robotics Laboratory</h3>
+<p align="center">
+	First assignment for the Experimental Robotics laboratory course 
+	<br />
+	<a href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/doc"><strong>Explore the docs »</strong></a>
+	<br />
+	<br />
+	<a href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/demo">View Demo</a>
+	·
+	<a href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues">Report Bug</a>
+	·
+	<a href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues">Request Feature</a>
+</p>
+</div>
+<!-- TABLE OF CONTENTS -->
+<details>
+	<summary>Table of Contents</summary>
+	<ol>
+		<li>
+			<a href="#about-the-project">About The Project</a>
+			<ul>
+				<li><a href="#assignments-prerequisites">Assignment's prerequisites</a></li>
+				<li><a href="#built-with">Built With</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#getting-started">Getting Started</a>
+			<ul>
+				<li><a href="#installation-procedure">Installation procedure</a></li>
+				<li><a href="#workspace-building-and-launch">Workspace building and launch</a></li>
+				<li><a href="#running-pocedure">Running procedure</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#usage">Usage</a>
+		</li>
+		<li>
+			<a href="#ros-node-description-an-overview">ROS node description: An overview</a>
+			<ul>
+				<li><a href="#the-main.py-node ">the main.py node</a></li>
+				<li><a href="#the-cluedo_kb.py-node ">the cluedo_kb.py node</a></li>
+				<li><a href="#the-action_interface.cpp-node">the action_interface.cpp node</a></li>
+				<li><a href="#the-manipulation.cpp-node ">the manipulation.cpp node</a></li>
+				<li><a href="#the-my_simulation.cpp-node ">the my_simulation.cpp node </a></li>
+				<li><a href="#rqt_graph">rqt_graph</a></li>
+			</ul>
+		<li>
+				<a href="#Working-hypothesis-and-environment">Working hypothesis and environment</a>
+		</li>
+			<ul>
+				<li><a href="#System's features">System's features</a></li>
+				<li><a href="#System's limitations">System's limitations</a></li>
+				<li><a href="#Possible technical Improvements">Possible technical Improvements</a></li>
+			</ul>
+		<li>
+			<a href="#roadmap">Roadmap</a>
+		</li>
+		<li>
+			<a href="#contributing">Contributing</a>
+		</li>
+		<li>
+			<a href="#license">License</a>
+		</li>
+		<li>
+			<a href="#contact">Contact</a>
+		</li>
+		<li>
+			<a href="#acknowledgments">Acknowledgments</a>
+		</li>
+	</ol>
+</details>
+<!-- ABOUT THE PROJECT -->
+<div class="section" id="about-the-project">
+<h1>About The Project<a class="headerlink" href="#about-the-project" title="Permalink to this heading"></a></h1>
+<p>This project takes inspiration from the earlier ones (<a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment1">ExperimentalRoboticsAssignment1</a> and <a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment2">ExperimentalRoboticsAssignment2</a>, respectively) but unlike them, the environment in which detectiBot moves is much more complex. Indeed, it presents several rooms, and 30 ArUco markers (5 markers for each room)</p>
+<p>This time, each marker corresponds to a hint, which are always given with the following structure:</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>int32 ID
+string key
+string value
+</pre></div>
+</div>
+<p>Also, markers may me in three different positions: placed on the walls (height 1 m ca.), and on the
+floor (placed vertically or horizonally).</p>
+<p>The idea is the same of the previous two assignment: the robot should keep receiving hints until it has a complete and consistent hypothesis. However, as in the previous assignments, only one ID source is the trustable one.</p>
+<p>As soon as the robot gets a complete hypothesis, it should go in the center of the arena (<strong>x=0.0</strong>, <strong>y=-1.0</strong>, which should be also the starting position of the robot) and «tells» its solution.</p>
+<p>If the solution is the correct one, the game ends.</p>
+<blockquote>
+<div><p><strong>REMARK</strong> x and y coordinates belonging to each room’s point where known a priori as shown in the table below</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>| room  | x,y coordinates  | 
+|--|--|
+| Room1 | ( -4 , -3 ) | 
+| Room2 | ( -4 , +2 ) | 
+| Room3 | ( -4 , +7 ) | 
+| Room4 | ( 5 , -7 )  | 
+| Room5 | ( 5 , -3 )  | 
+| Room6 | ( 5 , +1 )  | 
+</pre></div>
+</div>
+<p>Having differen values for z, it is needed that detectibot reaches both quotes with its cluedo_link</p>
+<p>Concerining the simulation environment, there are small walls around the robot aimed at impeding the movements of its mobile base</p>
+<p>Hence the robot moves from one «hint» coordinate to another one, while receiving hints. This holds until it has a complete
+and consistent hypothesis</p>
+<!-- Note about  consistent huèothesis -->
+<p>Please consider that <strong>consistent hypothesis</strong> have been defined as COMPLETED but NOT INCONSISTENT</p>
+<blockquote>
+<div><p><em>REMARK</em> A consistent hypothesis is  defined as <em>completed</em> when there occurs one role for each class (i.e., one occourence of what, one occourence for who, one occourence for where ).
+A straightforward example of such hypothesis is <span class="xref myst">ID2</span>, whose definition is here below reported</p>
+</div></blockquote>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>ID2_1: [&#39;where&#39;, &#39;Study&#39;]
+ID2_2: [&#39;who&#39;, &#39;Col.Mustard&#39;]
+ID2_3: [&#39;what&#39;, &#39;Rope&#39;]
+</pre></div>
+</div>
+<blockquote>
+<div><p><em>REMARK</em> An hypothesis, is defined as <em>inconsistent</em> when there occurs more than one role for each class (i.e. 2 or more occourences of who, where, what)</p>
+</div></blockquote>
+<p>A clear example of such hypothesis is ID4  whose definition is here below reported</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span>ID4_1: [&#39;where&#39;, &#39;Library&#39;]
+ID4_2: [&#39;who&#39;, &#39;Mrs.White&#39;]
+ID4_3: [&#39;what&#39;, &#39;LeadPipe&#39;]
+ID4_4: [&#39;where&#39;, &#39;Diningroom&#39;]
+</pre></div>
+</div>
+<div class="section" id="assignments-prerequisites">
+<h2>Assignment’s prerequisites<a class="headerlink" href="#assignments-prerequisites" title="Permalink to this heading"></a></h2>
+<p>In this assignment:</p>
+<ul class="simple">
+<li><p>Here using ROSPlan is <strong>not mandatory</strong></p></li>
+<li><p>the robot of the model has no limitations, meaning that it can be modelled in whatever fashion</p></li>
+<li><p>the usage of the ArUco libraries is mandatory for the detection of the markers.</p></li>
+<li><p>using functionalities such as mapping, path planning and following may greatly help in performing
+the assignment</p></li>
+<li><p>use, as starting point the <a class="reference external" href="https://github.com/CarmineD8/exp_assignment3">following package</a>, provided by our Professors!</p></li>
+</ul>
+<p>What does the <a class="reference external" href="https://github.com/CarmineD8/exp_assignment3">starting package</a> contain:</p>
+<ul class="simple">
+<li><p>a node, which implements the oracle. Concerning the implementation of the Oracle consider that:
+- there are in total 6 IDs [0…5];
+- ome of these IDs (randomly chosen) may generate inconsistent hypotheses (e.g. multiple persons,
+rooms, objects)
+-  the «trustable» ID is also randomly chosen (among the IDs which do not generate inconsisten
+-  the oracle node implements two services: the first one (/oracle_hint) recevies an Int32 as request (the id of
+the marker) and returns the hint as a erl2/ErlOracle message;
+- The oracle node implements also a service (/oracle_solution) which returns the trustable ID (erl2/Oracle.h,
+with an empty message for the request, and a int32 for the reply).</p></li>
+<li><p>similarly to the second assignment, some markers correspond to malformed hints (e.g, all fields are
+empty, or just one field is empty, …)</p></li>
+</ul>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="built-with">
+<h2>Built With 🏗️<a class="headerlink" href="#built-with" title="Permalink to this heading"></a></h2>
+<!-- PLEASE INSERT HERE -->
+<ul class="simple">
+<li><p><a class="reference external" href="http://wiki.ros.org">ROS</a></p></li>
+<li><p><a class="reference external" href="http://wiki.ros.org/smach">smach</a></p></li>
+<li><p><a class="reference external" href="https://www.github.com/opencv/opencv/wiki">OpenCV</a></p></li>
+<li><p><a class="reference external" href="https://moveit.ros.org/">MoveIt Frameowrk</a></p></li>
+<li><p><a class="reference external" href="http://wiki.ros.org/move_base">move_base</a></p></li>
+</ul>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- GETTING STARTED -->
+</div>
+</div>
+<div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
+<p>Under the following sections, the software architecture is briefly introduced, along with the prerequisites and installation procedures. Then, a quick video demonstration showing the overall functioning is provided and system’s limitations are discussed</p>
+<div class="section" id="installation-procedure">
+<h2>Installation procedure<a class="headerlink" href="#installation-procedure" title="Permalink to this heading"></a></h2>
+<blockquote>
+<div><dl class="myst field-list simple">
+<dt class="field-odd">warning</dt>
+<dd class="field-odd"><p>To avoid further issues, please use this docker image provided by our professors</p>
+</dd>
+</dl>
+</div></blockquote>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docker run -it -p <span class="m">6080</span>:80 -p <span class="m">5900</span>:5900 --name MyDockerContainer carms84/exproblab
+</pre></div>
+</div>
+<p>Also remember to update and upgrade the container</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt get update
+sudo apt get upgrade
+</pre></div>
+</div>
+<p>Then run <code class="docutils literal notranslate"><span class="pre">catkin_make</span></code> on your workspace; in my case:</p>
+<ul>
+<li><p>Navigate to your ROS workspace</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/ros_ws/
+</pre></div>
+</div>
+</li>
+<li><p>Run catkin</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>catkin_make
+</pre></div>
+</div>
+</li>
+</ul>
+<p>You can now download the repository inside the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/ros_ws/src
+git clone https://github.com/HolyStone95/ExperimentalRoboticsAssignment3
+</pre></div>
+</div>
+<p>Also download <code class="docutils literal notranslate"><span class="pre">MoveIt</span> <span class="pre">1.1.5</span></code> (If you haven’t already done so)</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/ros-planning/moveit.git
+<span class="nb">cd</span> moveit
+git checkout 2b881e5e3c4fd900d4d4310f4b12f9c4a63eb5dd
+<span class="nb">cd</span> ..
+git clone https://github.com/ros-planning/moveit_resources.git
+<span class="nb">cd</span> moveit_resources
+git checkout f6a7d161e224b9909afaaf621822daddf61b6f52
+<span class="nb">cd</span> ..
+git clone https://github.com/ros-planning/srdfdom.git
+<span class="nb">cd</span> srdfdom
+git checkout b1d67a14e45133928f9793e9ee143998219760fd
+<span class="nb">cd</span> ..
+apt-get install -y ros-noetic-rosparam-shortcuts
+<span class="nb">cd</span> ..
+catkin_make
+catkin_make
+catkin_make
+</pre></div>
+</div>
+<p>Then navigate through the directory, in order to find the marker models</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /ros_ws/src/ExperimentalRoboticsAssignment3/erl3/models 
+</pre></div>
+</div>
+<p>copy all files inside the <code class="docutils literal notranslate"><span class="pre">erl3</span></code> models folder and navigate to the <code class="docutils literal notranslate"><span class="pre">root/.gazebo</span></code> directory</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /root/.gazebo/models
+</pre></div>
+</div>
+<p>paste the previously copied files, containing all the marker’s models, as showm in the animated gif, here below</p>
+<p><img alt="optimized_install_models" src="https://user-images.githubusercontent.com/61761835/188335313-a364d084-6098-49a8-8f91-d8eda227416b.gif" /></p>
+</div>
+</div>
+<div class="section" id="workspace-building-e-launch">
+<h1>Workspace building e launch<a class="headerlink" href="#workspace-building-e-launch" title="Permalink to this heading"></a></h1>
+<p>Navigate to you workspace</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/ros_ws/
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>clone the repository</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>https://github.com/HolyStone95/ExperimentalRoboticsAssignment3
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>source your workspace by typing</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> devel/setup.bash
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div class="section" id="running-procedure">
+<h2>Running procedure<a class="headerlink" href="#running-procedure" title="Permalink to this heading"></a></h2>
+<div class="section" id="running-the-entire-project">
+<h3>Running the entire project<a class="headerlink" href="#running-the-entire-project" title="Permalink to this heading"></a></h3>
+<!-- including all the steps to display the robot's behavior -->
+<p>To test the <strong>project</strong>, first of all:</p>
+<ul class="simple">
+<li><p>Open a shell and run:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>roslaunch erl_assignment_3_robot detectibot_environment_2.launch <span class="m">2</span>&gt;/dev/null
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a second shell and run</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>roslaunch erl_assignment_3 launch_nodes.launch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a third shell and type:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 state_machine.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-navigation-module">
+<h3>Running the Navigation module<a class="headerlink" href="#running-the-navigation-module" title="Permalink to this heading"></a></h3>
+<p>To test the navigation module, first of all:</p>
+<ul class="simple">
+<li><p>Open a shell and run:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>roslaunch erl_assignment_3_robot detectibot_environment_2.launch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a second shell and run the navigation node</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 navigation.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-vision-module">
+<h3>Running the Vision module<a class="headerlink" href="#running-the-vision-module" title="Permalink to this heading"></a></h3>
+<p>To test the vision module, first of all:</p>
+<ul class="simple">
+<li><p>Open a shell and run:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>roslaunch erl_assignment_3_robot detectibot_environment_2.launch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a second shell and run</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 img_echo
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a third shell and type:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 detectibot_magnifier
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-state-machine-module">
+<h3>Running the State machine  module<a class="headerlink" href="#running-the-state-machine-module" title="Permalink to this heading"></a></h3>
+<p>To test the state machine’s module , first of all:</p>
+<ul class="simple">
+<li><p>Open a shell and run:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>roslaunch erl_assignment_3_robot detectibot_environment.launch <span class="m">2</span>&gt;/dev/null
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a second shell and run</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 img_echo <span class="p">&amp;</span>
+rosrun erl_assignment_3 detectibot_magnifier <span class="p">&amp;</span>
+rosrun erl_assignment_3 navigation.py 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a third shell and type:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 cluedo_kb.py
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Open a fourth shell and run:</p></li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun erl_assignment_3 state_machine.py
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- USAGE EXAMPLES -->
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h1>
+<p>The most relevant aspects of the project and a brief video tutorial on how to launch the simulation can be found here below</p>
+<p>https://user-images.githubusercontent.com/61761835/188322232-e940bd45-e460-4505-8004-16a02879690c.mp4</p>
+<!-- A commented small video, a GIF or screenshots showing the relevant parts of the running code. -->
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="ros-node-description-an-overview">
+<h1>ROS node description: An overview<a class="headerlink" href="#ros-node-description-an-overview" title="Permalink to this heading"></a></h1>
+<p>Here there is the UML components diagram of the project</p>
+<img alt="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/component_diagram.jpg" src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/component_diagram.jpg" />
+<p>The aforementioned architechture can be seen as a <strong>Deliberative</strong> one, being its pipeline structured as “sense-plan-act”</p>
+<ul class="simple">
+<li><p>Concerning the “sense” module, there are three types of sense in this architechture
+1. <strong>Vision</strong> -       it is implemented by means of Aruco and OpenCV frameworks
+2. <strong>Localisation</strong> - It is implemented by means of the Odom topic, in Gazebo
+3. <strong>Mapping</strong> - made possible by laser sensors and GMAPPING algorithm</p></li>
+<li><p>Concerning the “plan” module, it is implemented through a <a class="reference external" href="http://wiki.ros.org/smach">smach</a> state machine</p></li>
+<li><p>Finally, the move_base pkg is responsible for the detectibot’s movement around the environment</p></li>
+</ul>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/miscellaneous/deliberative_sketch_arch.png" width= 500 height=100>
+</p>
+<p>As shown in the above component diagram, this software architechture relies on the synergy of varius modules:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/cluedo_kb.py">cluedo_kb.py</a>              <!-- PLEASE INSERT HERE --></p></li>
+<li><p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/navigation.py">navigation.py</a>             <!-- PLEASE INSERT HERE --></p></li>
+<li><p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/state_machine.py">state_machine.py</a>          <!-- PLEASE INSERT HERE --></p></li>
+<li><p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl3/src/simulation.cpp">final_oracle.cpp</a>          <!-- PLEASE INSERT HERE --></p></li>
+<li><p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/src/img_echo.cpp">img_echo.cpp</a>              <!-- PLEASE INSERT HERE --></p></li>
+<li><p><a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/src/detectibot_magnifier.cpp">detectibot_magnifier.cpp</a>  <!-- PLEASE INSERT HERE --></p></li>
+</ul>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div class="section" id="the-state-machine-py-node-knot">
+<h2>the state_machine.py node :knot:<a class="headerlink" href="#the-state-machine-py-node-knot" title="Permalink to this heading"></a></h2>
+<p>Let’s start with the <code class="docutils literal notranslate"><span class="pre">state_machine.py</span></code> node</p>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_state_machine_py.jpg" width= 300 height=300>
+</p>
+<p>It implements a state machine that controls the operations of the robot; it is the core node of the architecture that interacts with and directs all remaining parts</p>
+<p>In particular the machine organises the investigation into four states.</p>
+<ul class="simple">
+<li><p><strong>move</strong> → moves the robot between rooms inside the simulated indoor environment</p></li>
+<li><p><strong>collect</strong> → the robot rotates on itself to read the largest number of hints within the room</p></li>
+<li><p><strong>check</strong> → takes hints from the sensing system via a service, and uses the ontology to work out whether there are possible solutions or not. If there occurs no possible solutions, the outcome is <code class="docutils literal notranslate"><span class="pre">mistery_not_solvable</span></code>, and the robot transitions back to the “move” state. Otherwise, if there actually occurs possible solutions, the state machine makes a transition to the “show” state, responsible for querying the oracle about the solution’s truthfulness</p></li>
+<li><p><strong>show</strong> → questions the oracle about the solution</p></li>
+</ul>
+<p>Here below we can find a hand-made state diagram, representing how the system works</p>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/state_diagrams/state_diagram.jpg" width= 500 height=500>
+</p>
+<p>Moreover, an <strong>introspection Server</strong> has been implemented in order to visualize the possible transitions between states, as well as the currently active state and the values of user data that is passed around
+For visualising it, just type:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rosrun smach_viewer smach_viewer.py
+</pre></div>
+</div>
+<blockquote>
+<div><p><em>REMARK:</em> Please, remember to import the correct libraries (i.e <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">smach,</span> <span class="pre">smach_ros</span></code>) otherwise some errors may occur!</p>
+</div></blockquote>
+<p><img alt="state_machine_functioning" src="https://user-images.githubusercontent.com/61761835/188338883-71fa5cc8-ad81-4621-87c5-35a7ca21c44a.gif" /></p>
+<p>Node interfaces:</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span>Node [/state_machine]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /state_machine/get_loggers
+ * /state_machine/set_logger_level
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="the-navigation-py-node-knot">
+<h2>the navigation.py node :knot:<a class="headerlink" href="#the-navigation-py-node-knot" title="Permalink to this heading"></a></h2>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_navigation_py.jpg" width= 500 height=500>
+</p>
+<p>This node implements two different services aimed at letting the robot reach ifferent rooms in order to fulfill its investigation-related tasks.
+The <code class="docutils literal notranslate"><span class="pre">/go_to_point</span></code> service calls MoveBase and waits until the robot hasn’t reached the given target whereas the <code class="docutils literal notranslate"><span class="pre">/turn_robot</span></code> service listens for a request containing the angular velocity around x to keep, and the time during which the robot has to turn at “that” specific angular velocity. Moreover:</p>
+<ul class="simple">
+<li><p>Localisation takes place through the subscription to the <strong>odom</strong> (nav_msgs/Odom) topic</p></li>
+<li><p>The node uses <strong>move_base</strong> (from move_base pkg) to perform the navigation. The main function of this package is to move a robot from its current position to a goal position with the help of other navigation nodes. The move_base node inside this package links the global-planner and the local-planner for the path planning, connecting to the rotate-recovery package if the robot is stuck in some obstacle and connecting global costmap and local costmap for getting the map. The move_base node is basically an implementation of SimpleActionServer, which takes a goal pose with message type (geometry_msgs/PoseStamped). We can send a goal position to this node using a SimpleActionClient node.</p></li>
+<li><p>In addition the navigation service provides a <strong>service</strong> to rotate the robot (erl_assignment_3_msgs/TurnRobot) by a certain angle speed for a certain time; this functionality is aimed at the collection of clues!</p></li>
+</ul>
+<p>Node Interfaces:</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span>Node [/navigation]
+Publications: 
+ * /cmd_vel [geometry_msgs/Twist]
+ * /move_base/cancel [actionlib_msgs/GoalID]
+ * /move_base/goal [move_base_msgs/MoveBaseActionGoal]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /odom [nav_msgs/Odometry]
+
+Services: 
+ * /go_to_point
+ * /navigation/get_loggers
+ * /navigation/set_logger_level
+ * /turn_robot
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="the-cluedo-kb-py-node-knot">
+<h2>the cluedo_kb.py node :knot:<a class="headerlink" href="#the-cluedo-kb-py-node-knot" title="Permalink to this heading"></a></h2>
+<p>Concerning the <code class="docutils literal notranslate"><span class="pre">cluedo_kb.py</span></code> node:</p>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_cluedo_kb_py.jpg" width= 500 height=500>
+</p>
+<p>cluedo_KB is a node that serves as a specialised ontology for the problem in hand; it supplies a processing/reasoning system that provides the functionality of:</p>
+<ul class="simple">
+<li><p>Registering clues</p></li>
+<li><p>Building and processing hypotheses based on the added information</p></li>
+<li><p>Finding possible solutions to the case</p></li>
+<li><p>Rejecting hypotheses (whether needed)</p></li>
+</ul>
+<p>More specifically, When the robot starts roaming around looking for Aruco markers, (where the hints’ IDs are stored), it  makes a service request through <code class="docutils literal notranslate"><span class="pre">/add_hint</span></code> for soliciting the oracle to announce the found hint. This latter, consists in a request of type <code class="docutils literal notranslate"><span class="pre">erl3/Marker</span></code> here below reported</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span># erl3/Marker service implementation
+
+int32 markerId
+---
+# erl3/ErlOracle oracle_hint
+ErlOracle oracle_hint
+</pre></div>
+</div>
+<p>Since could happen that sometimes the Oracle sends a wrong hint (i.e. it may occurs that some fields are empty strings and/or some fields has value -1), a function responsible for checking its quality, has been implemented.</p>
+<blockquote>
+<div><p><em>Remark</em> In the previous section we mentioned the difference between consistent and inconsistent hypothesis; It is worthmentioning that this nodes also implements a function  to cope with the removal of inconsistent hypothesis from the list of possible hints</p>
+</div></blockquote>
+<blockquote>
+<div><p><em><strong>REMARK</strong></em> the KB listens to the oracle’s topic and as soon as the oracle transmits the clue, the KB adds the message to the ontology without the need for an explicit request</p>
+</div></blockquote>
+<p>Node interfaces:</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span>Node [/cluedo_kb]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /add_hint
+ * /cluedo_kb/get_loggers
+ * /cluedo_kb/set_logger_level
+ * /get_id
+ * /mark_wrong_id
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="the-simulation-cpp-node-final-oracle-knot">
+<h2>the simulation.cpp node (final_oracle) :knot:<a class="headerlink" href="#the-simulation-cpp-node-final-oracle-knot" title="Permalink to this heading"></a></h2>
+<p>Concerning the <code class="docutils literal notranslate"><span class="pre">simulation.cpp</span></code> node:</p>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl3_final_oracle_cpp" width= 500 height=500>
+</p>
+<p>The architecture is based on the simulation.cpp node which is the same node we were provided by our Professors
+This latter supplies two services:</p>
+<ul class="simple">
+<li><p>Concerning the first one (/oracle_hint [erl3/Marker]), once it has been provided with a certain ID, it returns the clue corresponding to that ID (Identifier of an index in an array of messages yield by the oracle)</p></li>
+<li><p>Concerning the second one (/oracle_solution [erl3/Oracle]), it is needed to check the correctness of a proposed hypothesis at the end of the case</p></li>
+</ul>
+<p>Node interfaces:</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span>Node [/final_oracle]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+
+Services: 
+ * /final_oracle/get_loggers
+ * /final_oracle/set_logger_level
+ * /oracle_hint
+ * /oracle_solution
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="the-img-echo-cpp-node-knot">
+<h2>the img_echo.cpp node :knot:<a class="headerlink" href="#the-img-echo-cpp-node-knot" title="Permalink to this heading"></a></h2>
+<p>Concerning the <code class="docutils literal notranslate"><span class="pre">img_echo.cpp</span></code> node :</p>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_img_echo_cpp.jpg" width= 500 height=500>
+</p>
+<p>Briefly, this node reads the input image from the robot’s camera. Secondly, it  print it on a floating window, namely DetectiCAm, by means of a <code class="docutils literal notranslate"><span class="pre">cv_ptr</span></code>. (the <code class="docutils literal notranslate"><span class="pre">cv_bridge::CvImagePtr</span> <span class="pre">cv_ptr</span></code> returns a ROS image into an appropriate format compatible with OpenCV). Thirdly it publish the video stream!</p>
+<p><img alt="detecticam_optimised" src="https://user-images.githubusercontent.com/61761835/188857662-adec563d-f4ec-4517-bd43-c74b1b9261d7.gif" /></p>
+<blockquote>
+<div><p>Remark: Since we have to deal with the image, multiple copies of it will be needed; For this purpose the BGR8 image encoding  has been chosen, being it less susceptible against typos.
+Further Remark: ImageTransport’s  methods have been employed for creating image publishers and subscribers, being <code class="docutils literal notranslate"><span class="pre">image_transport</span></code> a package that provides transparetn support for transporting images in low-bandwidth compressed formats.
+<em>Further Further Remark</em>: Please remember to include <code class="docutils literal notranslate"><span class="pre">cv_bridge</span></code> in your <code class="docutils literal notranslate"><span class="pre">xml</span></code> package! Also do not forget to add the following headers to your cpp file</p>
+</div></blockquote>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cv_bridge/cv_bridge.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv2/imgproc/imgproc.hpp&gt; </span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;opencv2/highgui/highgui.hpp&gt;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p>Node interfaces:</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span>Node [/img_echo]
+Publications: 
+ * /img_echo [sensor_msgs/Image]
+ * /img_echo/compressed [sensor_msgs/CompressedImage]
+ * /img_echo/compressed/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /img_echo/compressed/parameter_updates [dynamic_reconfigure/Config]
+ * /img_echo/compressedDepth [sensor_msgs/CompressedImage]
+ * /img_echo/compressedDepth/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /img_echo/compressedDepth/parameter_updates [dynamic_reconfigure/Config]
+ * /img_echo/theora [theora_image_transport/Packet]
+ * /img_echo/theora/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /img_echo/theora/parameter_updates [dynamic_reconfigure/Config]
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /robot/camera1/image_raw [sensor_msgs/Image]
+
+Services: 
+ * /img_echo/compressed/set_parameters
+ * /img_echo/compressedDepth/set_parameters
+ * /img_echo/get_loggers
+ * /img_echo/set_logger_level
+ * /img_echo/theora/set_parameters
+ 
+ --------------------------------------------------------------------------------
+Node [/gazebo]
+Publications: 
+ * /clock [rosgraph_msgs/Clock]
+ * /gazebo/link_states [gazebo_msgs/LinkStates]
+ * /gazebo/model_states [gazebo_msgs/ModelStates]
+ * /gazebo/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /gazebo/parameter_updates [dynamic_reconfigure/Config]
+ * /odom [nav_msgs/Odometry]
+ * /robot/camera1/camera_info [sensor_msgs/CameraInfo]
+ * /robot/camera1/image_raw [sensor_msgs/Image]
+ * /robot/camera1/image_raw/compressed [sensor_msgs/CompressedImage]
+ * /robot/camera1/image_raw/compressed/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /robot/camera1/image_raw/compressed/parameter_updates [dynamic_reconfigure/Config]
+ * /robot/camera1/image_raw/compressedDepth [sensor_msgs/CompressedImage]
+ * /robot/camera1/image_raw/compressedDepth/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /robot/camera1/image_raw/compressedDepth/parameter_updates [dynamic_reconfigure/Config]
+ * /robot/camera1/image_raw/theora [theora_image_transport/Packet]
+ * /robot/camera1/image_raw/theora/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /robot/camera1/image_raw/theora/parameter_updates [dynamic_reconfigure/Config]
+ * /robot/camera1/parameter_descriptions [dynamic_reconfigure/ConfigDescription]
+ * /robot/camera1/parameter_updates [dynamic_reconfigure/Config]
+ * /rosout [rosgraph_msgs/Log]
+ * /scan [sensor_msgs/LaserScan]
+ * /tf [tf2_msgs/TFMessage]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /cmd_vel [geometry_msgs/Twist]
+ * /gazebo/set_link_state [unknown type]
+ * /gazebo/set_model_state [unknown type]
+
+Services: 
+ * /controller_manager/list_controller_types
+ * /controller_manager/list_controllers
+ * /controller_manager/load_controller
+ * /controller_manager/reload_controller_libraries
+ * /controller_manager/switch_controller
+ * /controller_manager/unload_controller
+ * /gazebo/apply_body_wrench
+ * /gazebo/apply_joint_effort
+ * /gazebo/clear_body_wrenches
+ * /gazebo/clear_joint_forces
+ * /gazebo/delete_light
+ * /gazebo/delete_model
+ * /gazebo/get_joint_properties
+ * /gazebo/get_light_properties
+ * /gazebo/get_link_properties
+ * /gazebo/get_link_state
+ * /gazebo/get_loggers
+ * /gazebo/get_model_properties
+ * /gazebo/get_model_state
+ * /gazebo/get_physics_properties
+ * /gazebo/get_world_properties
+ * /gazebo/pause_physics
+ * /gazebo/reset_simulation
+ * /gazebo/reset_world
+ * /gazebo/set_joint_properties
+ * /gazebo/set_light_properties
+ * /gazebo/set_link_properties
+ * /gazebo/set_link_state
+ * /gazebo/set_logger_level
+ * /gazebo/set_model_configuration
+ * /gazebo/set_model_state
+ * /gazebo/set_parameters
+ * /gazebo/set_physics_properties
+ * /gazebo/spawn_sdf_model
+ * /gazebo/spawn_urdf_model
+ * /gazebo/unpause_physics
+ * /robot/camera1/image_raw/compressed/set_parameters
+ * /robot/camera1/image_raw/compressedDepth/set_parameters
+ * /robot/camera1/image_raw/theora/set_parameters
+ * /robot/camera1/set_camera_info
+ * /robot/camera1/set_parameters
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="the-detectibot-magnifier-cpp-node-knot">
+<h2>The detectibot_magnifier.cpp node :knot:<a class="headerlink" href="#the-detectibot-magnifier-cpp-node-knot" title="Permalink to this heading"></a></h2>
+<p align="center">
+<img src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/component_diagrams/v1/erl_assignment_3_detectibot_magnifier.jpg" width= 500 height=500>
+</p>
+<p>This node is devoted to the detection of ARUCO’s markers made through a single camera mounted on the front side of the robot.
+It also implements a service that allows for retrieving the IDs identified through Aruco.</p>
+<p>For realising such a node, the <a class="reference external" href="https://github.com/ros-perception/vision_opencv">vision_openCV</a> packages, aimed at interfacing ROS with OpenCV have been emploied. OpenCV basically consists in a library of programming functions for real time computer vision. Hence this node employs a bridge between OpenCV and ROS. Due to the fact that ROS sends Images in <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Image</span></code> format, our goal is to obtain images in <code class="docutils literal notranslate"><span class="pre">cv_bridge</span></code> format.</p>
+<blockquote>
+<div><p><em>REMARK</em> Please note that By using <code class="docutils literal notranslate"><span class="pre">image_transport::Publisher</span> <span class="pre">image_pub_</span> </code>and subscribing to the topic <code class="docutils literal notranslate"><span class="pre">/robot/camera1/image_raw</span></code> we are able to decrease the bandwidth!</p>
+</div></blockquote>
+<p>Node interfaces:</p>
+<div class="highlight-Plain notranslate"><div class="highlight"><pre><span></span>Node [/detectibot_magnifier]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+
+Subscriptions: 
+ * /clock [rosgraph_msgs/Clock]
+ * /robot/camera1/image_raw [sensor_msgs/Image]
+
+Services: 
+ * /aruco_markers
+ * /detectibot_magnifier/get_loggers
+ * /detectibot_magnifier/set_logger_level
+</pre></div>
+</div>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="rqt-graph">
+<h2>rqt_graph<a class="headerlink" href="#rqt-graph" title="Permalink to this heading"></a></h2>
+<p>In the figure below, circles represent nodes and squares represent topic messages. The arrow instead, indicates the transmission of the message!</p>
+<img alt="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/rqt/rosgraph_nodes_topics_all.png" src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/rqt/rosgraph_nodes_topics_all.png" />
+</div>
+<div class="section" id="uml-temporal-diagram">
+<h2>UML temporal diagram<a class="headerlink" href="#uml-temporal-diagram" title="Permalink to this heading"></a></h2>
+<p>By means of this diagram it is possible to show how the system works. As the state_machine gets launched, the robot enters the MOVE state, responsible for the acrivation of the <code class="docutils literal notranslate"><span class="pre">/go_to_point</span></code> service. Hence, it reaches the center of the room and it starts to collect as many marker as possible.</p>
+<p>This has been made possible through the implementation of a <code class="docutils literal notranslate"><span class="pre">/turn_robot</span></code> service that, as the name explicitly suggests, makes detectibot turning around its own position. Only after, the system transitions to the CHECK state, where a request is made by the <code class="docutils literal notranslate"><span class="pre">/aruco_marker</span></code> service to retrieve the detected marker’s IDs (by means of a topic subscription). Whenever a new hint gets detected, the knowledge base represented by cluedo_kb node is issued (with a <code class="docutils literal notranslate"><span class="pre">/oracle_hint</span></code> service request).</p>
+<p>By means of a further request, made to the final_oracle node through the <code class="docutils literal notranslate"><span class="pre">/oracle_solution</span></code> service, the True ID gets compared and it is chosen whether to terminate the investigation (ending up in a MISTERY_SOLVED state) or pursuing it, transitioning back to the MOVE state</p>
+<img alt="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/temporal_diagrams/erl_temporal_diagram.jpg" src="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/media/temporal_diagrams/erl_temporal_diagram.jpg" />
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+</div>
+<div class="section" id="working-hypothesis-and-environment">
+<h1>Working hypothesis and environment<a class="headerlink" href="#working-hypothesis-and-environment" title="Permalink to this heading"></a></h1>
+<p>This architecture is designed for providing a reinterpretation of the Cluedo Game. Markers are set a-priori both on the ground and on wall-fixed boxes. The hypothesis IDs are contained within Aruco markers. The True ID instead, is  randomly chosen before starting the game.</p>
+<p>Detectibot (the robot involved in the investigation), moves in a obstacle-free environment charachterised by a perfectly flat floor (without irregularities), within a indoor environment, provided with rooms without furnitures. Path planning, has been implemented by menas of the MoveBase package It has been designed to mount a single camera, pointing toward the front side.</p>
+<p>It is also equipped with laser range finders which make possible, together with Odometry data, to employ a SLAM gmapping algorithm. This approach uses a particle filter in which each particle carries an individual map of the environment. To ensure its employability, the following requirements were met:</p>
+<ul class="simple">
+<li><p>laser outputs are published onto <code class="docutils literal notranslate"><span class="pre">/scan</span></code>  topic</p></li>
+<li><p>the robot model is endowed with two frames required for mapping algorithms, which are: <code class="docutils literal notranslate"><span class="pre">link_chassis</span></code> and <code class="docutils literal notranslate"><span class="pre">odom</span></code></p></li>
+</ul>
+<p>Concerning the Aruco detection, it has been implemented by the <a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/src/detectibot_magnifier.cpp">detectibotMagnifier</a>. This reads images on a specific topic (<code class="docutils literal notranslate"><span class="pre">topic_info</span></code>)</p>
+<p>All choices were made with the aim of making the system as modular and flexible as possible. Despite this, certain limitations make the system quite unrealistic but functional.</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div class="section" id="systems-features">
+<h2>System’s features<a class="headerlink" href="#systems-features" title="Permalink to this heading"></a></h2>
+<p>Most of them have been already discussed in the Software architecture’s section.</p>
+<p>The project implements the robot behaviour so that it can keep roaming around, looking for Aruco Markers inside the environmeent. This serves for solving the case.</p>
+<p>Indeed, while it navigates through the environment it tries to combine them in order to find a solution. This is where the reasoning &amp; AI module, represented by the <a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/blob/main/erl_assignment_3/scripts/cluedo_kb.py">cluedo_kb.py</a>, comes imto play</p>
+<p>Concerning the architecture, it is centralised and designed in such a way that individual components can be replaced as long as they meet the same required interface</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="systems-limitations">
+<h2>System’s limitations<a class="headerlink" href="#systems-limitations" title="Permalink to this heading"></a></h2>
+<p>Here below, some of the major system limitations are listed:</p>
+<ul class="simple">
+<li><p>If the robot had more than one camera, the detection system (detectibot_magnifirer) would have to be re-implemented to ensure a certain performance from the system</p></li>
+</ul>
+<p align="right">(<a href="#top">back to top</a>)</p>
+</div>
+<div class="section" id="possible-technical-improvements">
+<h2>Possible technical Improvements<a class="headerlink" href="#possible-technical-improvements" title="Permalink to this heading"></a></h2>
+<p>As for the system limitations, some of the most relevant potential techincal improvements:</p>
+<ul class="simple">
+<li><p>The current KB can be modified to implement the same functionalities on a different ontology system (i.e. Armor); the component can be extended for more accurate  hypotheses processing or for providing, for instance, a ontology backup feature</p></li>
+<li><p>The current navigation system is rather poor; it should be replaced with a more elaborate navigation system. In particular, the new navigation system should make it possible to achieve a certain orientation as well as a final position.</p></li>
+<li><p>The manipulation could be replaced with a more advanced node that performs a finer (more precise) control on moveit</p></li>
+<li><p>The current robot model is quite unstable. It should be adjusted so that it does not oscillate during its movments</p></li>
+<li><p>the robot needs a lot of manoeuvring space to move; There should be the need of seeking an appropriate navigation algorithm to reduce the necessary manoeuvring space</p></li>
+<li><p>The architecture could also be executed in a distributed manner by splitting the components over several devices. However, this possibility was not considered during the design of the system. It is therefore necessary to identify possible criticalities in the communication protocol (i.e. to better manage service calls that fail based on the quality of the connection) and deal with them appropriately</p></li>
+</ul>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- ROADMAP -->
+</div>
+</div>
+<div class="section" id="roadmap">
+<h1>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this heading"></a></h1>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Complete the introduction of the template</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Describe the software architechture</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Component diagram (<em>not mandatory</em>)</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Temporal diagram + comments</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> States diagrams, whether applicable + comments</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Create a list describing ROS messages and parameters</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Describe the installation steps and the running procedures
+- [x] Create a dedicated paragraph
+- [x] Include all the steps to display the robot’s behaviour</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Show in the “usage” section the running code</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Create a small video tutorial of the launch</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Create a small animated gif of the terminal while running code</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Describe the Working hypothesis and environment</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Dedicated section for System’s features</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Dedicated section for System’s limitations</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Dedicated section for Possible technical improvements</p></li>
+</ul>
+</li>
+</ul>
+<p>See the <a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment3/issues">open issues</a> for a full list of proposed features (and known issues).</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- CONTRIBUTING -->
+</div>
+<div class="section" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h1>
+<p>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag “enhancement”</p>
+<ol class="arabic simple">
+<li><p>Fork the Project</p></li>
+<li><p>Create your Feature Branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">feature/AmazingFeature</span></code>)</p></li>
+<li><p>Commit your Changes (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">'Add</span> <span class="pre">some</span> <span class="pre">AmazingFeature'</span></code>)</p></li>
+<li><p>Push to the Branch (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">feature/AmazingFeature</span></code>)</p></li>
+<li><p>Open a Pull Request</p></li>
+</ol>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- LICENSE -->
+</div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this heading"></a></h1>
+<p>Distributed under none License.</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- CONTACT -->
+</div>
+<div class="section" id="contact">
+<h1>Contact<a class="headerlink" href="#contact" title="Permalink to this heading"></a></h1>
+<p>Iacopo Pietrasanta - s4119821&#64;studenti.unige.it</p>
+<p>Project Link: <a class="reference external" href="https://github.com/HolyStone95/ExperimentalRoboticsAssignment2">https://github.com/HolyStone95/ExperimentalRoboticsAssignment2</a></p>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- ACKNOWLEDGMENTS -->
+</div>
+<div class="section" id="list-of-resources">
+<h1>List of resources<a class="headerlink" href="#list-of-resources" title="Permalink to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="http://wiki.ros.org/smach/Tutorials/Smach%20Viewer">Viewing state machine</a></p></li>
+<li><p><a class="reference external" href="http://wiki.ros.org/smach">Smach</a></p></li>
+<li><p><a class="reference external" href="https://github.com/EmaroLab/armor">Armor</a></p></li>
+<li><p><a class="reference external" href="https://protege.stanford.edu">Protègè</a></p></li>
+</ul>
+<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- general resources -->
+<!-- Nodes -->
+<!-- Launchers -->
+<!-- srvs -->
+<!-- diagrams  -->
+<!-- Temporal diagram -->
+<!-- rqt graphs -->
+<!-- temporal diagram -->
+<!-- MoveIt -->
+<!-- Previous project links -->
+<!-- OpemCV -- Aruco -->
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Iacopo Pietrasanta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

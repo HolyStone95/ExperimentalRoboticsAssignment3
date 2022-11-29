@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classimg__echo__class" kind="class" language="C++" prot="public">
+    <compoundname>img_echo_class</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimg__echo__class_1a176b56384b591c988ab3bf5639f08a65" prot="private" static="no" mutable="no">
+        <type>ros::NodeHandle</type>
+        <definition>ros::NodeHandle img_echo_class::nh</definition>
+        <argsstring></argsstring>
+        <name>nh</name>
+        <briefdescription>
+<para>class node handle </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="109" column="17" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimg__echo__class_1ad2c9abbe0cb1a9f8940990d2163d2614" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string img_echo_class::in_topic</definition>
+        <argsstring></argsstring>
+        <name>in_topic</name>
+        <initializer>= &quot;/robot/camera1/image_raw&quot;</initializer>
+        <briefdescription>
+<para>image input topic </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="112" column="19" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimg__echo__class_1abc6d22283406b6eadfad2b1e2ca9b061" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string img_echo_class::out_topic</definition>
+        <argsstring></argsstring>
+        <name>out_topic</name>
+        <initializer>= &quot;/img_echo&quot;</initializer>
+        <briefdescription>
+<para>image output topic </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="115" column="19" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimg__echo__class_1ae2243fc96201614f1fc861d7ac4706c5" prot="private" static="no" mutable="no">
+        <type>image_transport::ImageTransport</type>
+        <definition>image_transport::ImageTransport img_echo_class::it</definition>
+        <argsstring></argsstring>
+        <name>it</name>
+        <briefdescription>
+<para>the image transport handle </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="118" column="33" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimg__echo__class_1a2a674227eeafa6391b770e7534954683" prot="private" static="no" mutable="no">
+        <type>image_transport::Subscriber</type>
+        <definition>image_transport::Subscriber img_echo_class::image_sub</definition>
+        <argsstring></argsstring>
+        <name>image_sub</name>
+        <briefdescription>
+<para>image transport subscriber from Gazebo </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="121" column="29" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimg__echo__class_1ac43cbb98c04b7d516100f2472b5d5933" prot="private" static="no" mutable="no">
+        <type>image_transport::Publisher</type>
+        <definition>image_transport::Publisher img_echo_class::image_pub</definition>
+        <argsstring></argsstring>
+        <name>image_pub</name>
+        <briefdescription>
+<para>image transport publisher to the architecture </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="124" column="28" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimg__echo__class_1acad80956d38d7b99384d3a624629bed9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>img_echo_class::img_echo_class</definition>
+        <argsstring>()</argsstring>
+        <name>img_echo_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>img_echo class constructor </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="66" column="1" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="66" bodyend="74"/>
+        <references refid="classimg__echo__class_1a395477377683017361fdc80aaf3cc995" compoundref="img__echo_8cpp" startline="84" endline="104">image_callback</references>
+      </memberdef>
+      <memberdef kind="function" id="classimg__echo__class_1ae8682c1ae3d9a68fece0a38a80b3d296" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>img_echo_class::~img_echo_class</definition>
+        <argsstring>()</argsstring>
+        <name>~img_echo_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>img_echo node class destructor (just close the window) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="77" column="1" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classimg__echo__class_1a395477377683017361fdc80aaf3cc995" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void img_echo_class::image_callback</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;msg)</argsstring>
+        <name>image_callback</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>receive the image, print it on a window, then echo the image </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/src/img_echo.cpp" line="84" column="6" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="84" bodyend="104"/>
+        <references refid="namespacecv__bridge_1acbf2da402f4d3e505613e95b5a2aed35" compoundref="cv__bridge_8cpp" startline="425" endline="429">cv_bridge::toCvCopy</references>
+        <referencedby refid="classimg__echo__class_1acad80956d38d7b99384d3a624629bed9" compoundref="img__echo_8cpp" startline="66" endline="74">img_echo_class</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="erl_assignment_3/src/img_echo.cpp" line="62" column="1" bodyfile="erl_assignment_3/src/img_echo.cpp" bodystart="61" bodyend="125"/>
+    <listofallmembers>
+      <member refid="classimg__echo__class_1a395477377683017361fdc80aaf3cc995" prot="public" virt="non-virtual"><scope>img_echo_class</scope><name>image_callback</name></member>
+      <member refid="classimg__echo__class_1ac43cbb98c04b7d516100f2472b5d5933" prot="private" virt="non-virtual"><scope>img_echo_class</scope><name>image_pub</name></member>
+      <member refid="classimg__echo__class_1a2a674227eeafa6391b770e7534954683" prot="private" virt="non-virtual"><scope>img_echo_class</scope><name>image_sub</name></member>
+      <member refid="classimg__echo__class_1acad80956d38d7b99384d3a624629bed9" prot="public" virt="non-virtual"><scope>img_echo_class</scope><name>img_echo_class</name></member>
+      <member refid="classimg__echo__class_1ad2c9abbe0cb1a9f8940990d2163d2614" prot="private" virt="non-virtual"><scope>img_echo_class</scope><name>in_topic</name></member>
+      <member refid="classimg__echo__class_1ae2243fc96201614f1fc861d7ac4706c5" prot="private" virt="non-virtual"><scope>img_echo_class</scope><name>it</name></member>
+      <member refid="classimg__echo__class_1a176b56384b591c988ab3bf5639f08a65" prot="private" virt="non-virtual"><scope>img_echo_class</scope><name>nh</name></member>
+      <member refid="classimg__echo__class_1abc6d22283406b6eadfad2b1e2ca9b061" prot="private" virt="non-virtual"><scope>img_echo_class</scope><name>out_topic</name></member>
+      <member refid="classimg__echo__class_1ae8682c1ae3d9a68fece0a38a80b3d296" prot="public" virt="non-virtual"><scope>img_echo_class</scope><name>~img_echo_class</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

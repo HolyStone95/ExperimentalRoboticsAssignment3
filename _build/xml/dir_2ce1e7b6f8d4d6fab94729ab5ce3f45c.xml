@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_2ce1e7b6f8d4d6fab94729ab5ce3f45c" kind="dir">
+    <compoundname>vision_opencv/cv_bridge</compoundname>
+    <innerdir refid="dir_f1865cd747a00d6c6129fa1a86019929">vision_opencv/cv_bridge/doc</innerdir>
+    <innerdir refid="dir_7f73d67e22a3d69b351ee8dd6b950335">vision_opencv/cv_bridge/include</innerdir>
+    <innerdir refid="dir_6b4b7ffa5ed4d37255eabaf1c356cc45">vision_opencv/cv_bridge/python</innerdir>
+    <innerdir refid="dir_5195e5e948f2da0db02d96deada615c8">vision_opencv/cv_bridge/src</innerdir>
+    <innerdir refid="dir_75d7e0f1619e10dfa95ceeaddf88dfce">vision_opencv/cv_bridge/test</innerdir>
+    <innerfile refid="cv__bridge_2setup_8py">setup.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/cv_bridge/"/>
+  </compounddef>
+</doxygen>

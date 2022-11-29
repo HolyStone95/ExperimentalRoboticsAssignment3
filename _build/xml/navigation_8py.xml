@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="navigation_8py" kind="file" language="Python">
+    <compoundname>navigation.py</compoundname>
+    <innernamespace refid="namespacenavigation">navigation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacenavigation" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral">..<sp/>module::<sp/>navigation</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:platform:<sp/>Unix</highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:synopsis:<sp/>Python<sp/>module<sp/>aimed<sp/>at<sp/>implementong<sp/>the<sp/>Navigation<sp/>module</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">..<sp/>moduleauthor::<sp/>Iacopo Pietrasanta<sp/>iacopo.pietrasanta@gmail.com</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">This<sp/>node<sp/>implements<sp/>two<sp/>different<sp/>services<sp/>aimed<sp/>at<sp/>letting<sp/>the<sp/>robot<sp/>reach</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">different<sp/>rooms<sp/>in<sp/>order<sp/>to<sp/>fulfill<sp/>its<sp/>investigation-related<sp/>tasks.</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">The<sp/>go_to_point<sp/>service<sp/>calls<sp/>MoveBase<sp/>and<sp/>waits<sp/>until<sp/>the<sp/>robot<sp/>hasn&apos;t<sp/>reached</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">the<sp/>given<sp/>target<sp/>whereas<sp/>the<sp/>turn_robot<sp/>service<sp/>listens<sp/>for<sp/>a<sp/>request<sp/>containing<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">the<sp/>angular<sp/>velocity<sp/>around<sp/>x<sp/>to<sp/>keep,<sp/>and<sp/>the<sp/>time<sp/>during<sp/>which<sp/>the<sp/>robot<sp/>has<sp/>to</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">turn<sp/>at<sp/>that<sp/>angular<sp/>velocity.<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">Further<sp/>keypoints:</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">-<sp/>Localisation<sp/>takes<sp/>place<sp/>through<sp/>the<sp/>subscription<sp/>to<sp/>the<sp/>**odom**<sp/>(nav_msgs/Odom)<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"><sp/><sp/>topic</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral">-<sp/>The<sp/>node<sp/>uses<sp/>**move_base**<sp/>(from<sp/>move_base<sp/>pkg)<sp/>to<sp/>perform<sp/>the<sp/>navigation.</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral"><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral">Subscribes<sp/>to:</highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>/clock<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral">Publishes<sp/>to:</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/cmd_vel<sp/>[geometry_msgs/Twist]</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/move_base/cancel<sp/>[actionlib_msgs/GoalID]</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/move_base/goal<sp/>[move_base_msgs/MoveBaseActionGoal]</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/rosout<sp/>[rosgraph_msgs/Log]</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral">Service<sp/>:</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/go_to_point</highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/navigation/get_loggers</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/navigation/set_logger_level</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/turn_robot</highlight></codeline>
+<codeline lineno="31"><highlight class="stringliteral">&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>math</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>actionlib_msgs.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GoalID</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>nav_msgs.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Odometry</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>geometry_msgs.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>PoseWithCovariance,<sp/>Pose,<sp/>Point,<sp/>Quaternion,<sp/>Vector3,<sp/>Twist</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl_assignment_3_msgs.srv<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GoToPoint,<sp/>GoToPointRequest,<sp/>GoToPointResponse</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>erl_assignment_3_msgs.srv<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>TurnRobot,<sp/>TurnRobotRequest,<sp/>TurnRobotResponse</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>move_base_msgs.msg<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MoveBaseActionGoal</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="namespacenavigation_1aaf36cb767fec1d2f488df73580b9adbb" refkind="member"><highlight class="normal">odometry_topic<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/odom&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>name<sp/>of<sp/>the<sp/>odometry<sp/>source<sp/>topic</highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="namespacenavigation_1ac4ea594f64a618112a377f9a11f50819" refkind="member"><highlight class="normal">last_odometry<sp/>=<sp/><ref refid="namespacenavigation_1aeccb1ecea18846868e086fa9a8c93228" kindref="member">Odometry</ref>()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>last<sp/>received<sp/>odometry<sp/>(nav_msgs/Odometry)</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="namespacenavigation_1af900f5fbc83bf195cc91c2deeb52beff" refkind="member"><highlight class="normal">last_pos<sp/>=<sp/>Point()</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>the<sp/>last<sp/>position<sp/>returned<sp/>by<sp/>the<sp/>odometry</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="namespacenavigation_1a1ac2e867bca7316b3a374fa744a10b40" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacenavigation_1adb8495028727eb1e2adf36c3e9a8e422" kindref="member">read_odom</ref>(data):</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>read<sp/>and<sp/>save<sp/>the<sp/>data<sp/>from<sp/>the<sp/>Odometry<sp/>topic</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>(nav_msgs/Odometry):</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>current<sp/>odometry<sp/>message</highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>last_odometry</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>last_pos</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>last_odometry<sp/>=<sp/>data</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>last_pos<sp/>=<sp/>data.pose.pose.position</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>rospy.loginfo(&quot;pos(&quot;<sp/>+<sp/>str(data.pose.pose.position.x)<sp/>+<sp/>&quot;,<sp/>&quot;<sp/>+<sp/>str(data.pose.pose.position.y)<sp/>+<sp/>&quot;)&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="namespacenavigation_1af75fbb7a19ea032a78b21c56a40e3bca" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacenavigation_1af75fbb7a19ea032a78b21c56a40e3bca" kindref="member">dist_vector</ref>(P1,<sp/>P2):</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;returns<sp/>the<sp/>difference<sp/>vector<sp/>between<sp/>points.</highlight></codeline>
+<codeline lineno="77"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>v<sp/>=<sp/>Vector3()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>v.x<sp/>=<sp/>P1.x<sp/>-<sp/>P2.x</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>v.y<sp/>=<sp/>P1.y<sp/>-<sp/>P2.y</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>v.z<sp/>=<sp/>P1.z<sp/>-<sp/>P2.z</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>v</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="namespacenavigation_1a71f161d1ae098bd6340a019eec6739b0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacenavigation_1a71f161d1ae098bd6340a019eec6739b0" kindref="member">distance</ref>(P1,<sp/>P2):</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>eucledian<sp/>distance<sp/>between<sp/>P1<sp/>and<sp/>P2</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P1<sp/>(geometry_msgs/Point)<sp/>:<sp/>first<sp/>point</highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P2<sp/>(geometry_msgs/Point)<sp/>:<sp/>second<sp/>point</highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>v<sp/>=<sp/><ref refid="namespacenavigation_1af75fbb7a19ea032a78b21c56a40e3bca" kindref="member">dist_vector</ref>(P1,<sp/>P2)<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>math.sqrt(v.x**2<sp/>+<sp/>v.y**2<sp/>+<sp/>v.z**2)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="namespacenavigation_1a74e3c4c6ba2e5163f1e2c3bc4fb9afbc" refkind="member"><highlight class="normal">move_base_goal_topic<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/move_base/goal&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>goal<sp/>topic<sp/>name<sp/>for<sp/>commanding<sp/>the<sp/>navigation<sp/>stack</highlight></codeline>
+<codeline lineno="103"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="namespacenavigation_1a182f1ebb5aaa8b316a6c70aeb2dbb433" refkind="member"><highlight class="normal">pub_move_base<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>publisher<sp/>to<sp/>the<sp/>/move_base/goal<sp/>topic<sp/>(move_base/MoveBaseGoal)</highlight></codeline>
+<codeline lineno="107"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="namespacenavigation_1ab0e0fed79c0c499db082e37ce756e9b2" refkind="member"><highlight class="normal">pub_cancel_move_base<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>publisher<sp/>to<sp/>/move_base/cancel<sp/>(actionlib_msgs/GoalID)</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="namespacenavigation_1a8b7dacb95e13473c1e08a9fb424a8a96" refkind="member"><highlight class="normal">last_target<sp/>=<sp/>Point()</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>last<sp/>required<sp/>target<sp/>(geometry_msgs/Point)</highlight></codeline>
+<codeline lineno="115"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="namespacenavigation_1aa44e8b4dc0597fb4be7f7881613a0e49" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacenavigation_1aa44e8b4dc0597fb4be7f7881613a0e49" kindref="member">send_move_base</ref>(x,y):</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;send<sp/>a<sp/>goal<sp/>to<sp/>the<sp/>navigation<sp/>stack</highlight></codeline>
+<codeline lineno="119"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="121"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>(float)<sp/>:<sp/>x<sp/>coordinate</highlight></codeline>
+<codeline lineno="122"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>(float)<sp/>:<sp/>y<sp/>coordinate</highlight></codeline>
+<codeline lineno="123"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="124"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>pub_move_base</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>last_target</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>working</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>goal<sp/>=<sp/>MoveBaseActionGoal()</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.header.frame_id<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;map&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.header.frame_id<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;map&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.position.x<sp/>=<sp/>x</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.position.y<sp/>=<sp/>y</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.position.z<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.orientation.x<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.orientation.y<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.orientation.z<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>goal.goal.target_pose.pose.orientation.w<sp/>=<sp/>1.0</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_move_base.publish(goal)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.sleep(rospy.Duration(1))</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>last_target<sp/>=<sp/>goal.goal.target_pose.pose.position</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="namespacenavigation_1a32d189ba2e0de92c56020bc7aca98ac8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacenavigation_1a32d189ba2e0de92c56020bc7aca98ac8" kindref="member">go_to_point</ref>(req):</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>service<sp/>implementation<sp/>of<sp/>/go_to_point</highlight></codeline>
+<codeline lineno="150"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>service<sp/>calls<sp/>MoveBase<sp/>and<sp/>waits<sp/>until<sp/>the<sp/>robot<sp/>hasn&apos;t<sp/>reached</highlight></codeline>
+<codeline lineno="152"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>the<sp/>given<sp/>target.<sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Parameters:</highlight></codeline>
+<codeline lineno="155"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>req<sp/>(erl_assignment_3_msgs/GoToPointRequest):</highlight></codeline>
+<codeline lineno="156"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>target<sp/>point<sp/>to<sp/>go<sp/>at</highlight></codeline>
+<codeline lineno="157"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns</highlight></codeline>
+<codeline lineno="159"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>res<sp/>(erl_assignment_3_msgs/GoToPointResponse):</highlight></codeline>
+<codeline lineno="160"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>whether<sp/>the<sp/>request<sp/>succeeded<sp/>or<sp/>not.<sp/></highlight></codeline>
+<codeline lineno="161"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>last_target</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>last_pos</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>pub_cancel_move_base</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>make<sp/>the<sp/>request<sp/>to<sp/>the<sp/>nav<sp/>stack</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>read_id_from_movebase<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;sending<sp/>to<sp/>movebase...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacenavigation_1aa44e8b4dc0597fb4be7f7881613a0e49" kindref="member">send_move_base</ref>(<sp/>req.target.x,<sp/>req.target.y<sp/>)</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.sleep(rospy.Duration(1))</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>wait<sp/>for<sp/>the<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/>=<sp/>rospy.Rate(10)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;moving<sp/>to<sp/>({req.target.x},<sp/>{req.target.y})<sp/>...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/>rospy.is_shutdown():</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r.sleep()</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d<sp/>=<sp/><ref refid="namespacenavigation_1a71f161d1ae098bd6340a019eec6739b0" kindref="member">distance</ref>(<sp/>last_target,<sp/>last_pos<sp/>)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>d<sp/>&lt;=<sp/>0.5:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cancel<sp/>the<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;target<sp/>reached&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="185"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>else:</highlight></codeline>
+<codeline lineno="186"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.loginfo(f&quot;d={d}&quot;)</highlight></codeline>
+<codeline lineno="187"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;cancel<sp/>movebase<sp/>request&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_cancel_move_base.publish(GoalID())</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;done&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>GoToPointResponse(</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="namespacenavigation_1ace4608c55afc2efd91c604266d078ba9" refkind="member"><highlight class="normal">pub_cmd_vel<sp/>=<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>velocity<sp/>publisher<sp/>(used<sp/>by<sp/>the<sp/>turn_robot<sp/>service)</highlight></codeline>
+<codeline lineno="199"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201" refid="namespacenavigation_1a5b0513f973bd12fcdc6e7c8d40b248db" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacenavigation_1a5b0513f973bd12fcdc6e7c8d40b248db" kindref="member">turn_robot</ref>(req):</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;<sp/>implementation<sp/>of<sp/>the<sp/>service<sp/>/turn_robot</highlight></codeline>
+<codeline lineno="203"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="204"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>this<sp/>service<sp/>listens<sp/>for<sp/>a<sp/>request<sp/>containing<sp/>the<sp/>angular<sp/>velocity<sp/>around</highlight></codeline>
+<codeline lineno="205"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>x<sp/>to<sp/>keep,<sp/>and<sp/>the<sp/>time<sp/>during<sp/>which<sp/>the<sp/>robot<sp/>has<sp/>to<sp/>turn<sp/>at<sp/>that<sp/></highlight></codeline>
+<codeline lineno="206"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>angular<sp/>velocity.<sp/></highlight></codeline>
+<codeline lineno="207"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>pub_cmd_vel</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;sending<sp/>w={req.angularVel}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>tw<sp/>=<sp/>Twist()</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>tw.angular.z<sp/>=<sp/>req.angularVel</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(f</highlight><highlight class="stringliteral">&quot;waiting<sp/>dt={req.time}&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>dt<sp/>=<sp/>req.time<sp/>/<sp/>100.0</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>i<sp/>&lt;<sp/>100:</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pub_cmd_vel.publish(tw)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rospy.sleep(rospy.Duration(dt))</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i=i+1</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;stopping<sp/>robot&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>tw.angular.z<sp/>=<sp/>0.0</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_cmd_vel.publish(tw)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;done&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TurnRobotResponse(</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.init_node(</highlight><highlight class="stringliteral">&quot;navigation_node&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;pub<sp/>movebase&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_move_base<sp/>=<sp/>rospy.Publisher(move_base_goal_topic,<sp/>MoveBaseActionGoal,<sp/>queue_size=100)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;pub<sp/>movebase<sp/>cancellation&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_cancel_move_base<sp/>=<sp/>rospy.Publisher(</highlight><highlight class="stringliteral">&quot;/move_base/cancel&quot;</highlight><highlight class="normal">,<sp/>GoalID,<sp/>queue_size=1000)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;pub<sp/>cmd_vel&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>pub_cmd_vel<sp/>=<sp/>rospy.Publisher(</highlight><highlight class="stringliteral">&quot;/cmd_vel&quot;</highlight><highlight class="normal">,<sp/>Twist,<sp/>queue_size=1000)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.sleep(rospy.Duration(2))</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;sub<sp/>odometry&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="245" refid="namespacenavigation_1adb8495028727eb1e2adf36c3e9a8e422" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.Subscriber(odometry_topic,<sp/>Odometry,<sp/>read_odom,<sp/>queue_size=100)</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;srv<sp/>go<sp/>to<sp/>point&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.Service(</highlight><highlight class="stringliteral">&quot;go_to_point&quot;</highlight><highlight class="normal">,<sp/>GoToPoint,<sp/>go_to_point)</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;srv<sp/>turn<sp/>robot&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.Service(</highlight><highlight class="stringliteral">&quot;turn_robot&quot;</highlight><highlight class="normal">,<sp/>TurnRobot,<sp/>turn_robot)</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.loginfo(</highlight><highlight class="stringliteral">&quot;ros<sp/>spin&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>rospy.spin()</highlight></codeline>
+    </programlisting>
+    <location file="erl_assignment_3/scripts/navigation.py"/>
+  </compounddef>
+</doxygen>

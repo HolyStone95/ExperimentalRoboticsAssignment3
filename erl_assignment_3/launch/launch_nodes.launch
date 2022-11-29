@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node pkg="erl3" name="final_oracle" type="final_oracle" required="true" output="log" />
+<node pkg="erl_assignment_3" name="img_echo" type="img_echo" required="true" output="log" />
+<node pkg="erl_assignment_3" name="navigation" type="navigation.py" required="true" output="log" />
+<node pkg="erl_assignment_3" name="detectibot_magnifier" type="detectibot_magnifier" required="true" output="log" />
+<node pkg="erl_assignment_3" name="cluedo_kb" type="cluedo_kb.py" required="true" output="screen" />
+<!--<node pkg="erl_assignment_3" name="state_machine" type="state_machine.py" required="true" output="screen" />-->
+
+</launch>

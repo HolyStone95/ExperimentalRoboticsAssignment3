@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_51eb43b3720616926314a6d894165d01" kind="dir">
+    <compoundname>bridge_example</compoundname>
+    <innerdir refid="dir_7e0926457bab4397fd3defb6fd08e375">bridge_example/scripts</innerdir>
+    <innerdir refid="dir_3138c29cff513990550bb2d5e7a9541d">bridge_example/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="bridge_example/"/>
+  </compounddef>
+</doxygen>

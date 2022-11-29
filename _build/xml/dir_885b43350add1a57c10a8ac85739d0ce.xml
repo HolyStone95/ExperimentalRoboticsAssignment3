@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_885b43350add1a57c10a8ac85739d0ce" kind="dir">
+    <compoundname>vision_opencv/image_geometry/src/image_geometry</compoundname>
+    <innerfile refid="image__geometry_2src_2image__geometry_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="cameramodels_8py">cameramodels.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/image_geometry/src/image_geometry/"/>
+  </compounddef>
+</doxygen>

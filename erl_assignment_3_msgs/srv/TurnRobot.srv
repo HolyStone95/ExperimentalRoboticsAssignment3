@@ -1,0 +1,13 @@
+## service file 'TurnRobot.srv'
+
+# angular velocity request 
+float32 angularVel
+
+# time allocated for turning around 
+float32 time
+
+---
+
+# res to set the service as succeded or failed 
+bool success
+

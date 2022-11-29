@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md_documents_markdown-vs-rest" kind="page">
+    <compoundname>md_documents_markdown-vs-rest</compoundname>
+    <title>MarkDown Vs reStructured Text</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>see <ulink url="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html">this</ulink></para>
+<sect1 id="md_documents_markdown-vs-rest_1autotoc_md5">
+<title>ToC tree</title>
+<para>in reST:</para>
+<para><programlisting><codeline><highlight class="normal">..<sp/>toctree::</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:maxdepth:<sp/>1</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:caption:<sp/>ToC<sp/>title</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:titlesonly:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:glob:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:hidden:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>link<sp/>text<sp/>&lt;./path/link.format&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>...</highlight></codeline>
+</programlisting></para>
+<para>in MD-MyST:</para>
+<para><programlisting><codeline><highlight class="normal">\```{toctree}</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">maxdepth:<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">caption:<sp/>ToC<sp/>title</highlight></codeline>
+<codeline><highlight class="normal">titlesonly:</highlight></codeline>
+<codeline><highlight class="normal">glob:<sp/></highlight></codeline>
+<codeline><highlight class="normal">hidden:<sp/></highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">link<sp/>text<sp/>&lt;./path/link.format&gt;</highlight></codeline>
+</programlisting></para>
+<para><programlisting><codeline><highlight class="normal">##<sp/>reST<sp/>codeblocks</highlight></codeline>
+</programlisting></para>
+<para>.. code-block:: :caption: a code block caption</para>
+<para>import rospy </para>
+</sect1>
+<sect1 id="md_documents_markdown-vs-rest_1autotoc_md6">
+<title>...</title>
+<para>``` </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

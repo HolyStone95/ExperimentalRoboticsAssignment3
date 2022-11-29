@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code docs – Detectibot_magnifier.cpp &mdash; ExperimentalRoboticsAssignment3 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code docs – Img_echo.cpp" href="Img_echo.html" />
+    <link rel="prev" title="Code Documentation for ExperimentalRoboticsAssignment3" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ExperimentalRoboticsAssignment3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment3</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>Detectibot_magnifier.cpp</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-the-node">About the node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generalities">Generalities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-reference">Code Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Img_echo.html">Code docs – <em>Img_echo.cpp</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Navigation.html">Code docs – <em>Navigation.py</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Oracle.html">Code docs – <em>final_oracle.cpp</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="State_machine.html">Code docs – <em>State_machine.py</em></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment3</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ExperimentalRoboticsAssignment3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Code Documentation for ExperimentalRoboticsAssignment3</a> &raquo;</li>
+      <li>Code docs – <em>Detectibot_magnifier.cpp</em></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/code_documentation/Detectibot_magnifier.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="code-docs-detectibot-magnifier-cpp">
+<h1>Code docs – <em>Detectibot_magnifier.cpp</em><a class="headerlink" href="#code-docs-detectibot-magnifier-cpp" title="Permalink to this heading"></a></h1>
+<div class="section" id="about-the-node">
+<h2>About the node<a class="headerlink" href="#about-the-node" title="Permalink to this heading"></a></h2>
+<p>This node is devoted to the detection of ARUCO’s markers made through a single camera mounted on the front side of the robot.
+It also implements a service that allows for retrieving the IDs identified through Aruco.</p>
+</div>
+<div class="section" id="generalities">
+<h2>Generalities<a class="headerlink" href="#generalities" title="Permalink to this heading"></a></h2>
+<p>For realising such a node, the <code class="docutils literal notranslate"><span class="pre">vision_openCV</span></code> packages, aimed at interfacing ROS with OpenCV have been emploied.
+OpenCV basically consists in a library of programming functions for real time computer vision. Hence this node
+employs a bridge between OpenCV and ROS. Due to the fact that ROS sends Images in <code class="docutils literal notranslate"><span class="pre">sensor_msgs/Image</span></code> format, our
+goal is to obtain images in <code class="docutils literal notranslate"><span class="pre">cv_bridge</span></code> format.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that By using <code class="docutils literal notranslate"><span class="pre">image_transport::Publisher</span> <span class="pre">image_pub_</span></code> and subscribing to the topic <code class="docutils literal notranslate"><span class="pre">/robot/camera1/image_raw</span></code>
+we are able to significantly <strong>decrease the bandwidth</strong>!</p>
+</div>
+</div>
+<div class="section" id="code-reference">
+<h2>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this heading"></a></h2>
+<p>This node implements the Detection task with Aruco on a single camera. </p>
+<p><p>Subscribes to:</p>
+<p>/clock [rosgraph_msgs/Clock] /robot/camera1/image_raw [sensor_msgs/Image] Publishes to:</p>
+
+ /rosout [rosgraph_msgs/Log]<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Iacopo Pietrasanta </p>
+</dd>
+<dt><strong>Version</strong></dt><dd><p>1.0.0</p>
+</dd>
+</dl>
+</p>
+<p><p>Services:</p>
+<p>/aruco_markers /detectibot_magnifier/get_loggers /detectibot_magnifier/set_logger_level</p>
+</p>
+<p><p>Client Services:</p>
+<p>None</p>
+</p>
+<p><p>Action Services:</p>
+<p>None</p>
+</p>
+<p><p>Description:</p>
+<p>This node handles the Aruco’s marker’s detection task. After having received the image input, the Aruco marker is detected and only after the detections are sent through the output topic</p>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44mainiPPc">
+<span id="_CPPv34mainiPPc"></span><span id="_CPPv24mainiPPc"></span><span id="main__i.cPP"></span><span class="target" id="detectibot__magnifier_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44mainiPPc" title="Permalink to this definition"></a><br /></dt>
+<dd><p>main function </p>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv426detectibot_magnifier_class">
+<span id="_CPPv326detectibot_magnifier_class"></span><span id="_CPPv226detectibot_magnifier_class"></span><span id="detectibot_magnifier_class"></span><span class="target" id="classdetectibot__magnifier__class"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detectibot_magnifier_class</span></span></span><a class="headerlink" href="#_CPPv426detectibot_magnifier_class" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class26detectibot_magnifier_classEv">
+<span id="_CPPv3N26detectibot_magnifier_class26detectibot_magnifier_classEv"></span><span id="_CPPv2N26detectibot_magnifier_class26detectibot_magnifier_classEv"></span><span id="detectibot_magnifier_class::detectibot_magnifier_class"></span><span class="target" id="classdetectibot__magnifier__class_1aa57059b46382b0a20397692b0e9dbe23"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">detectibot_magnifier_class</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class26detectibot_magnifier_classEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p><a class="reference internal" href="#classdetectibot__magnifier__class"><span class="std std-ref">detectibot_magnifier_class</span></a> class constructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class14image_callbackERKN11sensor_msgs13ImageConstPtrE">
+<span id="_CPPv3N26detectibot_magnifier_class14image_callbackERKN11sensor_msgs13ImageConstPtrE"></span><span id="_CPPv2N26detectibot_magnifier_class14image_callbackERKN11sensor_msgs13ImageConstPtrE"></span><span id="detectibot_magnifier_class::image_callback__sensor_msgs::ImageConstPtrCR"></span><span class="target" id="classdetectibot__magnifier__class_1a189ea4667073e98df2f39a3576a2b70b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">image_callback</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">sensor_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ImageConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class14image_callbackERKN11sensor_msgs13ImageConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>receive the image, get the ARUCO markers, then send the detections through the out topic </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class7get_idsERN21erl_assignment_3_msgs11GetArucoIds7RequestERN21erl_assignment_3_msgs11GetArucoIds8ResponseE">
+<span id="_CPPv3N26detectibot_magnifier_class7get_idsERN21erl_assignment_3_msgs11GetArucoIds7RequestERN21erl_assignment_3_msgs11GetArucoIds8ResponseE"></span><span id="_CPPv2N26detectibot_magnifier_class7get_idsERN21erl_assignment_3_msgs11GetArucoIds7RequestERN21erl_assignment_3_msgs11GetArucoIds8ResponseE"></span><span id="detectibot_magnifier_class::get_ids__erl_assignment_3_msgs::GetArucoIds::RequestR.erl_assignment_3_msgs::GetArucoIds::ResponseR"></span><span class="target" id="classdetectibot__magnifier__class_1a11a7b384ef801370a0d3b9ad4db47c5c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ids</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">erl_assignment_3_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GetArucoIds</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Request</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">req</span></span>, <span class="n"><span class="pre">erl_assignment_3_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">GetArucoIds</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Response</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">res</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class7get_idsERN21erl_assignment_3_msgs11GetArucoIds7RequestERN21erl_assignment_3_msgs11GetArucoIds8ResponseE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>get the IDs identified by aruco </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-functions">Private Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class10set2stringERNSt13unordered_setIiEE">
+<span id="_CPPv3N26detectibot_magnifier_class10set2stringERNSt13unordered_setIiEE"></span><span id="_CPPv2N26detectibot_magnifier_class10set2stringERNSt13unordered_setIiEE"></span><span id="detectibot_magnifier_class::set2string__std::unordered_set:i:R"></span><span class="target" id="classdetectibot__magnifier__class_1a432563db05648b372c2c4eb8b7dcfa8b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set2string</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">st</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class10set2stringERNSt13unordered_setIiEE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>convert a set into a string </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class10set2vectorERNSt13unordered_setIiEE">
+<span id="_CPPv3N26detectibot_magnifier_class10set2vectorERNSt13unordered_setIiEE"></span><span id="_CPPv2N26detectibot_magnifier_class10set2vectorERNSt13unordered_setIiEE"></span><span id="detectibot_magnifier_class::set2vector__std::unordered_set:i:R"></span><span class="target" id="classdetectibot__magnifier__class_1a3a0edabb93cb401eeeeb892f3e845cc1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set2vector</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">st</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class10set2vectorERNSt13unordered_setIiEE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>convert a set into a dynamic array </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class3nh_E">
+<span id="_CPPv3N26detectibot_magnifier_class3nh_E"></span><span id="_CPPv2N26detectibot_magnifier_class3nh_E"></span><span id="detectibot_magnifier_class::nh___ros::NodeHandle"></span><span class="target" id="classdetectibot__magnifier__class_1a05b63b71f91bda021d337f9f49e70a61"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">NodeHandle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nh_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class3nh_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>class node handle </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class10mDetector_E">
+<span id="_CPPv3N26detectibot_magnifier_class10mDetector_E"></span><span id="_CPPv2N26detectibot_magnifier_class10mDetector_E"></span><span id="detectibot_magnifier_class::mDetector___aruco::MarkerDetector"></span><span class="target" id="classdetectibot__magnifier__class_1a9a1cd9cf012710653da20a9772018436"></span><span class="n"><span class="pre">aruco</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">MarkerDetector</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">mDetector_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class10mDetector_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>arUco detector </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class8markers_E">
+<span id="_CPPv3N26detectibot_magnifier_class8markers_E"></span><span id="_CPPv2N26detectibot_magnifier_class8markers_E"></span><span id="detectibot_magnifier_class::markers___std::vector:aruco::Marker:"></span><span class="target" id="classdetectibot__magnifier__class_1a1b3a8dba1d8063a7253b69d33b5ad374"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">aruco</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Marker</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">markers_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class8markers_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>array of markers from the callback </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class9camParam_E">
+<span id="_CPPv3N26detectibot_magnifier_class9camParam_E"></span><span id="_CPPv2N26detectibot_magnifier_class9camParam_E"></span><span id="detectibot_magnifier_class::camParam___aruco::CameraParameters"></span><span class="target" id="classdetectibot__magnifier__class_1a2bf627f4e8bd9e587e900906e0e85bc1"></span><span class="n"><span class="pre">aruco</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">CameraParameters</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">camParam_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class9camParam_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>arUco camera parameters </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class12marker_size_E">
+<span id="_CPPv3N26detectibot_magnifier_class12marker_size_E"></span><span id="_CPPv2N26detectibot_magnifier_class12marker_size_E"></span><span id="detectibot_magnifier_class::marker_size___double"></span><span class="target" id="classdetectibot__magnifier__class_1a8cb2ca79c7dcea2ba7d4753b51ea25ec"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">marker_size_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class12marker_size_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>size of each marker </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class11useCamInfo_E">
+<span id="_CPPv3N26detectibot_magnifier_class11useCamInfo_E"></span><span id="_CPPv2N26detectibot_magnifier_class11useCamInfo_E"></span><span id="detectibot_magnifier_class::useCamInfo___b"></span><span class="target" id="classdetectibot__magnifier__class_1ab4968459caadd5996a101e7a9de44b86"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">useCamInfo_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class11useCamInfo_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>??? </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class3it_E">
+<span id="_CPPv3N26detectibot_magnifier_class3it_E"></span><span id="_CPPv2N26detectibot_magnifier_class3it_E"></span><span id="detectibot_magnifier_class::it___image_transport::ImageTransport"></span><span class="target" id="classdetectibot__magnifier__class_1ad8469b09bd5d026a952fbac2543a863c"></span><span class="n"><span class="pre">image_transport</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ImageTransport</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">it_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class3it_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>image transport object </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class8inImage_E">
+<span id="_CPPv3N26detectibot_magnifier_class8inImage_E"></span><span id="_CPPv2N26detectibot_magnifier_class8inImage_E"></span><span id="detectibot_magnifier_class::inImage___cv::Mat"></span><span class="target" id="classdetectibot__magnifier__class_1af98e9f63341a93d68fa11e11e5da2c11"></span><span class="n"><span class="pre">cv</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Mat</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">inImage_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class8inImage_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>last received image </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class8in_topicE">
+<span id="_CPPv3N26detectibot_magnifier_class8in_topicE"></span><span id="_CPPv2N26detectibot_magnifier_class8in_topicE"></span><span id="detectibot_magnifier_class::in_topic__ss"></span><span class="target" id="classdetectibot__magnifier__class_1ac8cbe98c37b88683356f7942c28b32f0"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">in_topic</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;/robot/camera1/image_raw&quot;</span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class8in_topicE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>input img topic name </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class10image_sub_E">
+<span id="_CPPv3N26detectibot_magnifier_class10image_sub_E"></span><span id="_CPPv2N26detectibot_magnifier_class10image_sub_E"></span><span id="detectibot_magnifier_class::image_sub___image_transport::Subscriber"></span><span class="target" id="classdetectibot__magnifier__class_1a92a051c8e26dc6346ba58058607a472f"></span><span class="n"><span class="pre">image_transport</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Subscriber</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">image_sub_</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class10image_sub_E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>input img subscriber </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class15get_ids_serviceE">
+<span id="_CPPv3N26detectibot_magnifier_class15get_ids_serviceE"></span><span id="_CPPv2N26detectibot_magnifier_class15get_ids_serviceE"></span><span id="detectibot_magnifier_class::get_ids_service__ros::ServiceServer"></span><span class="target" id="classdetectibot__magnifier__class_1a260c82bdf254a34de1481615c9e9f041"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ServiceServer</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get_ids_service</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class15get_ids_serviceE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>service /get_ids </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26detectibot_magnifier_class3idsE">
+<span id="_CPPv3N26detectibot_magnifier_class3idsE"></span><span id="_CPPv2N26detectibot_magnifier_class3idsE"></span><span id="detectibot_magnifier_class::ids__std::unordered_set:i:"></span><span class="target" id="classdetectibot__magnifier__class_1a73fd8127bc297d6b0d707db5c92bb209"></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">unordered_set</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">int</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ids</span></span></span><a class="headerlink" href="#_CPPv4N26detectibot_magnifier_class3idsE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>the set of the found IDs </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv416erl_assignment_3">
+<span id="_CPPv316erl_assignment_3"></span><span id="_CPPv216erl_assignment_3"></span><span id="erl_assignment_3"></span><span class="target" id="namespaceerl__assignment__3"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">erl_assignment_3</span></span></span><a class="headerlink" href="#_CPPv416erl_assignment_3" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Code Documentation for ExperimentalRoboticsAssignment3" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Img_echo.html" class="btn btn-neutral float-right" title="Code docs – Img_echo.cpp" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Iacopo Pietrasanta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

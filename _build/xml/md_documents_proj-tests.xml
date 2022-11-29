@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md_documents_proj-tests" kind="page">
+    <compoundname>md_documents_proj-tests</compoundname>
+    <title>Project Testing</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="md_documents_proj-tests_1autotoc_md8">
+<title>Navigation Testing</title>
+<para>shell 1: (environment gazebo rviz move_base slam gmapping)</para>
+<para><programlisting><codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch</highlight></codeline>
+</programlisting></para>
+<para>shell 2: (navigation node)</para>
+<para><programlisting><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="md_documents_proj-tests_1autotoc_md9">
+<title>Vision Testing</title>
+<para>shell 1:</para>
+<para><programlisting><codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch</highlight></codeline>
+</programlisting></para>
+<para>shell 2:</para>
+<para><programlisting><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo</highlight></codeline>
+</programlisting></para>
+<para>shell 3:</para>
+<para><programlisting><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="md_documents_proj-tests_1autotoc_md10">
+<title>State machine test</title>
+<para>shell 1:</para>
+<para><programlisting><codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch<sp/>2&gt;/dev/null</highlight></codeline>
+</programlisting></para>
+<para>shell 2:</para>
+<para><programlisting><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py<sp/></highlight></codeline>
+</programlisting></para>
+<para>shell 3:</para>
+<para><programlisting><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>cluedo_kb.py</highlight></codeline>
+</programlisting></para>
+<para>shell 4:</para>
+<para><programlisting><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="md_documents_proj-tests_1autotoc_md11">
+<title>The entire project</title>
+<para>shell 1:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch<sp/>2&gt;/dev/null</highlight></codeline>
+</programlisting></para>
+<para>shell 2:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3<sp/>launch_nodes.launch</highlight></codeline>
+</programlisting></para>
+<para>shell 3:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
+</programlisting> </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

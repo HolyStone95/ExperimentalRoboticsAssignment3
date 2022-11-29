@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_f1865cd747a00d6c6129fa1a86019929" kind="dir">
+    <compoundname>vision_opencv/cv_bridge/doc</compoundname>
+    <innerfile refid="vision__opencv_2cv__bridge_2doc_2conf_8py">conf.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/cv_bridge/doc/"/>
+  </compounddef>
+</doxygen>

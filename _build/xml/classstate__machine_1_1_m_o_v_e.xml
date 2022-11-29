@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classstate__machine_1_1_m_o_v_e" kind="class" language="Python" prot="public">
+    <compoundname>state_machine::MOVE</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">State</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classstate__machine_1_1_m_o_v_e_1a31e46066a60db6c623c2f8005663f1fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.MOVE.__init__</definition>
+        <argsstring>(self, outcomes=[&apos;NEXT&apos;])</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>outcomes</type>
+          <defname>outcomes</defname>
+          <defval>[&apos;NEXT&apos;]</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="107" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="107" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__machine_1_1_m_o_v_e_1a08f985b53335e8d21c9c387ab48b6872" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.MOVE.execute</definition>
+        <argsstring>(self, userdata)</argsstring>
+        <name>execute</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>userdata</type>
+          <defname>userdata</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>move to the room, then increment the index.
+
+Note:
+    if the robot can&apos;t reach the correct result after having visited
+    every room, the exploration restart from the first room
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="110" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="110" bodyend="143"/>
+        <references refid="namespacestate__machine_1a603958986e96759744716f54f97c0da5" compoundref="state__machine_8py" startline="72">state_machine.cl_go_to_point</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>State</label>
+      </node>
+      <node id="1">
+        <label>state_machine.MOVE</label>
+        <link refid="classstate__machine_1_1_m_o_v_e"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>State</label>
+      </node>
+      <node id="1">
+        <label>state_machine.MOVE</label>
+        <link refid="classstate__machine_1_1_m_o_v_e"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="erl_assignment_3/scripts/state_machine.py" line="106" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="106" bodyend="144"/>
+    <listofallmembers>
+      <member refid="classstate__machine_1_1_m_o_v_e_1a31e46066a60db6c623c2f8005663f1fc" prot="public" virt="non-virtual"><scope>state_machine::MOVE</scope><name>__init__</name></member>
+      <member refid="classstate__machine_1_1_m_o_v_e_1a08f985b53335e8d21c9c387ab48b6872" prot="public" virt="non-virtual"><scope>state_machine::MOVE</scope><name>execute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

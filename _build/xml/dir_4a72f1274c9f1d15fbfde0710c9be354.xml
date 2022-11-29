@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_4a72f1274c9f1d15fbfde0710c9be354" kind="dir">
+    <compoundname>vision_opencv/image_geometry/include</compoundname>
+    <innerdir refid="dir_dd876c1bee27c7bec48bad83b1ac23cf">vision_opencv/image_geometry/include/image_geometry</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/image_geometry/include/"/>
+  </compounddef>
+</doxygen>

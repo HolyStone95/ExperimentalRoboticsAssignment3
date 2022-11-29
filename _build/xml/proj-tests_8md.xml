@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="proj-tests_8md" kind="file" language="Markdown">
+    <compoundname>proj-tests.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Project<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Navigation<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>1:<sp/>(environment<sp/>gazebo<sp/>rviz<sp/>move_base<sp/>slam<sp/>gmapping)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>2:<sp/>(navigation<sp/>node)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Vision<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>1:</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>2:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>3:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>State<sp/>machine<sp/>test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>1:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment.launch<sp/>2&gt;/dev/null</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>2:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>img_echo<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>detectibot_magnifier<sp/>&amp;</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>navigation.py<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>3:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>cluedo_kb.py</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>4:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>The<sp/>entire<sp/>project</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>1:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3_robot<sp/>detectibot_environment_2.launch<sp/>2&gt;/dev/null</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>2:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">roslaunch<sp/>erl_assignment_3<sp/>launch_nodes.launch</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">shell<sp/>3:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">rosrun<sp/>erl_assignment_3<sp/>state_machine.py</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="documents/proj-tests.md"/>
+  </compounddef>
+</doxygen>

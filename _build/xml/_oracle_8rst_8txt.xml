@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_oracle_8rst_8txt" kind="file" language="C++">
+    <compoundname>Oracle.rst.txt</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" prot="public" static="no" mutable="no">
+        <type>Code docs *final_oracle cpp see in the</type>
+        <definition>Code docs* final_oracle cpp see in the code</definition>
+        <argsstring></argsstring>
+        <name>code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="8" column="13" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="2" bodyend="-1"/>
+        <referencedby refid="classaruco_1_1_dictionary_1ad6478c47862ad93e331a8a4a9cf3ff46" compoundref="dictionary_8h" startline="74" endline="77">aruco::Dictionary::is</referencedby>
+        <referencedby refid="classaruco_1_1_dictionary_1a2bac9fc9b68e0b6a1351281e23fc7b16" compoundref="dictionary_8h" startline="115" endline="118">aruco::Dictionary::operator[]</referencedby>
+        <referencedby refid="classaruco_1_1_dictionary_1a1f653dc4ee1b62982a2d82ba4c11db75" compoundref="dictionary_8h" startline="121" endline="124">aruco::Dictionary::at</referencedby>
+        <referencedby refid="classaruco_1_1_dictionary_1a285798638893f5f3069d322afbe8efa2" compoundref="dictionary_8cpp" startline="2503" endline="2585">aruco::Dictionary::getMarkerImage_id</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a19e3c62854c506eb9993730f963d146d" prot="public" static="no" mutable="no">
+        <type>sometimes in the</type>
+        <definition>sometimes in the space</definition>
+        <argsstring></argsstring>
+        <name>space</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="9" column="18" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a82d55e07a4a4f63b0d123ed5a37c27ce" prot="public" static="no" mutable="no">
+        <type>sometimes in the the robot could find a <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> greater</type>
+        <definition>sometimes in the the robot could find a ID greater than</definition>
+        <argsstring></argsstring>
+        <name>than</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="9" column="58" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a055f013165feb3c8b64fe722e5692938" prot="public" static="no" mutable="no">
+        <type>contains the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> associated to the respective message into erl3::ErlOracle</type>
+        <definition>contains the ID associated to the respective message into erl3::ErlOracle oracle_msgs[30]</definition>
+        <argsstring>[30]</argsstring>
+        <name>oracle_msgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="11" column="76" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a2e94796893680fbb8b060a0e483a1d7c" prot="public" static="no" mutable="no">
+        <type>For</type>
+        <definition>For instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="11" column="92" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a3d397519c2d9adf8283ffa3045d32aaf" prot="public" static="no" mutable="no">
+        <type>For the id of the i th <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> <ref refid="simulation_8cpp_1a42b80e0b5892e0aba8cc512980770c1c" kindref="member">oracle_msgs</ref>[i] <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> <ref refid="simulation_8cpp_1ab5f3446a47fbb2ab4e388c5f5e6674df" kindref="member">markerID</ref>[i] in</type>
+        <definition>For the id of the i th hint oracle_msgs [i] is markerID [i] in particular</definition>
+        <argsstring></argsstring>
+        <name>particular</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="12" column="5" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" prot="public" static="no" mutable="no">
+        <type>For the id of the i th <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> <ref refid="simulation_8cpp_1a42b80e0b5892e0aba8cc512980770c1c" kindref="member">oracle_msgs</ref>[i] <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> <ref refid="simulation_8cpp_1ab5f3446a47fbb2ab4e388c5f5e6674df" kindref="member">markerID</ref>[i] in <ref refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" kindref="member">winID</ref> <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> the ID of the solution of the case there <ref refid="_state__machine_8rst_8txt_1ab080984025e7c021fc2b817b444dd1c7" kindref="member">are</ref> two types of</type>
+        <definition>For the id of the i th hint oracle_msgs [i] is markerID [i] in winID is the ID of the solution of the case there are two types of ID</definition>
+        <argsstring></argsstring>
+        <name>ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="13" column="25" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" prot="public" static="no" mutable="no">
+        <type>and there s the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the other message *ErlOracle *<ref refid="_state__machine_8rst_8txt_1a973e6a2335642e1fca2cbdb36866d90d" kindref="member">that</ref> <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> an identifier of a <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> of the case each <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> identifier goes from up to How to receive a hint the robot goes around in search of a ArUco <ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref> containing the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the hint When it finds <ref refid="_r_e_a_d_m_e_8md_8txt_1a375f47bedc3d0d753d1874b24e755b40" kindref="member">one</ref></type>
+        <definition>and there s the ID of the other message* ErlOracle* that is an identifier of a hypothesis of the case each hypothesis identifier goes from up to How to receive a hint the robot goes around in search of a ArUco code containing the ID of the hint When it finds one hint</definition>
+        <argsstring></argsstring>
+        <name>hint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="20" column="97" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a0a5467f9aa584c3c28d5dd38515df80d" prot="public" static="no" mutable="no">
+        <type>and there s the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the other message *ErlOracle *<ref refid="_state__machine_8rst_8txt_1a973e6a2335642e1fca2cbdb36866d90d" kindref="member">that</ref> <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> an identifier of a <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> of the case each <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> identifier goes from up to How to receive a <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> the robot goes around in search of a ArUco <ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref> containing the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> When it finds <ref refid="_r_e_a_d_m_e_8md_8txt_1a375f47bedc3d0d753d1874b24e755b40" kindref="member">one</ref> it makes a service request to the Oracle through oracle_hint</type>
+        <definition>Code docs *State_machine py *it is the core node of the architecture that interacts with and directs all remaining parts In particular the machine organises the investigation into **four **states **move **→ moves the robot between rooms inside the simulated indoor environment **collect **→ the robot rotates on itself to read the largest number of hints within the room **check **→ takes hints from the sensing system via a and uses the ontology to work out whether there are possible solutions or not If there occurs no possible the outcome is and the robot transitions back to the move state if there actually occurs possible the state machine makes a transition to the show responsible for querying the oracle about the solution s truthfulness **show **→ questions the oracle about the solution as the state_machine gets the robot enters the MOVE responsible for the acrivation of the go_to_point service it reaches the center of the room and it starts to collect as many marker as possible This has been made possible through the implementation of a turn_robot service as the name explicitly makes detectibot turning around its own position Only the system transitions to the CHECK where a request is made by the aruco_marker service to retrieve the detected marker s the knowledge base represented by **cluedo_kb **node is made to the final_oracle node through the oracle_solution service</definition>
+        <argsstring></argsstring>
+        <name>service</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="20" column="163" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="20" bodyend="-1"/>
+        <referencedby refid="simulation_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" compoundref="simulation_8cpp" startline="45" endline="140">main</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1a9f004aa0214bce303e8084747182b339" prot="public" static="no" mutable="no">
+        <type>and there s the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the other message *ErlOracle *<ref refid="_state__machine_8rst_8txt_1a973e6a2335642e1fca2cbdb36866d90d" kindref="member">that</ref> <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> an identifier of a <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> of the case each <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> identifier goes from up to How to receive a <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> the robot goes around in search of a ArUco <ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref> containing the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> When it finds <ref refid="_r_e_a_d_m_e_8md_8txt_1a375f47bedc3d0d753d1874b24e755b40" kindref="member">one</ref> it makes a <ref refid="_state__machine_8rst_8txt_1a5a2fea8da5f22e06a373df0a50635af7" kindref="member">service</ref> request to the Oracle through oracle_hint declaring the found <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> This request <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> of type erl3</type>
+        <definition>and there s the ID of the other message* ErlOracle* that is an identifier of a hypothesis of the case each hypothesis identifier goes from up to How to receive a hint the robot goes around in search of a ArUco code containing the ID of the hint When it finds one it makes a service request to the Oracle through oracle_hint declaring the found hint This request is of type erl3 Marker</definition>
+        <argsstring></argsstring>
+        <name>Marker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="20" column="225" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="20" bodyend="-1"/>
+        <referencedby refid="namespacearuco__ros_1a6a2e5c678137b0ca8b0cad20a7f8d019" compoundref="aruco__ros__utils_8cpp" startline="122" endline="139">aruco_ros::visMarkerFromPose</referencedby>
+        <referencedby refid="class_aruco_simple_1a274c023c4c1558e33930718910ba1139" compoundref="simple__single_8cpp" startline="86" endline="156">ArucoSimple::ArucoSimple</referencedby>
+        <referencedby refid="class_aruco_simple_1a4187d02eb1f8af79b91dc901c3f96586" compoundref="simple__single_8cpp" startline="185" endline="309">ArucoSimple::image_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="_oracle_8rst_8txt_1ae9e73c5f55a667c884e25c3bdf1101b6" prot="public" static="no" mutable="no">
+        <type>and there s the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the other message *ErlOracle *<ref refid="_state__machine_8rst_8txt_1a973e6a2335642e1fca2cbdb36866d90d" kindref="member">that</ref> <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> an identifier of a <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> of the case each <ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref> identifier goes from up to How to receive a <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> the robot goes around in search of a ArUco <ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref> containing the <ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref> of the <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> When it finds <ref refid="_r_e_a_d_m_e_8md_8txt_1a375f47bedc3d0d753d1874b24e755b40" kindref="member">one</ref> it makes a <ref refid="_state__machine_8rst_8txt_1a5a2fea8da5f22e06a373df0a50635af7" kindref="member">service</ref> request to the Oracle through oracle_hint declaring the found <ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref> This request <ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref> of type erl3 made as</type>
+        <definition>and there s the ID of the other message* ErlOracle* that is an identifier of a hypothesis of the case each hypothesis identifier goes from up to How to receive a hint the robot goes around in search of a ArUco code containing the ID of the hint When it finds one it makes a service request to the Oracle through oracle_hint declaring the found hint This request is of type erl3 made as follows</definition>
+        <argsstring></argsstring>
+        <name>follows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Oracle.rst.txt" line="20" column="240" bodyfile="_build/html/_sources/code_documentation/Oracle.rst.txt" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">Code<sp/>docs<sp/>--<sp/>*final_oracle.cpp*</highlight></codeline>
+<codeline lineno="2" refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" refkind="member"><highlight class="normal">=================================</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">Observations</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">--------------------</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">-<sp/>**the<sp/>node<sp/>contains<sp/>up<sp/>to<sp/>30<sp/>precomputed<sp/>hints**,<sp/>see<sp/>in<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref>:<sp/>``erl3::ErlOracle<sp/><ref refid="_oracle_8rst_8txt_1a055f013165feb3c8b64fe722e5692938" kindref="member">oracle_msgs</ref>[30];``</highlight></codeline>
+<codeline lineno="9" refid="_oracle_8rst_8txt_1a19e3c62854c506eb9993730f963d146d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>sometimes<sp/>in<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1a19e3c62854c506eb9993730f963d146d" kindref="member">space</ref>,<sp/>the<sp/>robot<sp/>could<sp/>find<sp/>a<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref><sp/>greater<sp/><ref refid="_oracle_8rst_8txt_1a82d55e07a4a4f63b0d123ed5a37c27ce" kindref="member">than</ref><sp/>30:<sp/>*it<sp/>must<sp/>be<sp/>discarded*.<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="11" refid="_oracle_8rst_8txt_1a82d55e07a4a4f63b0d123ed5a37c27ce" refkind="member"><highlight class="normal">-<sp/>the<sp/>array<sp/>``</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="simulation_8cpp_1ab5f3446a47fbb2ab4e388c5f5e6674df" kindref="member">markerID</ref>[30];``<sp/>contains<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref><sp/>associated<sp/>to<sp/>the<sp/>respective<sp/>message<sp/>into<sp/>``erl3::ErlOracle<sp/><ref refid="_oracle_8rst_8txt_1a055f013165feb3c8b64fe722e5692938" kindref="member">oracle_msgs</ref>[30];``.<sp/>For<sp/><ref refid="_oracle_8rst_8txt_1a2e94796893680fbb8b060a0e483a1d7c" kindref="member">instance</ref>,<sp/>the<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>of<sp/>the<sp/>i-th<sp/><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref>``<ref refid="_oracle_8rst_8txt_1a055f013165feb3c8b64fe722e5692938" kindref="member">oracle_msgs</ref>[i]``<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>``<ref refid="simulation_8cpp_1ab5f3446a47fbb2ab4e388c5f5e6674df" kindref="member">markerID</ref>[i]``</highlight></codeline>
+<codeline lineno="12" refid="_oracle_8rst_8txt_1a3d397519c2d9adf8283ffa3045d32aaf" refkind="member"><highlight class="normal">-<sp/>in<sp/><ref refid="_oracle_8rst_8txt_1a3d397519c2d9adf8283ffa3045d32aaf" kindref="member">particular</ref>,<sp/>``<ref refid="simulation_8cpp_1a90c5d03e068ddae91702223f47eff712" kindref="member">winID</ref>``<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>the<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref><sp/>of<sp/>the<sp/>solution<sp/>of<sp/>the<sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" refkind="member"><highlight class="normal">-<sp/>there<sp/><ref refid="_state__machine_8rst_8txt_1ab080984025e7c021fc2b817b444dd1c7" kindref="member">are</ref><sp/>two<sp/>types<sp/>of<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref>:<sp/>there</highlight><highlight class="stringliteral">&apos;s<sp/>the<sp/>one<sp/>in<sp/>the<sp/>message<sp/>*Marker*<sp/>which<sp/>is<sp/>an<sp/>index<sp/>of<sp/>the<sp/>array<sp/>of<sp/>hints;<sp/>and<sp/>there&apos;</highlight><highlight class="normal">s<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref><sp/>of<sp/>the<sp/>other<sp/>message<sp/>*ErlOracle*<sp/><ref refid="_state__machine_8rst_8txt_1a973e6a2335642e1fca2cbdb36866d90d" kindref="member">that</ref><sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>an<sp/>identifier<sp/>of<sp/>a<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref><sp/>of<sp/>the<sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal">.<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">-<sp/>each<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1a092d27941cd531a28f8d6f19690228ac" kindref="member">hypothesis</ref><sp/>identifier<sp/>goes<sp/>from<sp/>0<sp/>up<sp/>to<sp/>5</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">How<sp/>to<sp/>receive<sp/>a<sp/><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">----------------------</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="_oracle_8rst_8txt_1a0a5467f9aa584c3c28d5dd38515df80d" refkind="member"><highlight class="normal">the<sp/>robot<sp/>goes<sp/>around<sp/>in<sp/>search<sp/>of<sp/>a<sp/>ArUco<sp/><ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref><sp/>containing<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref><sp/>of<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref>.<sp/>When<sp/>it<sp/>finds<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1a375f47bedc3d0d753d1874b24e755b40" kindref="member">one</ref><sp/><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref>,<sp/>it<sp/>makes<sp/>a<sp/><ref refid="_oracle_8rst_8txt_1a0a5467f9aa584c3c28d5dd38515df80d" kindref="member">service</ref><sp/>request<sp/>to<sp/>the<sp/>Oracle<sp/>through<sp/>``/oracle_hint``<sp/><ref refid="_oracle_8rst_8txt_1a0a5467f9aa584c3c28d5dd38515df80d" kindref="member">service</ref>,<sp/><sp/>declaring<sp/>the<sp/>found<sp/><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref>.<sp/>This<sp/>request<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>of<sp/><ref refid="namespacerosfacedetect_1aa846ed4b5a4bf1b026629f15f519db9f" kindref="member">type</ref><sp/>``erl3/<ref refid="_oracle_8rst_8txt_1a9f004aa0214bce303e8084747182b339" kindref="member">Marker</ref>``,<sp/>made<sp/>as<sp/><ref refid="_oracle_8rst_8txt_1ae9e73c5f55a667c884e25c3bdf1101b6" kindref="member">follows</ref>:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">..<sp/><ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref>-block::</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>int32<sp/>markerId</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>---</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>erl3/ErlOracle<sp/>oracle_hint</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">the<sp/>field<sp/>of<sp/><ref refid="namespacerosfacedetect_1aa846ed4b5a4bf1b026629f15f519db9f" kindref="member">type</ref><sp/>*erl3/ErlOracle*<sp/>has<sp/>these<sp/>fields:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">..<sp/><ref refid="_oracle_8rst_8txt_1a7b9676e6340377e1c2930da27fd133a0" kindref="member">code</ref>-block::</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>int32<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="simulation_8cpp_1a0049a8a39c319bf1470f36c9e0f75abd" kindref="member">key</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">How<sp/>to<sp/>check<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>the<sp/><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref><sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>valid</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">----------------------------------</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_oracle_8rst_8txt_1ae9e73c5f55a667c884e25c3bdf1101b6" refkind="member"><highlight class="normal">to<sp/>check<sp/>whether<sp/>a<sp/>specific<sp/><ref refid="_oracle_8rst_8txt_1acc5905728f3f1ab997990f9b4ccaa13b" kindref="member">ID</ref><sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>the<sp/>solution<sp/>of<sp/>the<sp/>mystery,<sp/>call<sp/>the<sp/><ref refid="_oracle_8rst_8txt_1a0a5467f9aa584c3c28d5dd38515df80d" kindref="member">service</ref><sp/>``/oracle_solution``<sp/>of<sp/><ref refid="namespacerosfacedetect_1aa846ed4b5a4bf1b026629f15f519db9f" kindref="member">type</ref><sp/>``erl3/Oracle``.<sp/>Here</highlight><highlight class="stringliteral">&apos;s<sp/>the<sp/>prototype<sp/>of<sp/>the<sp/>service:</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral">..<sp/>code-block::</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>---</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>int32<sp/>ID</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">Code<sp/>Reference</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral">---------------</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral">..<sp/>doxygenfile::<sp/>simulation.cpp</highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:project:<sp/>ExperimentalRoboticsAssignment3</highlight></codeline>
+    </programlisting>
+    <location file="_build/html/_sources/code_documentation/Oracle.rst.txt"/>
+  </compounddef>
+</doxygen>

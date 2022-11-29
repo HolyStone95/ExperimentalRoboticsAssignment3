@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_42d473c946a6df0f7aea755e6e0bad62" kind="dir">
+    <compoundname>vision_opencv/image_geometry/src</compoundname>
+    <innerdir refid="dir_885b43350add1a57c10a8ac85739d0ce">vision_opencv/image_geometry/src/image_geometry</innerdir>
+    <innerfile refid="pinhole__camera__model_8cpp">pinhole_camera_model.cpp</innerfile>
+    <innerfile refid="stereo__camera__model_8cpp">stereo_camera_model.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/image_geometry/src/"/>
+  </compounddef>
+</doxygen>

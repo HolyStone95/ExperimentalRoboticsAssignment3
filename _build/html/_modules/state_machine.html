@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>state_machine &mdash; ExperimentalRoboticsAssignment3 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ExperimentalRoboticsAssignment3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code_documentation/index.html">Code Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ExperimentalRoboticsAssignment3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Module code</a> &raquo;</li>
+      <li>state_machine</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for state_machine</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. module:: state_machine</span>
+<span class="sd">	:platform: Unix</span>
+<span class="sd">	:synopsis: Core Python module aimed at implementong the Smach state machine</span>
+<span class="sd">.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrasanta@gmail.com</span>
+
+<span class="sd">The state_machine node implements a state machine (by means of ROS Smach pkg) that</span>
+<span class="sd">establishes the operations the robot can actually perform; It also represent</span>
+<span class="sd">the core module of the overall architechture </span>
+<span class="sd"> </span>
+<span class="sd">In particular the machine organises the investigation into four states.</span>
+<span class="sd">- **move** → moves the robot between rooms inside the simulated indoor environment </span>
+<span class="sd">- **collect** → the robot rotates on itself to read the largest number of hints within the room </span>
+<span class="sd">- **check** → takes hints from the sensing system via a service, and uses the ontology to work out whether there are possible solutions or not. If there occurs no possible solutions, the outcome is `mistery_not_solvable`, and the robot transitions back to the &quot;move&quot; state. Otherwise, if there actually occurs possible solutions, the state machine makes a transition to the &quot;show&quot; state, responsible for querying the oracle about the solution&#39;s truthfulness</span>
+<span class="sd">- **show** → questions the oracle about the solution</span>
+<span class="sd">Subscribes to:</span>
+<span class="sd">		/clock [rosgraph_msgs/Clock]</span>
+<span class="sd">	</span>
+<span class="sd">Publishes to:</span>
+<span class="sd">		/rosout [rosgraph_msgs/Log]</span>
+<span class="sd">Service :</span>
+<span class="sd">		/state_machine/get_loggers</span>
+<span class="sd">		/state_machine/set_logger_level</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="kn">import</span> <span class="nn">rospy</span>
+<span class="kn">import</span> <span class="nn">smach</span>
+<span class="kn">import</span> <span class="nn">smach_ros</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">seed</span>
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+
+<span class="kn">from</span> <span class="nn">erl3.srv</span> <span class="kn">import</span> <span class="n">Oracle</span><span class="p">,</span> <span class="n">OracleRequest</span><span class="p">,</span> <span class="n">OracleResponse</span>
+<span class="kn">from</span> <span class="nn">erl3.srv</span> <span class="kn">import</span> <span class="n">Marker</span><span class="p">,</span> <span class="n">MarkerRequest</span><span class="p">,</span> <span class="n">MarkerResponse</span>
+<span class="kn">from</span> <span class="nn">erl_assignment_3_msgs.srv</span> <span class="kn">import</span> <span class="n">GetId</span><span class="p">,</span> <span class="n">GetIdRequest</span><span class="p">,</span> <span class="n">GetIdResponse</span>
+<span class="kn">from</span> <span class="nn">erl_assignment_3_msgs.srv</span> <span class="kn">import</span> <span class="n">GoToPoint</span><span class="p">,</span> <span class="n">GoToPointRequest</span><span class="p">,</span> <span class="n">GoToPointResponse</span>
+<span class="kn">from</span> <span class="nn">erl_assignment_3_msgs.srv</span> <span class="kn">import</span> <span class="n">TurnRobot</span><span class="p">,</span> <span class="n">TurnRobotRequest</span><span class="p">,</span> <span class="n">TurnRobotResponse</span>
+<span class="kn">from</span> <span class="nn">erl_assignment_3_msgs.srv</span> <span class="kn">import</span> <span class="n">GetArucoIds</span><span class="p">,</span> <span class="n">GetArucoIdsRequest</span><span class="p">,</span> <span class="n">GetArucoIdsResponse</span>
+<span class="kn">from</span> <span class="nn">erl_assignment_3_msgs.srv</span> <span class="kn">import</span> <span class="n">AddHint</span><span class="p">,</span> <span class="n">AddHintRequest</span><span class="p">,</span> <span class="n">AddHintResponse</span>
+<span class="kn">from</span> <span class="nn">erl_assignment_3_msgs.srv</span> <span class="kn">import</span> <span class="n">MarkWrongId</span><span class="p">,</span> <span class="n">MarkWrongIdRequest</span><span class="p">,</span> <span class="n">MarkWrongIdResponse</span>
+<span class="kn">from</span> <span class="nn">geometry_msgs.msg</span> <span class="kn">import</span> <span class="n">Point</span>
+
+<span class="n">rooms</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+<span class="sd">&#39;&#39;&#39; coordinates of the rooms to visit</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">room_idx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="sd">&#39;&#39;&#39; current room to explore</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="k">def</span> <span class="nf">next_room</span><span class="p">():</span>
+	<span class="k">global</span> <span class="n">rooms</span>
+	<span class="k">global</span> <span class="n">room_idx</span>
+	
+	<span class="n">room_idx</span> <span class="o">=</span> <span class="n">room_idx</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="k">if</span> <span class="n">room_idx</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">rooms</span><span class="p">):</span>
+		<span class="n">room_idx</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">winnerID</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="sd">&#39;&#39;&#39; the id at the end of the case</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">to_show</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="sd">&#39;&#39;&#39; the id to show to the Oracle in the SHOW status</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">case_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;who&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;where&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;what&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+<span class="sd">&#39;&#39;&#39; the final solution of the case</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_go_to_point</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /go_to_point : erl_assignment_3_msgs/GoToPoint</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_turn_robot</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /turn_robot : erl_assignment_3_msgs/TurnRobot</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_aruco</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /aruco_markers : erl_assignment_3_msgs/GetArucoIds</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_add_hint</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /add_hint : erl_assignment_3_msgs/AddHint</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_get_hint</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /get_hint : erl_assignment_3_msgs/GetId</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_oracle_solution</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /oracle_solution : erl3/Oracle</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">cl_delete_hint</span> <span class="o">=</span> <span class="bp">None</span>
+<span class="sd">&#39;&#39;&#39; client /mark_wrong_id : erl_assignment_3_msgs/MarkWrongId</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">max_r</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="sd">&#39;&#39;&#39; for the movement target (maximum distance from the target)</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+
+
+<div class="viewcode-block" id="MOVE"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.MOVE">[docs]</a><span class="k">class</span> <span class="nc">MOVE</span><span class="p">(</span><span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="p">):</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NEXT&#39;</span><span class="p">]):</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="n">outcomes</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MOVE.execute"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.MOVE.execute">[docs]</a>	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userdata</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39; move to the room, then increment the index.</span>
+<span class="sd">		</span>
+<span class="sd">		Note:</span>
+<span class="sd">			if the robot can&#39;t reach the correct result after having visited</span>
+<span class="sd">			every room, the exploration restart from the first room</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="k">global</span> <span class="n">rooms</span>
+		<span class="k">global</span> <span class="n">room_idx</span>
+		<span class="k">global</span> <span class="n">cl_go_to_point</span>
+		
+		<span class="n">room</span> <span class="o">=</span> <span class="n">rooms</span><span class="p">[</span><span class="n">room_idx</span><span class="p">]</span>
+		<span class="n">th</span> <span class="o">=</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">random</span><span class="p">()</span>
+		<span class="n">radius</span> <span class="o">=</span> <span class="n">max_r</span> <span class="o">*</span> <span class="n">random</span><span class="p">()</span>
+		<span class="n">x</span> <span class="o">=</span> <span class="n">room</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
+		<span class="n">y</span> <span class="o">=</span> <span class="n">room</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(MOVE) target=({x}, {y}) idx={room_idx}&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># send request and wait</span>
+		<span class="n">tg</span> <span class="o">=</span> <span class="n">GoToPointRequest</span><span class="p">()</span>
+		<span class="n">tg</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+		<span class="n">tg</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+		<span class="n">tg</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="mf">0.0</span>
+		<span class="n">tgres</span> <span class="o">=</span> <span class="n">GoToPointResponse</span><span class="p">()</span>
+		<span class="n">tgres</span><span class="o">.</span><span class="n">success</span> <span class="o">=</span> <span class="bp">False</span>
+		<span class="k">while</span> <span class="ow">not</span> <span class="n">tgres</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+			<span class="n">tgres</span> <span class="o">=</span> <span class="n">cl_go_to_point</span><span class="p">(</span><span class="n">tg</span><span class="p">)</span>
+			<span class="k">if</span> <span class="ow">not</span> <span class="n">tgres</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+				<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(MOVE) movement action failure; retrying&quot;</span><span class="p">)</span>
+		
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(MOVE) on the target&quot;</span><span class="p">)</span>
+		<span class="k">return</span> <span class="s1">&#39;NEXT&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="COLLECT"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.COLLECT">[docs]</a><span class="k">class</span> <span class="nc">COLLECT</span><span class="p">(</span><span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="p">):</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NEXT&#39;</span><span class="p">]):</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="n">outcomes</span><span class="p">)</span>
+	
+<div class="viewcode-block" id="COLLECT.execute"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.COLLECT.execute">[docs]</a>	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userdata</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39; turn and gather the hints</span>
+<span class="sd">		</span>
+<span class="sd">		the robot turns areound itself and tries to grasp as many</span>
+<span class="sd">		markers as the camera can detect. </span>
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="k">global</span> <span class="n">cl_turn_robot</span>
+		
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(COLLECT) collecting hints&quot;</span><span class="p">)</span>
+		<span class="n">cmd</span> <span class="o">=</span> <span class="n">TurnRobotRequest</span><span class="p">()</span>
+		<span class="n">cmd</span><span class="o">.</span><span class="n">angularVel</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">3</span>
+		<span class="n">cmd</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="mi">10</span>
+		<span class="n">cl_turn_robot</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+		
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(COLLECT) done&quot;</span><span class="p">)</span>
+		<span class="k">return</span> <span class="s1">&#39;NEXT&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="CHECK"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.CHECK">[docs]</a><span class="k">class</span> <span class="nc">CHECK</span><span class="p">(</span><span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="p">):</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;NEXT&#39;</span><span class="p">,</span> <span class="s1">&#39;IMPOSSIBLE&#39;</span><span class="p">,</span> <span class="s1">&#39;AGAIN&#39;</span><span class="p">]):</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="n">outcomes</span><span class="p">)</span>
+	
+<div class="viewcode-block" id="CHECK.execute"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.CHECK.execute">[docs]</a>	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userdata</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39; ask if there are valid hints to the knowledge base</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="k">global</span> <span class="n">cl_aruco</span>
+		<span class="k">global</span> <span class="n">cl_add_hint</span>
+		<span class="k">global</span> <span class="n">cl_get_hint</span>
+		<span class="k">global</span> <span class="n">to_show</span>
+		
+		<span class="c1"># ask for hints to aruco</span>
+		<span class="n">aruco_hints</span> <span class="o">=</span> <span class="n">cl_aruco</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">aruco_hints</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(CHECK) empty from aruco, retry&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># register the hints in the knowledge base</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">aruco_hints</span><span class="o">.</span><span class="n">isEmpty</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(CHECK) received {len(aruco_hints.ids)} hints from ArUco&quot;</span><span class="p">)</span>
+			<span class="k">for</span> <span class="n">idh</span> <span class="ow">in</span> <span class="n">aruco_hints</span><span class="o">.</span><span class="n">ids</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">idh</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">:</span>
+					<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(CHECK) request for hint index={idh}&quot;</span><span class="p">)</span>
+					<span class="n">add_hint_req</span> <span class="o">=</span> <span class="n">AddHintRequest</span><span class="p">()</span>
+					<span class="n">add_hint_req</span><span class="o">.</span><span class="n">ID</span> <span class="o">=</span> <span class="n">idh</span>
+					<span class="n">cl_add_hint</span><span class="p">(</span><span class="n">add_hint_req</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;(CHECK) DISCARD request for hint index={idh}&quot;</span><span class="p">)</span>
+		
+		<span class="c1"># check for available hints</span>
+		<span class="n">kb_res</span> <span class="o">=</span> <span class="n">cl_get_hint</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">kb_res</span><span class="o">.</span><span class="n">consistent_found</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">kb_res</span><span class="o">.</span><span class="n">consistent_id</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+				<span class="n">to_show</span> <span class="o">=</span> <span class="n">kb_res</span><span class="o">.</span><span class="n">consistent_id</span>
+				<span class="k">return</span> <span class="s1">&#39;NEXT&#39;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(CHECK) no consistent ID to show, retrying&quot;</span><span class="p">)</span>
+				<span class="n">next_room</span><span class="p">()</span>
+				<span class="k">return</span> <span class="s1">&#39;AGAIN&#39;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;(CHECK) all hypotheses discarded, FAIL&quot;</span><span class="p">)</span>
+			<span class="k">return</span> <span class="s1">&#39;IMPOSSIBLE&#39;</span></div></div>
+
+
+<div class="viewcode-block" id="SHOW"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.SHOW">[docs]</a><span class="k">class</span> <span class="nc">SHOW</span><span class="p">(</span><span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="p">):</span>
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;AGAIN&#39;</span><span class="p">,</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">]):</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">State</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outcomes</span><span class="o">=</span><span class="n">outcomes</span><span class="p">)</span>
+	
+<div class="viewcode-block" id="SHOW.execute"><a class="viewcode-back" href="../code_documentation/State_machine.html#state_machine.SHOW.execute">[docs]</a>	<span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">userdata</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39; final checking: ask to the oracle, and try to show a solution.</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="k">global</span> <span class="n">cl_oracle_solution</span>
+		<span class="k">global</span> <span class="n">cl_delete_hint</span>
+		<span class="k">global</span> <span class="n">cl_marker</span>
+		<span class="k">global</span> <span class="n">to_show</span>
+		<span class="k">global</span> <span class="n">case_data</span>
+		<span class="k">global</span> <span class="n">room_idx</span>
+		<span class="k">global</span> <span class="n">rooms</span> 
+		
+		<span class="n">sol</span> <span class="o">=</span> <span class="n">cl_oracle_solution</span><span class="p">()</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;to_show={to_show} -- oracle={sol.ID}&quot;</span><span class="p">)</span>
+		
+		<span class="k">if</span> <span class="n">to_show</span> <span class="o">==</span> <span class="n">sol</span><span class="o">.</span><span class="n">ID</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;MYSTERY SOLVED&quot;</span><span class="p">)</span>
+			<span class="k">return</span> <span class="s2">&quot;SUCCESS&quot;</span>
+		
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;TRY AGAIN...&quot;</span><span class="p">)</span>
+			<span class="n">next_room</span><span class="p">()</span>
+			
+			<span class="k">return</span> <span class="s1">&#39;AGAIN&#39;</span></div></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">init_node</span><span class="p">(</span><span class="s2">&quot;state_machine&quot;</span><span class="p">)</span>
+	
+	<span class="n">seed</span><span class="p">(</span><span class="mi">82749387492</span><span class="p">)</span>
+	
+	<span class="c1"># client navigation service -- go to point</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl go_to_point&quot;</span><span class="p">)</span>
+	<span class="n">cl_go_to_point</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/go_to_point&quot;</span><span class="p">,</span> <span class="n">GoToPoint</span><span class="p">)</span>
+	
+	<span class="c1"># client navigation service -- turn robot</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl turn_robot&quot;</span><span class="p">)</span>
+	<span class="n">cl_turn_robot</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/turn_robot&quot;</span><span class="p">,</span> <span class="n">TurnRobot</span><span class="p">)</span>
+	
+	<span class="c1"># client aruco markers</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl aruco markers&quot;</span><span class="p">)</span>
+	<span class="n">cl_aruco</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/aruco_markers&quot;</span><span class="p">,</span> <span class="n">GetArucoIds</span><span class="p">)</span>
+	
+	<span class="c1"># client knowledge base -- add hint</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl add hint&quot;</span><span class="p">)</span>
+	<span class="n">cl_add_hint</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/add_hint&quot;</span><span class="p">,</span> <span class="n">AddHint</span><span class="p">)</span>
+	
+	<span class="c1"># client get hint</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl get id&quot;</span><span class="p">)</span>
+	<span class="n">cl_get_hint</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/get_id&quot;</span><span class="p">,</span> <span class="n">GetId</span><span class="p">)</span>
+	
+	<span class="c1"># client oracle -- solution</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl oracle solution&quot;</span><span class="p">)</span>
+	<span class="n">cl_oracle_solution</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/oracle_solution&quot;</span><span class="p">,</span> <span class="n">Oracle</span><span class="p">)</span>
+	
+	<span class="c1"># client kb -- delete hint</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl delete hint&quot;</span><span class="p">)</span>
+	<span class="n">cl_delete_hint</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/mark_wrong_id&quot;</span><span class="p">,</span> <span class="n">MarkWrongId</span><span class="p">)</span>
+	
+	<span class="c1"># client -- oracle marker</span>
+	<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="s2">&quot;cl oracle marker&quot;</span><span class="p">)</span>
+	<span class="n">cl_marker</span> <span class="o">=</span> <span class="n">rospy</span><span class="o">.</span><span class="n">ServiceProxy</span><span class="p">(</span><span class="s2">&quot;/oracle_hint&quot;</span><span class="p">,</span> <span class="n">Marker</span><span class="p">)</span>
+	
+	
+	<span class="n">sm</span> <span class="o">=</span> <span class="n">smach</span><span class="o">.</span><span class="n">StateMachine</span><span class="p">(</span> <span class="n">outcomes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mystery_solved&#39;</span><span class="p">,</span> <span class="s1">&#39;mystery_not_solvable&#39;</span><span class="p">]</span> <span class="p">)</span>
+	<span class="k">with</span> <span class="n">sm</span><span class="p">:</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">StateMachine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="s1">&#39;MOVE&#39;</span><span class="p">,</span> <span class="n">MOVE</span><span class="p">(),</span> <span class="n">transitions</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;NEXT&#39;</span><span class="p">:</span><span class="s1">&#39;COLLECT&#39;</span><span class="p">},</span> <span class="n">remapping</span><span class="o">=</span><span class="p">{}</span> <span class="p">)</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">StateMachine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="s1">&#39;COLLECT&#39;</span><span class="p">,</span> <span class="n">COLLECT</span><span class="p">(),</span> <span class="n">transitions</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;NEXT&#39;</span><span class="p">:</span><span class="s1">&#39;CHECK&#39;</span><span class="p">},</span> <span class="n">remapping</span><span class="o">=</span><span class="p">{}</span> <span class="p">)</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">StateMachine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="s1">&#39;CHECK&#39;</span><span class="p">,</span> <span class="n">CHECK</span><span class="p">(),</span> <span class="n">transitions</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;NEXT&#39;</span><span class="p">:</span><span class="s1">&#39;SHOW&#39;</span><span class="p">,</span> <span class="s1">&#39;IMPOSSIBLE&#39;</span><span class="p">:</span><span class="s1">&#39;mystery_not_solvable&#39;</span><span class="p">,</span> <span class="s1">&#39;AGAIN&#39;</span><span class="p">:</span><span class="s1">&#39;MOVE&#39;</span><span class="p">},</span> <span class="n">remapping</span><span class="o">=</span><span class="p">{}</span> <span class="p">)</span>
+		<span class="n">smach</span><span class="o">.</span><span class="n">StateMachine</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="s1">&#39;SHOW&#39;</span><span class="p">,</span> <span class="n">SHOW</span><span class="p">(),</span> <span class="n">transitions</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;AGAIN&#39;</span><span class="p">:</span><span class="s1">&#39;MOVE&#39;</span><span class="p">,</span> <span class="s1">&#39;SUCCESS&#39;</span><span class="p">:</span><span class="s1">&#39;mystery_solved&#39;</span><span class="p">},</span> <span class="n">remapping</span><span class="o">=</span><span class="p">{}</span> <span class="p">)</span>
+	
+	<span class="c1"># starting the introspection server needed for smachviewer </span>
+	<span class="n">sis</span> <span class="o">=</span> <span class="n">smach_ros</span><span class="o">.</span><span class="n">IntrospectionServer</span><span class="p">(</span><span class="s1">&#39;sm_server&#39;</span><span class="p">,</span> <span class="n">sm</span><span class="p">,</span> <span class="s1">&#39;/sm_root&#39;</span><span class="p">)</span>
+	<span class="n">sis</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+	
+	<span class="n">outcome</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+	<span class="k">if</span> <span class="n">outcome</span><span class="o">==</span><span class="s2">&quot;mystery_solved&quot;</span><span class="p">:</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">loginfo</span><span class="p">(</span><span class="n">f</span><span class="s2">&quot;mystery solved! ID={winnerID} with data(who={case_data[&#39;who&#39;]},where={case_data[&#39;where&#39;]},what={case_data[&#39;what&#39;]}&quot;</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">rospy</span><span class="o">.</span><span class="n">logerr</span><span class="p">(</span><span class="s2">&quot;mystery not solvable.&quot;</span><span class="p">)</span>
+	
+	<span class="c1"># rospy.spin()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Iacopo Pietrasanta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

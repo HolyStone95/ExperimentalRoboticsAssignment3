@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classstate__machine_1_1_c_h_e_c_k" kind="class" language="Python" prot="public">
+    <compoundname>state_machine::CHECK</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">State</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classstate__machine_1_1_c_h_e_c_k_1a6b44632604149b94217dfb1048a1c950" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.CHECK.__init__</definition>
+        <argsstring>(self, outcomes=[&apos;NEXT&apos;, &apos;IMPOSSIBLE&apos;, &apos;AGAIN&apos;])</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>outcomes</type>
+          <defname>outcomes</defname>
+          <defval>[&apos;NEXT&apos;</defval>
+        </param>
+        <param>
+          <type>&apos;IMPOSSIBLE&apos;</type>
+        </param>
+        <param>
+          <type>&apos;AGAIN&apos;]</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="167" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="167" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classstate__machine_1_1_c_h_e_c_k_1a509a2fc61bb542261e7f566487d78ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.CHECK.execute</definition>
+        <argsstring>(self, userdata)</argsstring>
+        <name>execute</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>userdata</type>
+          <defname>userdata</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>ask if there are valid hints to the knowledge base
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="170" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="170" bodyend="209"/>
+        <references refid="namespacestate__machine_1a61ad2d7f7796d9a8207ee7c2be7b6835" compoundref="state__machine_8py" startline="84">state_machine.cl_add_hint</references>
+        <references refid="namespacestate__machine_1a3beeedfafde415df2974a2a5dda69d6d" compoundref="state__machine_8py" startline="80">state_machine.cl_aruco</references>
+        <references refid="namespacestate__machine_1ad5face4951be519a2ec365d46bce4162" compoundref="state__machine_8py" startline="88">state_machine.cl_get_hint</references>
+        <references refid="namespacestate__machine_1ae1b578fc9d502ebdbfb09a0ff78bf0da" compoundref="state__machine_8py" startline="52" endline="59">state_machine.next_room</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>state_machine.CHECK</label>
+        <link refid="classstate__machine_1_1_c_h_e_c_k"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>State</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>state_machine.CHECK</label>
+        <link refid="classstate__machine_1_1_c_h_e_c_k"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>State</label>
+      </node>
+    </collaborationgraph>
+    <location file="erl_assignment_3/scripts/state_machine.py" line="166" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="166" bodyend="210"/>
+    <listofallmembers>
+      <member refid="classstate__machine_1_1_c_h_e_c_k_1a6b44632604149b94217dfb1048a1c950" prot="public" virt="non-virtual"><scope>state_machine::CHECK</scope><name>__init__</name></member>
+      <member refid="classstate__machine_1_1_c_h_e_c_k_1a509a2fc61bb542261e7f566487d78ef2" prot="public" virt="non-virtual"><scope>state_machine::CHECK</scope><name>execute</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

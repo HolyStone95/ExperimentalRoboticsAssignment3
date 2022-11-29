@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_detectibot__magnifier_8rst_8txt" kind="file" language="C++">
+    <compoundname>Detectibot_magnifier.rst.txt</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_detectibot__magnifier_8rst_8txt_1a6f151bf053f064333fa41575c7af1daa" prot="public" static="no" mutable="no">
+        <type>Code docs *Detectibot_magnifier cpp the vision_openCV</type>
+        <definition>Code docs* Detectibot_magnifier cpp the vision_openCV packages</definition>
+        <argsstring></argsstring>
+        <name>packages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Detectibot_magnifier.rst.txt" line="12" column="20" bodyfile="_build/html/_sources/code_documentation/Detectibot_magnifier.rst.txt" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_detectibot__magnifier_8rst_8txt_1aab7935661ade1e68845326aa28cf201d" prot="public" static="no" mutable="no">
+        <type>Code docs *Detectibot_magnifier cpp the vision_openCV aimed at interfacing ROS with OpenCV have been emploied OpenCV basically consists in a library of programming functions for real time computer vision <ref refid="_state__machine_8rst_8txt_1a8795d0cbcbce9d1f5a4f121d36ae9856" kindref="member">Hence</ref> this node employs a bridge between OpenCV and ROS Due to the fact <ref refid="_state__machine_8rst_8txt_1a973e6a2335642e1fca2cbdb36866d90d" kindref="member">that</ref> ROS sends Images in sensor_msgs Image</type>
+        <definition>Code docs* Detectibot_magnifier cpp the vision_openCV aimed at interfacing ROS with OpenCV have been emploied OpenCV basically consists in a library of programming functions for real time computer vision Hence this node employs a bridge between OpenCV and ROS Due to the fact that ROS sends Images in sensor_msgs Image format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="_build/html/_sources/code_documentation/Detectibot_magnifier.rst.txt" line="14" column="99" bodyfile="_build/html/_sources/code_documentation/Detectibot_magnifier.rst.txt" bodystart="14" bodyend="-1"/>
+        <referencedby refid="test__compression_8cpp_1a4a83d5ef9bb4eb154f7dfbab5e11cde8" compoundref="test__compression_8cpp" startline="5" endline="36">TEST</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">Code<sp/>docs<sp/>--<sp/>*Detectibot_magnifier.cpp*</highlight></codeline>
+<codeline lineno="2" refid="_detectibot__magnifier_8rst_8txt_1a6f151bf053f064333fa41575c7af1daa" refkind="member"><highlight class="normal">=========================================</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">About<sp/>the<sp/>node</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">---------------</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">This<sp/>node<sp/><ref refid="_r_e_a_d_m_e_8md_8txt_1af1324d0bc77791472f5243eadcfb11b2" kindref="member">is</ref><sp/>devoted<sp/>to<sp/>the<sp/>detection<sp/>of<sp/>ARUCO</highlight><highlight class="stringliteral">&apos;s<sp/>markers<sp/>made<sp/>through<sp/>a<sp/>single<sp/>camera<sp/>mounted<sp/>on<sp/>the<sp/>front<sp/>side<sp/>of<sp/>the<sp/>robot.</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">It<sp/>also<sp/>implements<sp/>a<sp/>service<sp/>that<sp/>allows<sp/>for<sp/>retrieving<sp/>the<sp/>IDs<sp/>identified<sp/>through<sp/>Aruco.</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">Generalities</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">-------------</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">For<sp/>realising<sp/>such<sp/>a<sp/>node,<sp/>the<sp/>``vision_openCV``<sp/>packages,<sp/>aimed<sp/>at<sp/>interfacing<sp/>ROS<sp/>with<sp/>OpenCV<sp/>have<sp/>been<sp/>emploied.<sp/></highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">OpenCV<sp/>basically<sp/>consists<sp/>in<sp/>a<sp/>library<sp/>of<sp/>programming<sp/>functions<sp/>for<sp/>real<sp/>time<sp/>computer<sp/>vision.<sp/>Hence<sp/>this<sp/>node<sp/></highlight></codeline>
+<codeline lineno="14" refid="_detectibot__magnifier_8rst_8txt_1aab7935661ade1e68845326aa28cf201d" refkind="member"><highlight class="stringliteral">employs<sp/>a<sp/>bridge<sp/>between<sp/>OpenCV<sp/>and<sp/>ROS.<sp/>Due<sp/>to<sp/>the<sp/>fact<sp/>that<sp/>ROS<sp/>sends<sp/>Images<sp/>in<sp/>``sensor_msgs/Image``<sp/>format,<sp/>our<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral">goal<sp/>is<sp/>to<sp/>obtain<sp/>images<sp/>in<sp/>``cv_bridge``<sp/>format.</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral">..<sp/>note::</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Please<sp/>note<sp/>that<sp/>By<sp/>using<sp/>``image_transport::Publisher<sp/>image_pub_``<sp/>and<sp/>subscribing<sp/>to<sp/>the<sp/>topic<sp/>``/robot/camera1/image_raw``<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>we<sp/>are<sp/>able<sp/>to<sp/>significantly<sp/>**decrease<sp/>the<sp/>bandwidth**!</highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral">Code<sp/>Reference</highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral">---------------</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral">..<sp/>doxygenfile::<sp/>detectibot_magnifier.cpp</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>:project:<sp/>ExperimentalRoboticsAssignment3</highlight></codeline>
+    </programlisting>
+    <location file="_build/html/_sources/code_documentation/Detectibot_magnifier.rst.txt"/>
+  </compounddef>
+</doxygen>

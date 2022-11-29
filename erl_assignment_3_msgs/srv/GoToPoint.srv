@@ -1,0 +1,10 @@
+## service file 'GoToPoint.srv'
+
+# the target point to go at 
+geometry_msgs/Point target
+
+---
+
+# res to set the service as succeded or failed 
+bool success
+

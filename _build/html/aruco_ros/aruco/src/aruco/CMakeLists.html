@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; ExperimentalRoboticsAssignment3 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> ExperimentalRoboticsAssignment3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../code_documentation/index.html">Code Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment2</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">ExperimentalRoboticsAssignment3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/aruco_ros/aruco/src/aruco/CMakeLists.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <dl class="simple">
+<dt>set(sources</dt><dd><p>cameraparameters.cpp
+cvdrawingutils.cpp
+dictionary.cpp
+ippe.cpp
+marker.cpp
+markerdetector.cpp
+markerlabeler.cpp
+markermap.cpp
+posetracker.cpp
+markerlabelers/dictionary_based.cpp
+debug.cpp
+markerlabelers/svmmarkers.cpp</p>
+</dd>
+</dl>
+<p>)</p>
+<dl>
+<dt>set(headers</dt><dd><p>aruco_export.h
+cameraparameters.h
+cvdrawingutils.h
+dictionary.h
+ippe.h
+marker.h
+markerdetector.h
+markerlabeler.h
+markermap.h
+posetracker.h
+markerlabelers/dictionary_based.h
+timers.h</p>
+<blockquote>
+<div><p>debug.h
+aruco.h</p>
+</div></blockquote>
+<p>markerlabelers/svmmarkers.h</p>
+</dd>
+</dl>
+<p>)</p>
+<p>add_library(aruco ${sources} ${headers})
+IF(NOT ARUCO_ANDROID)</p>
+<dl class="simple">
+<dt>set_target_properties(aruco PROPERTIES          # create <a href="#id1"><span class="problematic" id="id2">*</span></a>nix style library versions + symbolic links</dt><dd><p>DEFINE_SYMBOL ARUCO_DSO_EXPORTS
+VERSION ${PROJECT_VERSION}
+SOVERSION ${PROJECT_SOVERSION}
+CLEAN_DIRECT_OUTPUT 1                       # allow creating static and shared libs without conflicts
+OUTPUT_NAME “aruco${PROJECT_DLLVERSION}”    # avoid conflicts between library and binary target names</p>
+</dd>
+</dl>
+<p>)</p>
+<p>#include(GenerateExportHeader)
+#generate_export_header(aruco)</p>
+<p>target_link_libraries(aruco PUBLIC opencv_core)
+target_link_libraries(aruco PRIVATE opencv_imgproc opencv_calib3d opencv_features2d opencv_ml)</p>
+<p>target_include_directories(aruco PUBLIC
+#  $&lt;BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}&gt;
+#  $&lt;BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}&gt;</p>
+<blockquote>
+<div><p>$&lt;INSTALL_INTERFACE:include&gt;</p>
+</div></blockquote>
+<p>)</p>
+<dl class="simple">
+<dt>install(TARGETS aruco EXPORT arucoConfig</dt><dd><p>RUNTIME DESTINATION bin
+LIBRARY DESTINATION lib PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+ARCHIVE DESTINATION lib</p>
+</dd>
+</dl>
+<p>)</p>
+<dl class="simple">
+<dt>install(FILES ${headers}</dt><dd><p>DESTINATION include/aruco</p>
+</dd>
+</dl>
+<p>)</p>
+<p>install(EXPORT arucoConfig DESTINATION “share/aruco/cmake”)
+ELSE()
+MESSAGE(STATUS  “ARUCO COMPILATION”)
+target_link_libraries( # Specifies the target library.</p>
+<blockquote>
+<div><p>aruco lib_opencv</p>
+<p># Links the target library to the log library
+# included in the NDK.
+${log-lib} )</p>
+</div></blockquote>
+<p>ENDIF()</p>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Iacopo Pietrasanta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

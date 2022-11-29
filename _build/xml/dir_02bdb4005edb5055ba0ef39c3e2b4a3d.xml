@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_02bdb4005edb5055ba0ef39c3e2b4a3d" kind="dir">
+    <compoundname>_build/html/_sources</compoundname>
+    <innerdir refid="dir_a6630cccf965a2fe08f29b63a35dbcd4">_build/html/_sources/armetectibot</innerdir>
+    <innerdir refid="dir_d67fbd47a273efb57c9852a8c53fee1f">_build/html/_sources/aruco_ros</innerdir>
+    <innerdir refid="dir_e54b6d0d1981af8de7cdab24fd6d1c39">_build/html/_sources/bridge_example</innerdir>
+    <innerdir refid="dir_19d2a84171ad5410f35a5a0a65c9e77a">_build/html/_sources/code_documentation</innerdir>
+    <innerdir refid="dir_38e8b9ed5b7b9416573615062e91436d">_build/html/_sources/documents</innerdir>
+    <innerdir refid="dir_5c7a1c402a9f9f0138f9491a7f165b5f">_build/html/_sources/erl3</innerdir>
+    <innerdir refid="dir_2c6d378fa091dc5c5fe7a020ff0110d1">_build/html/_sources/erl_assignment_3</innerdir>
+    <innerdir refid="dir_e3b1a7ba9d2f276774d5aea8135240df">_build/html/_sources/erl_assignment_3_msgs</innerdir>
+    <innerdir refid="dir_da68b58fb177a3d9891eeb8e86722158">_build/html/_sources/erl_assignment_3_robot</innerdir>
+    <innerdir refid="dir_1b151a4f6542cc09e46a716fbd68bb94">_build/html/_sources/vision_opencv</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="_build/html/_sources/"/>
+  </compounddef>
+</doxygen>

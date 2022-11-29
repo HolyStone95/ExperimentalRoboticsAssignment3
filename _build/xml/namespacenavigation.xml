@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacenavigation" kind="namespace" language="Python">
+    <compoundname>navigation</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacenavigation_1aaf36cb767fec1d2f488df73580b9adbb" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>navigation.odometry_topic</definition>
+        <argsstring></argsstring>
+        <name>odometry_topic</name>
+        <initializer>=  &quot;/odom&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="46" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1ac4ea594f64a618112a377f9a11f50819" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.last_odometry</definition>
+        <argsstring></argsstring>
+        <name>last_odometry</name>
+        <initializer>=  <ref refid="namespacenavigation_1aeccb1ecea18846868e086fa9a8c93228" kindref="member">Odometry</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="50" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1af900f5fbc83bf195cc91c2deeb52beff" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.last_pos</definition>
+        <argsstring></argsstring>
+        <name>last_pos</name>
+        <initializer>=  Point()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="54" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1a74e3c4c6ba2e5163f1e2c3bc4fb9afbc" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string navigation.move_base_goal_topic</definition>
+        <argsstring></argsstring>
+        <name>move_base_goal_topic</name>
+        <initializer>=  &quot;/move_base/goal&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="101" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1a182f1ebb5aaa8b316a6c70aeb2dbb433" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.pub_move_base</definition>
+        <argsstring></argsstring>
+        <name>pub_move_base</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="105" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1ab0e0fed79c0c499db082e37ce756e9b2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.pub_cancel_move_base</definition>
+        <argsstring></argsstring>
+        <name>pub_cancel_move_base</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="109" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1a8b7dacb95e13473c1e08a9fb424a8a96" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.last_target</definition>
+        <argsstring></argsstring>
+        <name>last_target</name>
+        <initializer>=  Point()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="113" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1ace4608c55afc2efd91c604266d078ba9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.pub_cmd_vel</definition>
+        <argsstring></argsstring>
+        <name>pub_cmd_vel</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="197" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1aeccb1ecea18846868e086fa9a8c93228" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.Odometry</definition>
+        <argsstring></argsstring>
+        <name>Odometry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="245" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1adb8495028727eb1e2adf36c3e9a8e422" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.read_odom</definition>
+        <argsstring></argsstring>
+        <name>read_odom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="245" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="245" bodyend="-1"/>
+        <referencedby refid="namespacenavigation_1a1ac2e867bca7316b3a374fa744a10b40" compoundref="navigation_8py" startline="58" endline="74">read_odom</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacenavigation_1a91dc7b647c85e3a318992d230c051980" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>navigation.queue_size</definition>
+        <argsstring></argsstring>
+        <name>queue_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="245" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacenavigation_1a1ac2e867bca7316b3a374fa744a10b40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def navigation.read_odom</definition>
+        <argsstring>(data)</argsstring>
+        <name>read_odom</name>
+        <param>
+          <type>data</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>read and save the data from the Odometry topic
+
+Parameters:
+    data (nav_msgs/Odometry):
+        the current odometry message
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="58" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="58" bodyend="74"/>
+        <references refid="namespacenavigation_1adb8495028727eb1e2adf36c3e9a8e422" compoundref="navigation_8py" startline="245">read_odom</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacenavigation_1af75fbb7a19ea032a78b21c56a40e3bca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def navigation.dist_vector</definition>
+        <argsstring>(P1, P2)</argsstring>
+        <name>dist_vector</name>
+        <param>
+          <type>P1</type>
+          <defname>P1</defname>
+        </param>
+        <param>
+          <type>P2</type>
+          <defname>P2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>returns the difference vector between points.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="75" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="75" bodyend="86"/>
+        <referencedby refid="namespacenavigation_1a71f161d1ae098bd6340a019eec6739b0" compoundref="navigation_8py" startline="87" endline="100">distance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacenavigation_1a71f161d1ae098bd6340a019eec6739b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def navigation.distance</definition>
+        <argsstring>(P1, P2)</argsstring>
+        <name>distance</name>
+        <param>
+          <type>P1</type>
+          <defname>P1</defname>
+        </param>
+        <param>
+          <type>P2</type>
+          <defname>P2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>eucledian distance between P1 and P2
+
+Parameters:
+    P1 (geometry_msgs/Point) : first point
+    P2 (geometry_msgs/Point) : second point
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="87" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="87" bodyend="100"/>
+        <references refid="namespacenavigation_1af75fbb7a19ea032a78b21c56a40e3bca" compoundref="navigation_8py" startline="75" endline="86">dist_vector</references>
+        <referencedby refid="namespacenavigation_1a32d189ba2e0de92c56020bc7aca98ac8" compoundref="navigation_8py" startline="148" endline="196">go_to_point</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacenavigation_1aa44e8b4dc0597fb4be7f7881613a0e49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def navigation.send_move_base</definition>
+        <argsstring>(x, y)</argsstring>
+        <name>send_move_base</name>
+        <param>
+          <type><ref refid="_r_e_a_d_m_e_8md_8txt_1a32adde371575f865b948a2d9efdef5b1" kindref="member">x</ref></type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>y</type>
+          <defname>y</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>send a goal to the navigation stack
+
+Parameters:
+    x (float) : x coordinate
+    y (float) : y coordinate</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="117" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="117" bodyend="147"/>
+        <referencedby refid="namespacenavigation_1a32d189ba2e0de92c56020bc7aca98ac8" compoundref="navigation_8py" startline="148" endline="196">go_to_point</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacenavigation_1a32d189ba2e0de92c56020bc7aca98ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def navigation.go_to_point</definition>
+        <argsstring>(req)</argsstring>
+        <name>go_to_point</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>service implementation of /go_to_point
+
+the service calls MoveBase and waits until the robot hasn&apos;t reached
+the given target. 
+
+Parameters:
+    req (erl_assignment_3_msgs/GoToPointRequest):
+        the target point to go at
+
+Returns
+    res (erl_assignment_3_msgs/GoToPointResponse):
+        whether the request succeeded or not. 
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="148" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="148" bodyend="196"/>
+        <references refid="namespacenavigation_1a71f161d1ae098bd6340a019eec6739b0" compoundref="navigation_8py" startline="87" endline="100">distance</references>
+        <references refid="namespacenavigation_1aa44e8b4dc0597fb4be7f7881613a0e49" compoundref="navigation_8py" startline="117" endline="147">send_move_base</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacenavigation_1a5b0513f973bd12fcdc6e7c8d40b248db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def navigation.turn_robot</definition>
+        <argsstring>(req)</argsstring>
+        <name>turn_robot</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>implementation of the service /turn_robot
+
+this service listens for a request containing the angular velocity around
+x to keep, and the time during which the robot has to turn at that 
+angular velocity. 
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/navigation.py" line="201" column="1" bodyfile="erl_assignment_3/scripts/navigation.py" bodystart="201" bodyend="232"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: navigation
+:platform: Unix
+:synopsis: Python module aimed at implementong the Navigation module
+.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrasanta@gmail.com
+
+This node implements two different services aimed at letting the robot reach
+different rooms in order to fulfill its investigation-related tasks.
+The go_to_point service calls MoveBase and waits until the robot hasn&apos;t reached
+the given target whereas the turn_robot service listens for a request containing 
+the angular velocity around x to keep, and the time during which the robot has to
+turn at that angular velocity. 
+Further keypoints:
+- Localisation takes place through the subscription to the **odom** (nav_msgs/Odom) 
+  topic
+- The node uses **move_base** (from move_base pkg) to perform the navigation.
+ 
+Subscribes to:
+/clock 
+
+Publishes to:
+    /cmd_vel [geometry_msgs/Twist]
+    /move_base/cancel [actionlib_msgs/GoalID]
+    /move_base/goal [move_base_msgs/MoveBaseActionGoal]
+    /rosout [rosgraph_msgs/Log]
+Service :
+    /go_to_point
+    /navigation/get_loggers
+    /navigation/set_logger_level
+    /turn_robot
+</verbatim> </para>
+    </detaileddescription>
+    <location file="erl_assignment_3/scripts/navigation.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_d160065f9cdbdeb38af5bbfcd84128d0" kind="dir">
+    <compoundname>vision_opencv/image_geometry</compoundname>
+    <innerdir refid="dir_0b906f2be17fe9cbcb56681d41f81b78">vision_opencv/image_geometry/doc</innerdir>
+    <innerdir refid="dir_4a72f1274c9f1d15fbfde0710c9be354">vision_opencv/image_geometry/include</innerdir>
+    <innerdir refid="dir_42d473c946a6df0f7aea755e6e0bad62">vision_opencv/image_geometry/src</innerdir>
+    <innerdir refid="dir_5b2c6bd70c97f6cff7b2f62d89e61a56">vision_opencv/image_geometry/test</innerdir>
+    <innerfile refid="image__geometry_2setup_8py">setup.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/image_geometry/"/>
+  </compounddef>
+</doxygen>

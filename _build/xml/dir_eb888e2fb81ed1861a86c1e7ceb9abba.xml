@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_eb888e2fb81ed1861a86c1e7ceb9abba" kind="dir">
+    <compoundname>vision_opencv/cv_bridge/src/boost/predef/library</compoundname>
+    <innerdir refid="dir_3691e4fffebcece04a7377146fc1e9c5">vision_opencv/cv_bridge/src/boost/predef/library/c</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/cv_bridge/src/boost/predef/library/"/>
+  </compounddef>
+</doxygen>

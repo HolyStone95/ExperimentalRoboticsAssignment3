@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: erl_assignment_3
+    relative_path: urdf/robot6.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/m2wr.srdf
+  CONFIG:
+    author_name: gg
+    author_email: gg@gg.ru
+    generated_timestamp: 1661798909

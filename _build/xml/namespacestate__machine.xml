@@ -1,0 +1,327 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacestate__machine" kind="namespace" language="Python">
+    <compoundname>state_machine</compoundname>
+    <innerclass refid="classstate__machine_1_1_c_h_e_c_k" prot="public">state_machine::CHECK</innerclass>
+    <innerclass refid="classstate__machine_1_1_c_o_l_l_e_c_t" prot="public">state_machine::COLLECT</innerclass>
+    <innerclass refid="classstate__machine_1_1_m_o_v_e" prot="public">state_machine::MOVE</innerclass>
+    <innerclass refid="classstate__machine_1_1_s_h_o_w" prot="public">state_machine::SHOW</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacestate__machine_1a90cccbf998600dba4beb0f767a6c41fd" prot="public" static="no" mutable="no">
+        <type>list</type>
+        <definition>list state_machine.rooms</definition>
+        <argsstring></argsstring>
+        <name>rooms</name>
+        <initializer>=  [(-4,-3), (-4,2), (-4,7), (5,-7), (5,-3), (5,1)]</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="44" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a2bd9fd1920d2bc42dc4731864d652717" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int state_machine.room_idx</definition>
+        <argsstring></argsstring>
+        <name>room_idx</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="48" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a9eae712143c08f3491a16d4ee6451750" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int state_machine.winnerID</definition>
+        <argsstring></argsstring>
+        <name>winnerID</name>
+        <initializer>=  -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="60" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a789fc3e10c22b001717ce1b7892fbe97" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int state_machine.to_show</definition>
+        <argsstring></argsstring>
+        <name>to_show</name>
+        <initializer>=  -1;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="64" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a6a475cbf752498b2299eecd2b68d3514" prot="public" static="no" mutable="no">
+        <type>dictionary</type>
+        <definition>dictionary state_machine.case_data</definition>
+        <argsstring></argsstring>
+        <name>case_data</name>
+        <initializer>=  {&quot;who&quot;:&quot;&quot;, &quot;where&quot;:&quot;&quot;, &quot;what&quot;:&quot;&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="68" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a603958986e96759744716f54f97c0da5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_go_to_point</definition>
+        <argsstring></argsstring>
+        <name>cl_go_to_point</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="72" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="72" bodyend="-1"/>
+        <referencedby refid="classstate__machine_1_1_m_o_v_e_1a08f985b53335e8d21c9c387ab48b6872" compoundref="state__machine_8py" startline="110" endline="143">state_machine.MOVE.execute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a15d8b0fa02e1fe70d6bdd9d7ca123442" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_turn_robot</definition>
+        <argsstring></argsstring>
+        <name>cl_turn_robot</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="76" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="76" bodyend="-1"/>
+        <referencedby refid="classstate__machine_1_1_c_o_l_l_e_c_t_1afc9c7daa29434ed9f4b7b13b3a1c9665" compoundref="state__machine_8py" startline="148" endline="165">state_machine.COLLECT.execute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a3beeedfafde415df2974a2a5dda69d6d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_aruco</definition>
+        <argsstring></argsstring>
+        <name>cl_aruco</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="80" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classstate__machine_1_1_c_h_e_c_k_1a509a2fc61bb542261e7f566487d78ef2" compoundref="state__machine_8py" startline="170" endline="209">state_machine.CHECK.execute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a61ad2d7f7796d9a8207ee7c2be7b6835" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_add_hint</definition>
+        <argsstring></argsstring>
+        <name>cl_add_hint</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="84" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classstate__machine_1_1_c_h_e_c_k_1a509a2fc61bb542261e7f566487d78ef2" compoundref="state__machine_8py" startline="170" endline="209">state_machine.CHECK.execute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1ad5face4951be519a2ec365d46bce4162" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_get_hint</definition>
+        <argsstring></argsstring>
+        <name>cl_get_hint</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="88" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classstate__machine_1_1_c_h_e_c_k_1a509a2fc61bb542261e7f566487d78ef2" compoundref="state__machine_8py" startline="170" endline="209">state_machine.CHECK.execute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a3c3b5ea8c574a68329796bac67a0b562" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_oracle_solution</definition>
+        <argsstring></argsstring>
+        <name>cl_oracle_solution</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="92" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classstate__machine_1_1_s_h_o_w_1a14d2726508e9b2dbb5c2a33589dd5b47" compoundref="state__machine_8py" startline="214" endline="239">state_machine.SHOW.execute</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a96656c15d01281a447073b8c3f67acba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_delete_hint</definition>
+        <argsstring></argsstring>
+        <name>cl_delete_hint</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="96" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a36cf2be5ca5c54b410eebbd4ac82c1b2" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float state_machine.max_r</definition>
+        <argsstring></argsstring>
+        <name>max_r</name>
+        <initializer>=  1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="100" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1aa0222cedd1894200b1cb7d79c710213c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.cl_marker</definition>
+        <argsstring></argsstring>
+        <name>cl_marker</name>
+        <initializer>=  rospy.ServiceProxy(&quot;/oracle_hint&quot;, Marker)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="275" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a6793c4913a1241bddf256328c9a01028" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.sm</definition>
+        <argsstring></argsstring>
+        <name>sm</name>
+        <initializer>=  smach.StateMachine( outcomes = [&apos;mystery_solved&apos;, &apos;mystery_not_solvable&apos;] )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="278" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="278" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a372490be06dbd069bfafaa476a4f9f0b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.transitions</definition>
+        <argsstring></argsstring>
+        <name>transitions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="280" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a79821721f66b54a385a27e6c1004f57c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.remapping</definition>
+        <argsstring></argsstring>
+        <name>remapping</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="280" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1a0c431850437f844cabf1123287e44478" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.sis</definition>
+        <argsstring></argsstring>
+        <name>sis</name>
+        <initializer>=  smach_ros.IntrospectionServer(&apos;sm_server&apos;, <ref refid="namespacestate__machine_1a6793c4913a1241bddf256328c9a01028" kindref="member">sm</ref>, &apos;/sm_root&apos;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="286" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacestate__machine_1acbf2f3b4f08f91ac415d0c496d674e03" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>state_machine.outcome</definition>
+        <argsstring></argsstring>
+        <name>outcome</name>
+        <initializer>=  sm.execute()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="289" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="289" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacestate__machine_1ae1b578fc9d502ebdbfb09a0ff78bf0da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def state_machine.next_room</definition>
+        <argsstring>()</argsstring>
+        <name>next_room</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/state_machine.py" line="52" column="1" bodyfile="erl_assignment_3/scripts/state_machine.py" bodystart="52" bodyend="59"/>
+        <referencedby refid="classstate__machine_1_1_c_h_e_c_k_1a509a2fc61bb542261e7f566487d78ef2" compoundref="state__machine_8py" startline="170" endline="209">state_machine.CHECK.execute</referencedby>
+        <referencedby refid="classstate__machine_1_1_s_h_o_w_1a14d2726508e9b2dbb5c2a33589dd5b47" compoundref="state__machine_8py" startline="214" endline="239">state_machine.SHOW.execute</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: state_machine
+:platform: Unix
+:synopsis: Core Python module aimed at implementong the Smach state machine
+.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrasanta@gmail.com
+
+The state_machine node implements a state machine (by means of ROS Smach pkg) that
+establishes the operations the robot can actually perform; It also represent
+the core module of the overall architechture 
+ 
+In particular the machine organises the investigation into four states.
+- **move** → moves the robot between rooms inside the simulated indoor environment 
+- **collect** → the robot rotates on itself to read the largest number of hints within the room 
+- **check** → takes hints from the sensing system via a service, and uses the ontology to work out whether there are possible solutions or not. If there occurs no possible solutions, the outcome is `mistery_not_solvable`, and the robot transitions back to the &quot;move&quot; state. Otherwise, if there actually occurs possible solutions, the state machine makes a transition to the &quot;show&quot; state, responsible for querying the oracle about the solution&apos;s truthfulness
+- **show** → questions the oracle about the solution
+Subscribes to:
+    /clock [rosgraph_msgs/Clock]
+
+Publishes to:
+    /rosout [rosgraph_msgs/Log]
+Service :
+    /state_machine/get_loggers
+    /state_machine/set_logger_level
+</verbatim> </para>
+    </detaileddescription>
+    <location file="erl_assignment_3/scripts/state_machine.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

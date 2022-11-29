@@ -1,0 +1,11 @@
+## service file 'GetId.srv'
+
+# empty request
+
+---
+
+# if there are yet consistent hypotheses
+bool consistent_found
+
+# the ID of the selected consisten hp (chech consistent_found before)
+int32 consistent_id

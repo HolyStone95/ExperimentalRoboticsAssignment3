@@ -1,0 +1,379 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecluedo__kb" kind="namespace" language="Python">
+    <compoundname>cluedo_kb</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacecluedo__kb_1a0fb9cc01990ff96751d9a8df8f473ad2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.record_where</definition>
+        <argsstring></argsstring>
+        <name>record_where</name>
+        <initializer>=  0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="79" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a727404718e0777bf45e91fa9458e1f18" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.record_what</definition>
+        <argsstring></argsstring>
+        <name>record_what</name>
+        <initializer>=  1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="80" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a0e82193f2d59570204a37c310bc95e7b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.record_who</definition>
+        <argsstring></argsstring>
+        <name>record_who</name>
+        <initializer>=  2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="81" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1af2159774e7dc8e59e293d9057d60e690" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.is_active</definition>
+        <argsstring></argsstring>
+        <name>is_active</name>
+        <initializer>=  3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="82" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a5be4e3b61f6bdb880099c78cf658f5dc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int cluedo_kb.is_complete</definition>
+        <argsstring></argsstring>
+        <name>is_complete</name>
+        <initializer>=  4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="83" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a8636f58ddb22c3c70904f8e30a4dcc5e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.kb</definition>
+        <argsstring></argsstring>
+        <name>kb</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="85" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a335d9858030dee0238a6f2fc67a05023" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.kb_consistent</definition>
+        <argsstring></argsstring>
+        <name>kb_consistent</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="94" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1a1c63dfe724e4e24b2985ef2adb3bbfbb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.srv_get_id</definition>
+        <argsstring></argsstring>
+        <name>srv_get_id</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="98" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacecluedo__kb_1aa138c12c38a471ab81561c0a1b3606cf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>cluedo_kb.cl_oracle_hint</definition>
+        <argsstring></argsstring>
+        <name>cl_oracle_hint</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+<para><mdash/> <mdash/> <mdash/> <mdash/> <mdash/> <mdash/> <mdash/> <mdash/> Testing <mdash/> <mdash/> <mdash/> <mdash/> <mdash/> <mdash/> <mdash/> ## rospy.loginfo( &quot;cluedo_kb subscriber /oracle_hint...&quot; ) rospy.Subscriber( &quot;oracle_hint&quot;, ErlOracle, add_hint ) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="342" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="342" bodyend="-1"/>
+        <referencedby refid="namespacecluedo__kb_1a789e88706006ad8833736360f1445982" compoundref="cluedo__kb_8py" startline="346" endline="365">add_hint_service</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacecluedo__kb_1ac2ce9f31fe1875079d6cdbaa539122f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.print_kb_content</definition>
+        <argsstring>()</argsstring>
+        <name>print_kb_content</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>print the content inside the ontology on screen
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="104" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="104" bodyend="131"/>
+        <referencedby refid="namespacecluedo__kb_1a9c5cbd279b89f36f5f84c0e2dd63fca8" compoundref="cluedo__kb_8py" startline="269" endline="314">get_id</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.add_hint</definition>
+        <argsstring>(hint)</argsstring>
+        <name>add_hint</name>
+        <param>
+          <type><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref></type>
+          <defname>hint</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>receive and store (if possible) the hint
+
+Parameters: 
+    hint (erl3/ErlOracle):
+        the hint received directly from the Oracle
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="132" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="132" bodyend="149"/>
+        <references refid="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" compoundref="cluedo__kb_8py" startline="150" endline="241">add_hint_to_list</references>
+        <references refid="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" compoundref="cluedo__kb_8py" startline="242" endline="268">is_valid_hint</references>
+        <referencedby refid="namespacecluedo__kb_1a789e88706006ad8833736360f1445982" compoundref="cluedo__kb_8py" startline="346" endline="365">add_hint_service</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1a5b22ff3cf204215f52ecb6c13d8a806d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.add_hint_to_list</definition>
+        <argsstring>(hint)</argsstring>
+        <name>add_hint_to_list</name>
+        <param>
+          <type><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref></type>
+          <defname>hint</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>add a hint to the list, if possible
+
+the function tries to add a hint, checking if it is still consistent; 
+if the required field is already occupied (i.e. the string in that cell
+is not empty), the ID is marked as inconsistent and deactivated, and
+its index is removed from the indexes list. 
+
+Parameters:
+    hint (erl2/ErlOracle):
+        the hint to store in the KB</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="150" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="150" bodyend="241"/>
+        <referencedby refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="132" endline="149">add_hint</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1a8f44cecf16139c1d94cbf2a2bfc193cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.is_valid_hint</definition>
+        <argsstring>(hint)</argsstring>
+        <name>is_valid_hint</name>
+        <param>
+          <type><ref refid="_oracle_8rst_8txt_1a31598fc9ace12f0c15d34780665fbcf9" kindref="member">hint</ref></type>
+          <defname>hint</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>check if the hint is vald or not
+
+the Oracle sometimes could send a wrong hint, i.e. some field is
+a empty string and/or some filed has value &quot;-1&quot;. the function
+detects the quality of the hint, and returns if it is admissible
+or not. Also the ID could be negative or zero. 
+
+Parameters:
+    hint (erl2/ErlOracle):
+        the hint to store in the KB
+
+Returns:
+    (bool) if the hint is admissible or not.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="242" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="242" bodyend="268"/>
+        <referencedby refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="132" endline="149">add_hint</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1a9c5cbd279b89f36f5f84c0e2dd63fca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.get_id</definition>
+        <argsstring>(req)</argsstring>
+        <name>get_id</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>implementation of the service /get_id
+
+the service tries to return the first available index, looking in the 
+list of remaining indexes. if no consistent index is available, the
+service returns response.consistent_found=False .
+
+Parameters:
+    req (erl_assignment_2/GetIdRequest):
+        the service request
+
+Returns:
+    (erl_assignment_2/GetIdResponse) the id and if there are
+    still available IDs. 
+
+Note:
+    the service coulf return also (true, -1) in a situation in which
+    there are some active ID, but none of them is complete. </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="269" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="269" bodyend="314"/>
+        <references refid="namespacecluedo__kb_1ac2ce9f31fe1875079d6cdbaa539122f6" compoundref="cluedo__kb_8py" startline="104" endline="131">print_kb_content</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1afe9cb44eb6b95930542c455410ad70fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.mark_wrong_id</definition>
+        <argsstring>(req)</argsstring>
+        <name>mark_wrong_id</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>discard a ID from the system.
+
+Parameters:
+    req (erl_assignment_2/MarkWrongIdRequest):
+        the service request
+
+Returns:
+    req (erl_assignment_2/MarkWrongIdResponse) empty
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="315" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="315" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1a789e88706006ad8833736360f1445982" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.add_hint_service</definition>
+        <argsstring>(req)</argsstring>
+        <name>add_hint_service</name>
+        <param>
+          <type>req</type>
+          <defname>req</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>add a hint to th knowledge.
+
+the service calls the oracle and asks for a hint, then stores
+the hint. 
+
+Parameters: 
+        req (erl_assignment_3/AddHintRequest):
+            the service request 
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="346" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="346" bodyend="365"/>
+        <references refid="namespacecluedo__kb_1a1d7f88bfe0321a672bdef29136ac817f" compoundref="cluedo__kb_8py" startline="132" endline="149">add_hint</references>
+        <references refid="namespacecluedo__kb_1aa138c12c38a471ab81561c0a1b3606cf" compoundref="cluedo__kb_8py" startline="342">cl_oracle_hint</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacecluedo__kb_1ae00019d2c2ba8a48f8255f575cc3fd8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def cluedo_kb.shut_msg</definition>
+        <argsstring>()</argsstring>
+        <name>shut_msg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>print on console shut message
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="erl_assignment_3/scripts/cluedo_kb.py" line="366" column="1" bodyfile="erl_assignment_3/scripts/cluedo_kb.py" bodystart="366" bodyend="372"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>.. module:: cluedo_kb
+    :platform: Unix
+    :synopsis: Python module aimed at implementong the Reasoning &amp; AI module
+.. moduleauthor:: Iacopo Pietrasanta iacopo.pietrasanta@gmail.com
+
+cluedo_KB is a node that serves as a specialised ontology for the problem in hand; it supplies a processing/reasoning system that provides the functionality of:  
+
+- Registering clues 
+- Building and processing hypotheses based on the added information 
+- Finding possible solutions to the case 
+- Rejecting hypotheses (whether needed)
+
+It also implements two different services; As the robot starts its investigation,
+it moves from one room to tne next; In the meantime it makes a service request 
+through `/add_hint` for soliciting the oracle to announce the found hint. 
+This latter, consists in a request of type `erl3/Marker` 
+
+
+Subscribes to:
+/clock [rosgraph_msgs/Clock]
+    
+Publishes to:
+/rosout [rosgraph_msgs/Log]
+Service :
+/add_hint
+/cluedo_kb/get_loggers
+/cluedo_kb/set_logger_level
+/get_id
+/mark_wrong_id
+</verbatim> </para>
+    </detaileddescription>
+    <location file="erl_assignment_3/scripts/cluedo_kb.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

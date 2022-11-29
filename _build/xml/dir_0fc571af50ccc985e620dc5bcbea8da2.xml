@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_0fc571af50ccc985e620dc5bcbea8da2" kind="dir">
+    <compoundname>vision_opencv/opencv_tests</compoundname>
+    <innerdir refid="dir_ba6e97056e9dc760627ea2ebeeabd09c">vision_opencv/opencv_tests/nodes</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/opencv_tests/"/>
+  </compounddef>
+</doxygen>

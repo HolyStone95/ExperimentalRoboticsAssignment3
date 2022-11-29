@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_bac3f3c938acd5c69a2a49efc04c34f0" kind="dir">
+    <compoundname>vision_opencv</compoundname>
+    <innerdir refid="dir_2ce1e7b6f8d4d6fab94729ab5ce3f45c">vision_opencv/cv_bridge</innerdir>
+    <innerdir refid="dir_d160065f9cdbdeb38af5bbfcd84128d0">vision_opencv/image_geometry</innerdir>
+    <innerdir refid="dir_0fc571af50ccc985e620dc5bcbea8da2">vision_opencv/opencv_tests</innerdir>
+    <innerdir refid="dir_3ac51109f9f28780e973b1cb667ca999">vision_opencv/vision_opencv</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="vision_opencv/"/>
+  </compounddef>
+</doxygen>

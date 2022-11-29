@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_012ccd603ba4e60a1cab583bd0627077" kind="dir">
+    <compoundname>erl_assignment_3/src</compoundname>
+    <innerfile refid="detectibot__magnifier_8cpp">detectibot_magnifier.cpp</innerfile>
+    <innerfile refid="img__echo_8cpp">img_echo.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="erl_assignment_3/src/"/>
+  </compounddef>
+</doxygen>

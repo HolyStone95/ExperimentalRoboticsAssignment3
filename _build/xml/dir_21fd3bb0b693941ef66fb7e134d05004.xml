@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_21fd3bb0b693941ef66fb7e134d05004" kind="dir">
+    <compoundname>erl_assignment_3/scripts</compoundname>
+    <innerfile refid="cluedo__kb_8py">cluedo_kb.py</innerfile>
+    <innerfile refid="navigation_8py">navigation.py</innerfile>
+    <innerfile refid="state__machine_8py">state_machine.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="erl_assignment_3/scripts/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code docs – Img_echo.cpp &mdash; ExperimentalRoboticsAssignment3 v1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Code docs – Navigation.py" href="Navigation.html" />
+    <link rel="prev" title="Code docs – Detectibot_magnifier.cpp" href="Detectibot_magnifier.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ExperimentalRoboticsAssignment3
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Code documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code Documentation for ExperimentalRoboticsAssignment3</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Detectibot_magnifier.html">Code docs – <em>Detectibot_magnifier.cpp</em></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Code docs – <em>Img_echo.cpp</em></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-the-node">About the node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-reference">Code Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Navigation.html">Code docs – <em>Navigation.py</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Oracle.html">Code docs – <em>final_oracle.cpp</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="State_machine.html">Code docs – <em>State_machine.py</em></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Documents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../documents/index.html">Other Documentation for ExperimentalRoboticsAssignment3</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ExperimentalRoboticsAssignment3</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Code Documentation for ExperimentalRoboticsAssignment3</a> &raquo;</li>
+      <li>Code docs – <em>Img_echo.cpp</em></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/code_documentation/Img_echo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="code-docs-img-echo-cpp">
+<h1>Code docs – <em>Img_echo.cpp</em><a class="headerlink" href="#code-docs-img-echo-cpp" title="Permalink to this heading"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Authors</dt>
+<dd class="field-odd"><p>HolyStone95</p>
+</dd>
+<dt class="field-even">Version</dt>
+<dd class="field-even"><p>1.0</p>
+</dd>
+</dl>
+<div class="section" id="about-the-node">
+<h2>About the node<a class="headerlink" href="#about-the-node" title="Permalink to this heading"></a></h2>
+<p>This node reads the input image from the robot’s camera. Secondly, it print it on a floating window,
+namely <strong>DetectiCam</strong>, by means of a <code class="docutils literal notranslate"><span class="pre">cv_ptr</span></code>. (the <code class="docutils literal notranslate"><span class="pre">cv_bridge::CvImagePtr</span> <span class="pre">cv_ptr</span></code> returns a ROS image into an appropriate
+format compatible with OpenCV). Thirdly it publish the video stream!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since we have to deal with the image, multiple copies of it will be needed;
+For this purpose the BGR8 image encoding has been chosen, being it less susceptible against typos.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ImageTransport’s methods have been employed for creating image publishers and subscribers,
+being <code class="docutils literal notranslate"><span class="pre">image_transport</span></code> a package that provides transparetn support for transporting images in <strong>low-bandwidth</strong> compressed
+formats.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please remember to include cv_bridge in your xml package! Also do not forget to add the following headers to your cpp file</p>
+</div>
+</div>
+<div class="section" id="code-reference">
+<h2>Code Reference<a class="headerlink" href="#code-reference" title="Permalink to this heading"></a></h2>
+<p>This node reads the camera input and show it onto a floating window. </p>
+<p><p>Subscribes to:</p>
+<p>/clock [rosgraph_msgs/Clock] /robot/camera1/image_raw [sensor_msgs/Image] Publishes to:</p>
+<p>/img_echo [sensor_msgs/Image] /img_echo/compressed [sensor_msgs/CompressedImage] /img_echo/compressed/parameter_descriptions [dynamic_reconfigure/ConfigDescription] /img_echo/compressed/parameter_updates [dynamic_reconfigure/Config] /img_echo/compressedDepth [sensor_msgs/CompressedImage] /img_echo/compressedDepth/parameter_descriptions [dynamic_reconfigure/ConfigDescription] /img_echo/compressedDepth/parameter_updates [dynamic_reconfigure/Config] /img_echo/theora [theora_image_transport/Packet] /img_echo/theora/parameter_descriptions [dynamic_reconfigure/ConfigDescription] /img_echo/theora/parameter_updates [dynamic_reconfigure/Config] /rosout [rosgraph_msgs/Log] Services:</p>
+<p>/img_echo/compressed/set_parameters /img_echo/compressedDepth/set_parameters /img_echo/get_loggers /img_echo/set_logger_level /img_echo/theora/set_parameters</p>
+<dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Iacopo Pietrasanta </p>
+</dd>
+<dt><strong>Version</strong></dt><dd><p>1.0.0</p>
+</dd>
+</dl>
+</p>
+<p><p>Client Services:</p>
+<p>None</p>
+</p>
+<p><p>Action Services:</p>
+<p>None</p>
+</p>
+<p><p>Description:</p>
+<p>Briefly, this node reads the input image from the robot’s camera. Secondly, it print it on a floating window, namely DetectiCAm, by means of a cv_ptr; Thirdly it publish the video stream!</p>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv44mainiPPc">
+<span id="_CPPv34mainiPPc"></span><span id="_CPPv24mainiPPc"></span><span id="main__i.cPP"></span><span class="target" id="img__echo_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">main</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">argc</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">argv</span></span><span class="sig-paren">)</span><br /></dt>
+<dd><p>main function </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-variables">Variables</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv413OPENCV_WINDOW">
+<span id="_CPPv313OPENCV_WINDOW"></span><span id="_CPPv213OPENCV_WINDOW"></span><span id="OPENCV_WINDOW__ssC"></span><span class="target" id="img__echo_8cpp_1ac8b1805a7073a3ed84d89f2aaef3f254"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">OPENCV_WINDOW</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;DetectiCam&quot;</span></span><a class="headerlink" href="#_CPPv413OPENCV_WINDOW" title="Permalink to this definition"></a><br /></dt>
+<dd><p>window name </p>
+</dd></dl>
+
+</div>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv414img_echo_class">
+<span id="_CPPv314img_echo_class"></span><span id="_CPPv214img_echo_class"></span><span id="img_echo_class"></span><span class="target" id="classimg__echo__class"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">img_echo_class</span></span></span><a class="headerlink" href="#_CPPv414img_echo_class" title="Permalink to this definition"></a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class14img_echo_classEv">
+<span id="_CPPv3N14img_echo_class14img_echo_classEv"></span><span id="_CPPv2N14img_echo_class14img_echo_classEv"></span><span id="img_echo_class::img_echo_class"></span><span class="target" id="classimg__echo__class_1acad80956d38d7b99384d3a624629bed9"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">img_echo_class</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14img_echo_class14img_echo_classEv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>img_echo class constructor </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_classD0Ev">
+<span id="_CPPv3N14img_echo_classD0Ev"></span><span id="_CPPv2N14img_echo_classD0Ev"></span><span id="img_echo_class::~img_echo_class"></span><span class="target" id="classimg__echo__class_1ae8682c1ae3d9a68fece0a38a80b3d296"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~img_echo_class</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14img_echo_classD0Ev" title="Permalink to this definition"></a><br /></dt>
+<dd><p>img_echo node class destructor (just close the window) </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class14image_callbackERKN11sensor_msgs13ImageConstPtrE">
+<span id="_CPPv3N14img_echo_class14image_callbackERKN11sensor_msgs13ImageConstPtrE"></span><span id="_CPPv2N14img_echo_class14image_callbackERKN11sensor_msgs13ImageConstPtrE"></span><span id="img_echo_class::image_callback__sensor_msgs::ImageConstPtrCR"></span><span class="target" id="classimg__echo__class_1a395477377683017361fdc80aaf3cc995"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">image_callback</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">sensor_msgs</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ImageConstPtr</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N14img_echo_class14image_callbackERKN11sensor_msgs13ImageConstPtrE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>receive the image, print it on a window, then echo the image </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-private-members">Private Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class2nhE">
+<span id="_CPPv3N14img_echo_class2nhE"></span><span id="_CPPv2N14img_echo_class2nhE"></span><span id="img_echo_class::nh__ros::NodeHandle"></span><span class="target" id="classimg__echo__class_1a176b56384b591c988ab3bf5639f08a65"></span><span class="n"><span class="pre">ros</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">NodeHandle</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">nh</span></span></span><a class="headerlink" href="#_CPPv4N14img_echo_class2nhE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>class node handle </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class8in_topicE">
+<span id="_CPPv3N14img_echo_class8in_topicE"></span><span id="_CPPv2N14img_echo_class8in_topicE"></span><span id="img_echo_class::in_topic__ssC"></span><span class="target" id="classimg__echo__class_1ad2c9abbe0cb1a9f8940990d2163d2614"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">in_topic</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;/robot/camera1/image_raw&quot;</span></span><a class="headerlink" href="#_CPPv4N14img_echo_class8in_topicE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>image input topic </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class9out_topicE">
+<span id="_CPPv3N14img_echo_class9out_topicE"></span><span id="_CPPv2N14img_echo_class9out_topicE"></span><span id="img_echo_class::out_topic__ssC"></span><span class="target" id="classimg__echo__class_1abc6d22283406b6eadfad2b1e2ca9b061"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">out_topic</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;/img_echo&quot;</span></span><a class="headerlink" href="#_CPPv4N14img_echo_class9out_topicE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>image output topic </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class2itE">
+<span id="_CPPv3N14img_echo_class2itE"></span><span id="_CPPv2N14img_echo_class2itE"></span><span id="img_echo_class::it__image_transport::ImageTransport"></span><span class="target" id="classimg__echo__class_1ae2243fc96201614f1fc861d7ac4706c5"></span><span class="n"><span class="pre">image_transport</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">ImageTransport</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">it</span></span></span><a class="headerlink" href="#_CPPv4N14img_echo_class2itE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>the image transport handle </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class9image_subE">
+<span id="_CPPv3N14img_echo_class9image_subE"></span><span id="_CPPv2N14img_echo_class9image_subE"></span><span id="img_echo_class::image_sub__image_transport::Subscriber"></span><span class="target" id="classimg__echo__class_1a2a674227eeafa6391b770e7534954683"></span><span class="n"><span class="pre">image_transport</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Subscriber</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">image_sub</span></span></span><a class="headerlink" href="#_CPPv4N14img_echo_class9image_subE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>image transport subscriber from Gazebo </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14img_echo_class9image_pubE">
+<span id="_CPPv3N14img_echo_class9image_pubE"></span><span id="_CPPv2N14img_echo_class9image_pubE"></span><span id="img_echo_class::image_pub__image_transport::Publisher"></span><span class="target" id="classimg__echo__class_1ac43cbb98c04b7d516100f2472b5d5933"></span><span class="n"><span class="pre">image_transport</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Publisher</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">image_pub</span></span></span><a class="headerlink" href="#_CPPv4N14img_echo_class9image_pubE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>image transport publisher to the architecture </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv416erl_assignment_3">
+<span id="_CPPv316erl_assignment_3"></span><span id="_CPPv216erl_assignment_3"></span><span id="erl_assignment_3"></span><span class="target" id="namespaceerl__assignment__3"></span><span class="k"><span class="pre">namespace</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">erl_assignment_3</span></span></span><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Detectibot_magnifier.html" class="btn btn-neutral float-left" title="Code docs – Detectibot_magnifier.cpp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Navigation.html" class="btn btn-neutral float-right" title="Code docs – Navigation.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Iacopo Pietrasanta.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
